@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Events — Event Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="logo">Aurora<span>Events</span></a>
+      <nav class="main-nav" id="main-nav">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Event Management & Production</p>
+      <h1>Every event, staged<br> like a <span>story.</span></h1>
+      <p class="hero-sub">Weddings, corporate gatherings, concerts and private celebrations, planned down to the last
+        detail and delivered without a stumble.</p>
+      <a href="#contact" class="btn btn-primary">Plan your event</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <p class="eyebrow">About us</p>
+      <h2>We build the room before the guests walk in.</h2>
+      <p>Aurora Events has spent twelve years turning briefs into evenings people remember. Our team handles venues,
+        vendors, run-of-show, and everything in between, so our clients can host instead of manage.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-number">350+</span>
+          <span class="stat-label">Events delivered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Years running</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Clients who rebook</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <p class="eyebrow center">What we do</p>
+    <h2 class="section-title">Services</h2>
+    <div class="ticket-grid">
+      <div class="ticket">
+        <div class="ticket-notch top"></div>
+        <div class="ticket-body">
+          <span class="ticket-tag">SERVICE ONE</span>
+          <h3>Weddings</h3>
+          <p>Full-service planning from venue scouting to the last dance, tailored to each couple's story.</p>
+        </div>
+        <div class="ticket-notch bottom"></div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-notch top"></div>
+        <div class="ticket-body">
+          <span class="ticket-tag">SERVICE TWO</span>
+          <h3>Corporate Events</h3>
+          <p>Conferences, product launches and offsites run with precision, on schedule and on brand.</p>
+        </div>
+        <div class="ticket-notch bottom"></div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-notch top"></div>
+        <div class="ticket-body">
+          <span class="ticket-tag">SERVICE THREE</span>
+          <h3>Concerts &amp; Shows</h3>
+          <p>Stage production, sound, lighting and crowd flow for live shows of any size.</p>
+        </div>
+        <div class="ticket-notch bottom"></div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-notch top"></div>
+        <div class="ticket-body">
+          <span class="ticket-tag">SERVICE FOUR</span>
+          <h3>Private Parties</h3>
+          <p>Milestone birthdays, anniversaries and reunions, styled and staffed end to end.</p>
+        </div>
+        <div class="ticket-notch bottom"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-copy">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Tell us about your event.</h2>
+        <p>Share a few details and our team will reply within one business day with next steps.</p>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="event-type">Event type</label>
+            <select id="event-type" name="event-type">
+              <option value="wedding">Wedding</option>
+              <option value="corporate">Corporate Event</option>
+              <option value="concert">Concert / Show</option>
+              <option value="private">Private Party</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="event-date">Event date</label>
+            <input type="date" id="event-date" name="event-date">
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="Tell us a little about what you're planning"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo">Aurora<span>Events</span></a>
+        <p>Event management and production, planned with care and run without a hitch.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>hello@auroraevents.com</p>
+        <p>+91 98765 43210</p>
+        <p>Bengaluru, Karnataka</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Aurora Events. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
