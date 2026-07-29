@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leon Home — Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo">
+        <svg class="logo__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 14c1.5-3 3-4.5 4-4.5s2.5 1.5 4 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M12 6v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Leon Home
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__list">
+          <li><a href="#" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="#agents" class="nav__link">Agents</a></li>
+          <li><a href="#projects" class="nav__link">Best in Projects</a></li>
+          <li><a href="#collection" class="nav__link">Collection</a></li>
+          <li><a href="#about" class="nav__link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <div class="socials" aria-label="Social media">
+          <a href="#" class="socials__link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="socials__link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="socials__link" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <a href="tel:+6213156493058" class="btn btn--phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +62 315-649-3058
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero__card">
+        <img
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
+          alt="Modern curved home on rocky coastline at sunset"
+          class="hero__bg"
+        />
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
+          <div class="hero__tagline">
+            <span class="hero__since">Since 2022</span>
+            <p>Upgrade your life with smart home technology</p>
+          </div>
+
+          <h1 class="hero__title">Leon Home</h1>
+
+          <div class="hero__stats">
+            <div class="stat-card">
+              <span class="stat-card__number">5.9K+</span>
+              <p>Successfully delivering innovative projects to clients worldwide.</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number">10K+</span>
+              <p>Award winning residential projects completed with excellence.</p>
+            </div>
+          </div>
+
+          <a href="#collection" class="btn btn--discover">
+            Discover More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="excellence" id="about">
+      <h2 class="section-title">Experience Excellence In Real Estate</h2>
+
+      <div class="excellence__grid">
+        <div class="excellence__left">
+          <h3 class="excellence__heading">Your Trusted Partner in Finding the Perfect Home.</h3>
+          <p class="excellence__text">
+            We combine deep market expertise with personalized service to help you discover properties that truly match your lifestyle. From first viewing to final keys, we're with you every step.
+          </p>
+          <a href="#about" class="btn btn--dark">About Us</a>
+
+          <div class="partners">
+            <span class="partners__label">Our Partners</span>
+            <div class="partners__logos">
+              <span class="partners__logo">Polymath</span>
+              <span class="partners__logo">BuildLife</span>
+              <span class="partners__logo">Quotient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="excellence__center">
+          <img
+            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80"
+            alt="Luxury modern villa with pool at night"
+            class="excellence__image"
+          />
+        </div>
+
+        <div class="excellence__right">
+          <div class="feature">
+            <h4 class="feature__title">Expert Guidance</h4>
+            <p class="feature__text">Our seasoned agents provide tailored advice to navigate the market with confidence and clarity.</p>
+          </div>
+          <hr class="feature__divider" />
+          <div class="feature">
+            <h4 class="feature__title">Wide Property Selection</h4>
+            <p class="feature__text">Browse an extensive portfolio of homes, from cozy apartments to sprawling estates.</p>
+          </div>
+
+          <div class="reviews">
+            <span class="reviews__label">Reviews</span>
+            <div class="reviews__content">
+              <div class="reviews__avatars">
+                <img src="https://i.pravatar.cc/40?img=1" alt="" />
+                <img src="https://i.pravatar.cc/40?img=2" alt="" />
+                <img src="https://i.pravatar.cc/40?img=3" alt="" />
+              </div>
+              <div class="reviews__info">
+                <span class="reviews__badge">10K+</span>
+                <span class="reviews__rating">4.9 Customer Ratings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="agents">
+      <div class="team__inner">
+        <div class="team__cards">
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="James Carter" class="team-card__photo" />
+            <div class="team-card__info">
+              <h3 class="team-card__name">James Carter</h3>
+              <p class="team-card__role">Sales Manager</p>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Sarah Mitchell" class="team-card__photo" />
+            <div class="team-card__info">
+              <h3 class="team-card__name">Sarah Mitchell</h3>
+              <p class="team-card__role">Property Agent</p>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Michael Chen" class="team-card__photo" />
+            <div class="team-card__info">
+              <h3 class="team-card__name">Michael Chen</h3>
+              <p class="team-card__role">Property Agent</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="team__content">
+          <h2 class="team__title">Meet Our Expert Team</h2>
+          <p class="team__text">
+            Our dedicated professionals bring years of experience and a passion for real estate. They work tirelessly to match you with the perfect property.
+          </p>
+          <a href="#agents" class="btn btn--outline">View All</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="properties" id="collection">
+      <div class="properties__header">
+        <h2 class="properties__title">Find Your Dream Home Today</h2>
+        <p class="properties__desc">
+          Explore our curated collection of premium properties. Each listing is handpicked to offer exceptional quality, location, and value.
+        </p>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous property">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <div class="carousel__track-wrapper">
+          <div class="carousel__track">
+            <article class="property-card" data-index="0">
+              <div class="property-card__image-wrap">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80" alt="Contemporary hillside residence" />
+                <span class="property-card__tag">Available Property</span>
+              </div>
+              <div class="property-card__info">
+                <h3 class="property-card__name">Contemporary Hillside Residence</h3>
+                <p class="property-card__price">₹3,200,000</p>
+              </div>
+            </article>
+
+            <article class="property-card property-card--active" data-index="1">
+              <div class="property-card__image-wrap">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern family home with pool" />
+                <span class="property-card__tag">Available Property</span>
+              </div>
+              <div class="property-card__info">
+                <h3 class="property-card__name">Modern Family Home</h3>
+                <p class="property-card__price">₹4,500,000</p>
+              </div>
+            </article>
+
+            <article class="property-card" data-index="2">
+              <div class="property-card__image-wrap">
+                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&q=80" alt="Luxury beachfront villa" />
+                <span class="property-card__tag">Available Property</span>
+              </div>
+              <div class="property-card__info">
+                <h3 class="property-card__name">Luxury Beachfront Villa</h3>
+                <p class="property-card__price">₹6,800,000</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__btn carousel__btn--next" aria-label="Next property">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
