@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA | Luxury Real Estate & Architectural Estates</title>
+    <meta name="description" content="Discover Aurelia's curated portfolio of the world's most exclusive minimalist architectural masterpieces and luxury estates.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo" id="nav-logo">
+                <span>AURELIA</span>
+            </a>
+            
+            <nav class="nav-menu" aria-label="Main Navigation">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#featured" class="nav-link">Featured</a>
+                <a href="#about" class="nav-link">Why Aurelia</a>
+                <a href="#listings" class="nav-link">Estates</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#blog" class="nav-link">Insights</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary btn-nav">Book Private Tour</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu" id="mobile-menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <nav class="mobile-nav-menu" aria-label="Mobile Navigation">
+            <a href="#hero" class="mobile-nav-link">Home</a>
+            <a href="#featured" class="mobile-nav-link">Featured</a>
+            <a href="#about" class="mobile-nav-link">Why Aurelia</a>
+            <a href="#listings" class="mobile-nav-link">Estates</a>
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#blog" class="mobile-nav-link">Insights</a>
+            <a href="#contact" class="btn btn-primary btn-mobile-cta">Book Private Tour</a>
+        </nav>
+    </div>
+
+    
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-wrapper wrapper">
+            <div class="hero-bg layer" style="background-image: url('images/hero.jpg');"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content-container">
+            <div class="hero-text-block">
+                <span class="hero-tag">ARCHITECTURAL MASTERPIECES</span>
+                <h1 class="hero-title">
+                    <span class="hero-title-line-wrapper"><span class="hero-title-line">Living in</span></span>
+                    <span class="hero-title-line-wrapper"><span class="hero-title-line italic-serif">Sculpted Light</span></span>
+                </h1>
+                <p class="hero-subtitle">Curated residential art. Minimalist luxury estates built for those who perceive architecture as a living medium.</p>
+                <div class="hero-ctas">
+                    <a href="#featured" class="btn btn-primary">Explore Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Request Dossier</a>
+                </div>
+            </div>
+            
+            
+            <div class="floating-hero-card-wrapper" id="hero-floating-card-wrapper">
+                <div class="floating-hero-card" id="hero-floating-card">
+                    <div class="floating-card-blur"></div>
+                    <div class="floating-card-content">
+                        <span class="float-card-tag">NEW RELEASE</span>
+                        <h3 class="float-card-title">Samyak Manor</h3>
+                        <p class="float-card-loc">South Mumbai, India</p>
+                        <div class="float-card-divider"></div>
+                        <div class="float-card-footer">
+                            <span class="float-card-price">₹96,40,00,000</span>
+                            <a href="#listings" class="float-card-link" aria-label="View Samyak Manor details">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-mouse-indicator">
+            <span class="mouse-scroll-wheel"></span>
+        </div>
+    </section>
+
+    
+    <section class="search-section" id="search-bar">
+        <div class="search-container reveal-up">
+            <form class="search-form" id="property-search-form" action="#" method="GET">
+                <div class="search-group">
+                    <label for="search-location" class="search-label">Location</label>
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <select id="search-location" name="location">
+                            <option value="">All Regions</option>
+                            <option value="mumbai">Mumbai, India</option>
+                            <option value="goa">Goa, India</option>
+                            <option value="udaipur">Udaipur, India</option>
+                            <option value="jaipur">Jaipur, India</option>
+                            <option value="kerala">Kerala Backwaters, India</option>
+                            <option value="lodhi">Lodhi Estate, New Delhi</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-group">
+                    <label for="search-type" class="search-label">Property Type</label>
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <select id="search-type" name="type">
+                            <option value="">All Estates</option>
+                            <option value="villa">Coastal Villa</option>
+                            <option value="penthouse">Skyline Penthouse</option>
+                            <option value="brutalist">Brutalist Mansion</option>
+                            <option value="chalet">Alpine Chalet</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="search-group">
+                    <label for="search-price" class="search-label">Budget Range</label>
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                        <select id="search-price" name="price">
+                            <option value="">Any Budget</option>
+                            <option value="5-10">₹5 Cr – ₹10 Cr</option>
+                            <option value="10-15">₹10 Cr – ₹15 Cr</option>
+                            <option value="15-20">₹15 Cr – ₹20 Cr</option>
+                            <option value="20+">₹20 Cr+ Private Reserves</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-search" aria-label="Search properties">
+                    <span>Search Estates</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    
+    <section class="featured-section" id="featured">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div>
+                    <span class="section-tag">CURATED RELEASES</span>
+                    <h2 class="section-title">Featured Architectural Masterpieces</h2>
+                </div>
+                <div class="section-desc-wrapper">
+                    <p class="section-desc">A strict selection of homes defined by mathematical symmetry, premium materials, and unparalleled privacy.</p>
+                </div>
+            </div>
+
+            <div class="property-grid">
+                
+                <article class="property-card reveal-up">
+                    <div class="card-img-wrapper">
+                        <img src="images/prop_featured_1.jpg" alt="Marigold Manor Exterior" class="card-img" loading="lazy">
+                        <span class="card-badge">Exclusive</span>
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <p class="card-location">Lonavala, India</p>
+                        <h3 class="card-title">Marigold Manor</h3>
+                        <div class="card-specs">
+                            <span>4 Beds</span>
+                            <span class="specs-dot"></span>
+                            <span>5 Baths</span>
+                            <span class="specs-dot"></span>
+                            <span>7,200 sqft</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-price">₹38,60,00,000</span>
+                            <a href="#contact" class="card-arrow-link" aria-label="Learn more about Marigold Manor">
+                                <span>Details</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="property-card reveal-up">
+                    <div class="card-img-wrapper">
+                        <img src="images/prop_featured_2.jpg" alt="Ebony Horizon Cliffside Estate" class="card-img" loading="lazy">
+                        <span class="card-badge">Off Market</span>
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <p class="card-location">Goa, India</p>
+                        <h3 class="card-title">Ebony Horizon</h3>
+                        <div class="card-specs">
+                            <span>6 Beds</span>
+                            <span class="specs-dot"></span>
+                            <span>8 Baths</span>
+                            <span class="specs-dot"></span>
+                            <span>9,500 sqft</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-price">₹54,50,00,000</span>
+                            <a href="#contact" class="card-arrow-link" aria-label="Learn more about Ebony Horizon">
+                                <span>Details</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="property-card reveal-up">
+                    <div class="card-img-wrapper">
+                        <img src="images/prop_featured_3.jpg" alt="Skyline Penthouse BKC" class="card-img" loading="lazy">
+                        <span class="card-badge">New Release</span>
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <p class="card-location">Bandra Kurla Complex, India</p>
+                        <h3 class="card-title">Skyline Penthouse</h3>
+                        <div class="card-specs">
+                            <span>3 Beds</span>
+                            <span class="specs-dot"></span>
+                            <span>4.5 Baths</span>
+                            <span class="specs-dot"></span>
+                            <span>5,100 sqft</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-price">₹28,70,00,000</span>
+                            <a href="#contact" class="card-arrow-link" aria-label="Learn more about Skyline Penthouse">
+                                <span>Details</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="stats-section" id="stats">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-item reveal-fade">
+                    <span class="stat-number" data-target="140">0</span><span class="stat-plus">+</span>
+                    <p class="stat-label">Properties Sold</p>
+                </div>
+                <div class="stat-item reveal-fade">
+                    <span class="stat-number" data-target="98">0</span><span class="stat-plus">%</span>
+                    <p class="stat-label">Happy Clients</p>
+                </div>
+                <div class="stat-item reveal-fade">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-item reveal-fade">
+                    <span class="stat-number" data-target="12">0</span><span class="stat-plus"></span>
+                    <p class="stat-label">Cities Covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                
+                <div class="about-img-block reveal-left">
+                    <div class="about-img-wrapper">
+                        <img src="images/why_us.jpg" alt="Architectural wood slats detail next to reflecting pool" class="about-img" loading="lazy">
+                        <div class="about-img-overlay"></div>
+                    </div>
+                </div>
+                
+                
+                <div class="about-content-block reveal-right">
+                    <span class="section-tag">OUR CONCIERGE</span>
+                    <h2 class="section-title">Redefining the Luxury Real Estate Journey</h2>
+                    <p class="about-intro">We do not broker transactions. We broker architectural legacy. Our boutique advisory connects discerning collectors with spatial masterworks.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/>
+                                    <line x1="12" y1="22" x2="12" y2="15.5"/>
+                                    <polyline points="22 8.5 12 15.5 2 8.5"/>
+                                    <polyline points="2 15.5 12 8.5 22 15.5"/>
+                                    <line x1="12" y1="2" x2="12" y2="8.5"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3 class="feature-title">Unrivaled Portfolio</h3>
+                                <p class="feature-desc">Access to off-market estates and unique modernist retreats not listed on public channels.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3 class="feature-title">Absolute Discretion</h3>
+                                <p class="feature-desc">Every negotiation is handled with strict confidentiality protocols, shielding your identity.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3 class="feature-title">Bespoke Advisory</h3>
+                                <p class="feature-desc">Full-scale acquisition assistance including architectural audit, historical vetting, and structural advisory.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="listings-section" id="listings">
+        <div class="section-container">
+            <div class="listings-header reveal-up">
+                <span class="section-tag">PREMIUM RESERVE</span>
+                <h2 class="section-title">The Seasonal Reserve</h2>
+                <p class="listings-intro-text">An ultra-exclusive catalog of structural marvels open for private acquisition and virtual preview.</p>
+            </div>
+
+            <div class="reserve-list">
+                
+                <div class="reserve-item alternating-row">
+                    <div class="reserve-img-block reveal-left">
+                        <div class="reserve-img-wrapper">
+                            <img src="images/prop_listing_1.jpg" alt="Glass pavilion over lake in Udaipur" class="reserve-img" loading="lazy">
+                            <div class="reserve-img-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="reserve-text-block reveal-right">
+                        <span class="reserve-number">01 / Reserve</span>
+                        <h3 class="reserve-title">The Glass Pavilion</h3>
+                        <p class="reserve-location">Udaipur, India</p>
+                        <p class="reserve-description">Hovering seamlessly over the calm waters of Lake Pichola, this pavilion incorporates ultra-high-clear structural glass panes and post-tensioned raw concrete roofs. Floor-to-ceiling vistas blend the inner living gallery with the surrounding Rajasthani mist.</p>
+                        <div class="reserve-specs">
+                            <div class="spec-col">
+                                <span class="spec-val">4</span>
+                                <span class="spec-lbl">Beds</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-val">5.5</span>
+                                <span class="spec-lbl">Baths</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-val">6,800</span>
+                                <span class="spec-lbl">Sq Ft</span>
+                            </div>
+                        </div>
+                        <div class="reserve-action">
+                            <span class="reserve-price">₹180,00,00,000</span>
+                            <a href="#contact" class="btn btn-secondary">Request Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="reserve-item alternating-row reserve-reversed">
+                    <div class="reserve-img-block reveal-right">
+                        <div class="reserve-img-wrapper">
+                            <img src="images/prop_listing_2.jpg" alt="Minimalist desert stone sanctuary at dusk" class="reserve-img" loading="lazy">
+                            <div class="reserve-img-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="reserve-text-block reveal-left">
+                        <span class="reserve-number">02 / Reserve</span>
+                        <h3 class="reserve-title">Desert Sanctuary</h3>
+                        <p class="reserve-location">Jaisalmer, India</p>
+                        <p class="reserve-description">Carved directly from desert boulders, this structure uses local sand-cast stone blocks and rich structural brass. Designed to stay cool in extreme heat, it opens up towards a private canyon offering absolute stillness and starlit horizons.</p>
+                        <div class="reserve-specs">
+                            <div class="spec-col">
+                                <span class="spec-val">5</span>
+                                <span class="spec-lbl">Beds</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-val">6</span>
+                                <span class="spec-lbl">Baths</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-val">8,200</span>
+                                <span class="spec-lbl">Sq Ft</span>
+                            </div>
+                        </div>
+                        <div class="reserve-action">
+                            <span class="reserve-price">₹135,00,00,000</span>
+                            <a href="#contact" class="btn btn-secondary">Request Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="reserve-item alternating-row">
+                    <div class="reserve-img-block reveal-left">
+                        <div class="reserve-img-wrapper">
+                            <img src="images/prop_listing_3.jpg" alt="Luxury Himalayan chalet with snowy peaks view" class="reserve-img" loading="lazy">
+                            <div class="reserve-img-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="reserve-text-block reveal-right">
+                        <span class="reserve-number">03 / Reserve</span>
+                        <h3 class="reserve-title">Himalayan Retreat</h3>
+                        <p class="reserve-location">Manali, India</p>
+                        <p class="reserve-description">Perched at a dramatic elevation, this contemporary chalet marries traditional cedar siding with massive structural glass elements. Features a private geothermal wellness spa and direct helipad access.</p>
+                        <div class="reserve-specs">
+                            <div class="spec-col">
+                                <span class="spec-val">6</span>
+                                <span class="spec-lbl">Beds</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-val">7.5</span>
+                                <span class="spec-lbl">Baths</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-val">9,400</span>
+                                <span class="spec-lbl">Sq Ft</span>
+                            </div>
+                        </div>
+                        <div class="reserve-action">
+                            <span class="reserve-price">₹210,00,00,000</span>
+                            <a href="#contact" class="btn btn-secondary">Request Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="services-section" id="services">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div>
+                    <span class="section-tag">OUR EXPERTISE</span>
+                    <h2 class="section-title">Curated Spatial Solutions</h2>
+                </div>
+                <div class="section-desc-wrapper">
+                    <p class="section-desc">From acquisition to asset management, our services are structured to cater to collectors of elite residential architecture.</p>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                
+                <div class="service-card reveal-up">
+                    <span class="service-num">01</span>
+                    <h3 class="service-title">Discreet Acquisition</h3>
+                    <p class="service-desc">Strategic sourcing of off-market architectural masterpieces, representing purchasers with strict anonymity and legal precision.</p>
+                    <div class="service-link">
+                        <span class="service-link-text">Read details</span>
+                        <svg class="service-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+
+                
+                <div class="service-card reveal-up">
+                    <span class="service-num">02</span>
+                    <h3 class="service-title">Exclusive Disinvestment</h3>
+                    <p class="service-desc">Exposing exceptional architectural assets to verified high-net-worth buyers through private viewings and discrete auctions.</p>
+                    <div class="service-link">
+                        <span class="service-link-text">Read details</span>
+                        <svg class="service-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+
+                
+                <div class="service-card reveal-up">
+                    <span class="service-num">03</span>
+                    <h3 class="service-title">Architectural Vetting</h3>
+                    <p class="service-desc">Comprehensive structural, design authenticity, and material evaluations conducted by certified architectural historians and engineers.</p>
+                    <div class="service-link">
+                        <span class="service-link-text">Read details</span>
+                        <svg class="service-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+
+                
+                <div class="service-card reveal-up">
+                    <span class="service-num">04</span>
+                    <h3 class="service-title">Portfolio Placement</h3>
+                    <p class="service-desc">Strategic advice on building real estate collections that represent both long-term financial hedges and historic design value.</p>
+                    <div class="service-link">
+                        <span class="service-link-text">Read details</span>
+                        <svg class="service-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="testimonials-section">
+        <div class="section-container">
+            <div class="testimonials-header reveal-up">
+                <span class="section-tag">COLLECTOR VOICES</span>
+                <h2 class="section-title">Client Vows</h2>
+            </div>
+            
+            
+            <div class="carousel-wrapper reveal-up">
+                <div class="carousel-scroller" id="testimonial-scroller">
+                    
+                    <div class="carousel-slide active">
+                        <div class="testimonial-content">
+                            <span class="quote-mark">“</span>
+                            <blockquote class="testimonial-quote">Aurelia represents a paradigm shift. They didn't show me houses; they introduced me to architectural landmarks. The process was completely private and incredibly refined.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-details">
+                                    <p class="author-name">Jean-Laurent V.</p>
+                                    <p class="author-title">Art Collector & Philanthropist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="carousel-slide">
+                        <div class="testimonial-content">
+                            <span class="quote-mark">“</span>
+                            <blockquote class="testimonial-quote">Their structural vetting and architectural advice gave us the confidence to purchase our desert sanctuary. Unprecedented professionalism in the high-end residential field.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-details">
+                                    <p class="author-name">Elena K.</p>
+                                    <p class="author-title">Design Critic & Tech Founder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="carousel-slide">
+                        <div class="testimonial-content">
+                            <span class="quote-mark">“</span>
+                            <blockquote class="testimonial-quote">Acquiring an off-market modernist retreat is complex. Aurelia managed the absolute confidentiality of our family office while securing a legendary clifftop estate.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-details">
+                                    <p class="author-name">Marcus Sterling</p>
+                                    <p class="author-title">Principal, Sterling Trust</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" id="prev-testimonial" aria-label="Previous testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <div class="carousel-indicators" id="carousel-indicators">
+                        <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                        <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                        <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                    </div>
+                    <button class="carousel-btn next-btn" id="next-testimonial" aria-label="Next testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="blog-section" id="blog">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div>
+                    <span class="section-tag">AURELIA INSIGHTS</span>
+                    <h2 class="section-title">Architectural Musings</h2>
+                </div>
+                <div class="section-desc-wrapper">
+                    <p class="section-desc">Explorations into structural philosophy, historical preservation, and the future of luxury residential craft.</p>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                
+                <article class="blog-card reveal-up">
+                    <div class="blog-img-wrapper">
+                        <img src="images/prop_featured_1.jpg" alt="Modern concrete architecture in trees" class="blog-img" loading="lazy">
+                        <div class="blog-img-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">August 2026</span>
+                        <h3 class="blog-title">The Rise of Biophilic Modernism</h3>
+                        <p class="blog-excerpt">How contemporary architects are embedding concrete structures deep into living forests without altering the geological micro-ecology.</p>
+                        <a href="#blog" class="blog-link">
+                            <span>Read article</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                
+                <article class="blog-card reveal-up">
+                    <div class="blog-img-wrapper">
+                        <img src="images/prop_featured_3.jpg" alt="Double-height living space art display" class="blog-img" loading="lazy">
+                        <div class="blog-img-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">July 2026</span>
+                        <h3 class="blog-title">Curating Large-Scale Spatial Art</h3>
+                        <p class="blog-excerpt">A structural perspective on light alignment, humidity cycles, and weight distributions when placing massive sculptures in double-height lobbies.</p>
+                        <a href="#blog" class="blog-link">
+                            <span>Read article</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                
+                <article class="blog-card reveal-up">
+                    <div class="blog-img-wrapper">
+                        <img src="images/hero.jpg" alt="Modern coastal villa sunset" class="blog-img" loading="lazy">
+                        <div class="blog-img-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">June 2026</span>
+                        <h3 class="blog-title">Living on the Edge: Clifftop Stability</h3>
+                        <p class="blog-excerpt">Exploring post-tensioned foundation micro-piles that anchor modern cantilever estates to volcanic marine cliffs.</p>
+                        <a href="#blog" class="blog-link">
+                            <span>Read article</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cta-section" id="contact">
+        <div class="cta-bg-wrapper">
+            <div class="cta-bg" style="background-image: url('images/hero.jpg');"></div>
+            <div class="cta-overlay"></div>
+        </div>
+        
+        <div class="cta-content-container reveal-up">
+            <span class="cta-tag">PRIVATE INVITATION</span>
+            <h2 class="cta-title">Acquire Your Spatial Masterwork</h2>
+            <p class="cta-desc">Subscribe to our discrete mailing list to receive quarterly briefs containing off-market properties and global design insights.</p>
+            
+            <form class="cta-form" id="newsletter-form" action="#" method="POST">
+                <div class="cta-input-group">
+                    <label for="newsletter-email" class="sr-only">Email address</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Enter your private email" required>
+                    <button type="submit" class="btn btn-primary btn-cta">Request Access</button>
+                </div>
+                <p class="cta-disclaimer">By submitting, you agree to our strict non-disclosure terms. Your data remains completely anonymous.</p>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                
+                <div class="footer-brand-col">
+                    <a href="#" class="footer-logo">AURELIA</a>
+                    <p class="footer-brand-desc">Curators of fine structural legacies and modernist sanctuaries. Operating at the intersection of architecture, luxury, and art.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Navigations</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#featured">Featured Estates</a></li>
+                        <li><a href="#about">Our Concierge</a></li>
+                        <li><a href="#listings">The Reserve</a></li>
+                        <li><a href="#services">Specialized Services</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Regions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#listings">Mumbai, India</a></li>
+                        <li><a href="#listings">Goa, India</a></li>
+                        <li><a href="#featured">Udaipur, India</a></li>
+                        <li><a href="#listings">jaipur, India</a></li>
+                        <li><a href="#listings">lodi estate,New delhi  india</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Private Office</h4>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>MG Road, Mumbai, India</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>inquire@aureliaestates.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Aurelia Estates. All rights reserved. Vetted by historic preservation boards.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <span class="legal-dot"></span>
+                    <a href="#">Non-Disclosure Terms</a>
+                    <span class="legal-dot"></span>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
