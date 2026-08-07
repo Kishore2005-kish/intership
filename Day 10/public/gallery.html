@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photo Gallery | Vidyanjali International School, Pune</title>
+    <meta
+      name="description"
+      content="Photo gallery of Vidyanjali International School, Pune — campus, classrooms, sports, cultural events and celebrations, with a lightbox viewer."
+    />
+    <meta property="og:title" content="Photo Gallery | Vidyanjali International School" />
+    <meta property="og:description" content="Campus, classroom, sports and cultural photographs from Vidyanjali International School, Pune." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/img/logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="topbar d-none d-lg-block">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex gap-4">
+          <span><i class="bi bi-telephone me-1"></i> +91 20 4123 8800</span>
+          <span><i class="bi bi-envelope me-1"></i> info@vidyanjali.edu.in</span>
+          <span><i class="bi bi-geo-alt me-1"></i> Baner Road, Pune 411045</span>
+        </div>
+        <div class="d-flex gap-3 align-items-center">
+          <span class="text-white-50">Affiliated to CBSE, New Delhi</span>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg vis-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">
+          <img src="/assets/img/logo.png" alt="Vidyanjali International School crest" />
+          <span class="brand-name">Vidyanjali<span class="brand-sub">International School</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about.html">About School</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admissions.html">Admissions</a></li>
+            <li class="nav-item"><a class="nav-link" href="/academics.html">Academics</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faculty.html">Faculty</a></li>
+            <li class="nav-item"><a class="nav-link" href="/gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/news.html">News &amp; Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact Us</a></li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn btn-saffron btn-sm" href="/admissions.html#enquiry">Apply Now</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-banner">
+      <div class="container position-relative">
+        <span class="eyebrow" style="color: #f0a020">Life at Vidyanjali</span>
+        <h1>Photo Gallery</h1>
+        <nav aria-label="breadcrumb" class="mt-2">
+          <ol class="breadcrumb small">
+            <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="text-center mb-4 reveal">
+            <span class="eyebrow">Moments</span>
+            <h2 class="section-title">Click any photo to open the viewer</h2>
+            <p class="lead-muted mx-auto" style="max-width: 620px">
+              Use the arrow keys or swipe to browse, and press Esc to close.
+            </p>
+          </div>
+
+          <div class="filter-bar mb-4 reveal" data-filter-group="gallery">
+            <button class="filter-btn active" data-filter="all" type="button">All</button>
+            <button class="filter-btn" data-filter="campus" type="button">Campus</button>
+            <button class="filter-btn" data-filter="academics" type="button">Academics</button>
+            <button class="filter-btn" data-filter="sports" type="button">Sports</button>
+            <button class="filter-btn" data-filter="cultural" type="button">Cultural</button>
+          </div>
+
+          <div class="gallery-grid reveal" data-gallery data-filter-target="gallery">
+            <figure class="gallery-item" data-category="campus" data-caption="Main academic block at golden hour" tabindex="0">
+              <img src="/assets/img/hero-1.jpg" data-full="/assets/img/hero-1.jpg" width="1920" height="1080" loading="lazy" alt="Main academic block at sunset" />
+              <figcaption>Main academic block at golden hour</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="academics" data-caption="A smart classroom session in Class VII" tabindex="0">
+              <img src="/assets/img/hero-2.jpg" data-full="/assets/img/hero-2.jpg" width="1920" height="1080" loading="lazy" alt="Smart classroom session" />
+              <figcaption>A smart classroom session in Class VII</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cultural" data-caption="Annual Day classical dance performance" tabindex="0">
+              <img src="/assets/img/hero-3.jpg" data-full="/assets/img/hero-3.jpg" width="1920" height="1080" loading="lazy" alt="Annual Day dance performance" />
+              <figcaption>Annual Day classical dance performance</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="academics" data-caption="Chemistry practicals in the senior lab" tabindex="0">
+              <img src="/assets/img/lab.jpg" data-full="/assets/img/lab.jpg" width="1200" height="900" loading="lazy" alt="Chemistry practical class" />
+              <figcaption>Chemistry practicals in the senior lab</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="campus" data-caption="The library reading hall" tabindex="0">
+              <img src="/assets/img/library.jpg" data-full="/assets/img/library.jpg" width="1200" height="900" loading="lazy" alt="Library reading hall" />
+              <figcaption>The library reading hall</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="sports" data-caption="Sports Day 100 m final on the school track" tabindex="0">
+              <img src="/assets/img/sports.jpg" data-full="/assets/img/sports.jpg" width="1200" height="900" loading="lazy" alt="Sports day race" />
+              <figcaption>Sports Day 100 m final on the school track</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cultural" data-caption="Junior art studio during a painting workshop" tabindex="0">
+              <img src="/assets/img/art.jpg" data-full="/assets/img/art.jpg" width="1200" height="900" loading="lazy" alt="Art and craft workshop" />
+              <figcaption>Junior art studio during a painting workshop</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="academics" data-caption="Group work in the middle school wing" tabindex="0">
+              <img src="/assets/img/hero-2.jpg" data-full="/assets/img/hero-2.jpg" width="1920" height="1080" loading="lazy" alt="Students working in groups" />
+              <figcaption>Group work in the middle school wing</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="sports" data-caption="Inter-house athletics meet warm-up" tabindex="0">
+              <img src="/assets/img/sports.jpg" data-full="/assets/img/sports.jpg" width="1200" height="900" loading="lazy" alt="Athletics meet warm up" />
+              <figcaption>Inter-house athletics meet warm-up</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="campus" data-caption="Courtyard assembly before the morning bell" tabindex="0">
+              <img src="/assets/img/hero-1.jpg" data-full="/assets/img/hero-1.jpg" width="1920" height="1080" loading="lazy" alt="Morning assembly courtyard" />
+              <figcaption>Courtyard assembly before the morning bell</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cultural" data-caption="Ganesh Chaturthi celebration on campus" tabindex="0">
+              <img src="/assets/img/hero-3.jpg" data-full="/assets/img/hero-3.jpg" width="1920" height="1080" loading="lazy" alt="Festival celebration on stage" />
+              <figcaption>Ganesh Chaturthi celebration on campus</figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="academics" data-caption="Biology dissection demonstration" tabindex="0">
+              <img src="/assets/img/lab.jpg" data-full="/assets/img/lab.jpg" width="1200" height="900" loading="lazy" alt="Biology laboratory demonstration" />
+              <figcaption>Biology dissection demonstration</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="vis-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="footer-brand d-flex align-items-center gap-3 mb-3">
+              <img src="/assets/img/logo.png" alt="Vidyanjali International School crest" />
+              <div>
+                <div class="text-white fw-bold" style="font-family: 'Playfair Display', serif">Vidyanjali</div>
+                <div class="small text-uppercase" style="letter-spacing: 0.14em; color: #f0a020">International School</div>
+              </div>
+            </div>
+            <p class="small">
+              Vidya Dadati Vinayam — knowledge grants humility. A CBSE co-educational day school in Pune,
+              serving families since 1998.
+            </p>
+            <div class="social-links mt-3">
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://wa.me/912041238800" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="/about.html">About School</a></li>
+              <li><a href="/admissions.html">Admissions</a></li>
+              <li><a href="/academics.html">Academics</a></li>
+              <li><a href="/faculty.html">Faculty</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Explore</h5>
+            <ul>
+              <li><a href="/gallery.html">Gallery</a></li>
+              <li><a href="/news.html">News &amp; Events</a></li>
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="/index.html#notices">Notice Board</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h5>Reach Us</h5>
+            <ul>
+              <li><i class="bi bi-geo-alt me-2"></i>Survey No. 42, Baner Road, Pune, Maharashtra 411045</li>
+              <li><i class="bi bi-telephone me-2"></i><a href="tel:+912041238800">+91 20 4123 8800</a></li>
+              <li><i class="bi bi-envelope me-2"></i><a href="mailto:info@vidyanjali.edu.in">info@vidyanjali.edu.in</a></li>
+              <li><i class="bi bi-clock me-2"></i>Mon-Sat, 8:00 am - 3:30 pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+          <span>&copy; <span data-year>2026</span> Vidyanjali International School. All rights reserved.</span>
+          <span>Designed with HTML5, CSS3, JavaScript &amp; Bootstrap 5.</span>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/gallery.js"></script>
+  </body>
+</html>
