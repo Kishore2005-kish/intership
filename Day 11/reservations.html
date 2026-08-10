@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserve a table at Taj Heritage Kitchen — book your royal dining experience today.">
+  <title>Reservations | Taj Heritage Kitchen</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">T</div>
+        <div class="logo-text">
+          <span>Taj Heritage</span>
+          <span>Kitchen</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-cta">
+          <a href="reservations.html" class="btn btn-primary">Reserve</a>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80');">
+    <div class="container">
+      <h1>Reservations</h1>
+      <p>Book your table for an unforgettable dining experience</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Reservations</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section form-section">
+    <div class="container">
+      <div class="form-grid">
+        <div class="form-info reveal-left">
+          <span class="section-label">Book a Table</span>
+          <h2>Reserve Your Experience</h2>
+          <p>We recommend booking in advance, especially for weekends and special occasions. For groups of 10 or more, please call us directly.</p>
+          <div class="form-info-list">
+            <div class="form-info-item">
+              <div class="form-info-icon">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <span>+91 22 6665 1234</span>
+              </div>
+            </div>
+            <div class="form-info-item">
+              <div class="form-info-icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>reservations@tajheritage.com</span>
+              </div>
+            </div>
+            <div class="form-info-item">
+              <div class="form-info-icon">🕐</div>
+              <div>
+                <strong>Hours</strong>
+                <span>Mon–Thu: 12–11 PM · Fri–Sat: 12–12 AM · Sun: 11–10 PM</span>
+              </div>
+            </div>
+            <div class="form-info-item">
+              <div class="form-info-icon">📍</div>
+              <div>
+                <strong>Location</strong>
+                <span>Apollo Bunder, Colaba, Mumbai 400001</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="reservation-form reveal-right" id="reservationForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date <span class="required">*</span></label>
+              <input type="date" id="date" name="date" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="time">Time <span class="required">*</span></label>
+              <select id="time" name="time" required>
+                <option value="">Select time</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="13:30">1:30 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:00">8:00 PM</option>
+                <option value="20:30">8:30 PM</option>
+                <option value="21:00">9:00 PM</option>
+                <option value="21:30">9:30 PM</option>
+                <option value="22:00">10:00 PM</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests">Guests <span class="required">*</span></label>
+              <select id="guests" name="guests" required>
+                <option value="">Number of guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="7">7 Guests</option>
+                <option value="8">8 Guests</option>
+                <option value="9">9+ Guests</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="occasion">Occasion</label>
+              <select id="occasion" name="occasion">
+                <option value="">Select occasion (optional)</option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="business">Business Dinner</option>
+                <option value="date">Date Night</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="requests">Special Requests</label>
+            <textarea id="requests" name="requests" placeholder="Dietary requirements, seating preferences, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-dark" style="width: 100%;">Confirm Reservation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-text">
+              <span>Taj Heritage</span>
+              <span>Kitchen</span>
+            </div>
+          </a>
+          <p>Experience the finest Indian cuisine inspired by the legendary Taj Hotels.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">t</a>
+            <a href="#" class="social-link" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Private Dining</a></li>
+            <li><a href="#">Catering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon – Thu: 12 PM – 11 PM</li>
+            <li>Fri – Sat: 12 PM – 12 AM</li>
+            <li>Sunday: 11 AM – 10 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Taj Heritage Kitchen. All rights reserved.</span>
+        <span>Designed with ♥ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

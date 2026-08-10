@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the menu at Taj Heritage Kitchen — authentic Indian dishes from across the subcontinent.">
+  <title>Menu | Taj Heritage Kitchen</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">T</div>
+        <div class="logo-text">
+          <span>Taj Heritage</span>
+          <span>Kitchen</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-cta">
+          <a href="reservations.html" class="btn btn-primary">Reserve</a>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1920&q=80');">
+    <div class="container">
+      <h1>Our Menu</h1>
+      <p>A culinary voyage through the diverse flavours of India</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Menu</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="menu-tabs reveal">
+        <button class="menu-tab active" data-category="starters">Starters</button>
+        <button class="menu-tab" data-category="mains">Main Course</button>
+        <button class="menu-tab" data-category="biryani">Biryani & Rice</button>
+        <button class="menu-tab" data-category="breads">Breads</button>
+        <button class="menu-tab" data-category="desserts">Desserts</button>
+        <button class="menu-tab" data-category="beverages">Beverages</button>
+      </div>
+
+      <!-- Starters -->
+      <div class="menu-category active" id="starters">
+        <div class="card-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1606491956689-2ea866858137?w=600&q=80" alt="Tandoori Prawns">
+              <span class="menu-card-badge">Seafood</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Tandoori Jhinga</h3>
+              <p>Jumbo prawns marinated in yogurt, ginger, garlic, and Kashmiri chili, char-grilled in our clay tandoor.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹745 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80" alt="Paneer Tikka">
+              <span class="menu-card-badge">Vegetarian</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Paneer Tikka</h3>
+              <p>Cottage cheese cubes marinated in spiced yogurt, bell peppers, and onions, grilled to perfection.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹545 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1603894584375-5e62a3f5c9ef?w=600&q=80" alt="Chicken Seekh Kebab">
+            </div>
+            <div class="menu-card-body">
+              <h3>Chicken Seekh Kebab</h3>
+              <p>Minced chicken blended with herbs and spices, skewered and roasted in the tandoor. Served with mint chutney.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹595 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1626132647503-795975a5c07e?w=600&q=80" alt="Samosa Chaat">
+              <span class="menu-card-badge">Street Food</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Samosa Chaat</h3>
+              <p>Crispy samosas topped with spiced chickpeas, yogurt, tamarind chutney, and sev — a Delhi street classic.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹395 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Course -->
+      <div class="menu-category" id="mains">
+        <div class="card-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80" alt="Butter Chicken">
+              <span class="menu-card-badge">Chef's Special</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Murgh Makhani</h3>
+              <p>Tandoor-roasted chicken in a rich, velvety tomato-cream sauce with butter and fenugreek leaves.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹695 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="Dal Makhani">
+              <span class="menu-card-badge">Vegetarian</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Dal Makhani</h3>
+              <p>Black lentils and kidney beans slow-cooked overnight with butter, cream, and aromatic spices.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹495 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1565557623262-b51f2512a7ad?w=600&q=80" alt="Rogan Josh">
+            </div>
+            <div class="menu-card-body">
+              <h3>Rogan Josh</h3>
+              <p>Tender lamb braised in a fragrant Kashmiri gravy with fennel, ginger, and dried red chilies.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹795 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80" alt="Palak Paneer">
+              <span class="menu-card-badge">Vegetarian</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Palak Paneer</h3>
+              <p>Fresh cottage cheese cubes in a creamy spinach gravy tempered with garlic and cumin.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹525 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biryani & Rice -->
+      <div class="menu-category" id="biryani">
+        <div class="card-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1563379091339-03246963d29a?w=600&q=80" alt="Hyderabadi Biryani">
+              <span class="menu-card-badge">Signature</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Hyderabadi Dum Biryani</h3>
+              <p>Layered basmati rice and tender lamb, slow-cooked in sealed handi with saffron and royal spices.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹895 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1633945274408-ddd4f804e577?w=600&q=80" alt="Chicken Biryani">
+            </div>
+            <div class="menu-card-body">
+              <h3>Murgh Biryani</h3>
+              <p>Fragrant Lucknowi-style chicken biryani with long-grain basmati, caramelized onions, and mint.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹695 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1589302168068-964664d93a0f?w=600&q=80" alt="Vegetable Biryani">
+              <span class="menu-card-badge">Vegetarian</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Subz Biryani</h3>
+              <p>Seasonal vegetables and paneer layered with saffron-infused basmati rice — a vegetarian delight.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹595 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breads -->
+      <div class="menu-category" id="breads">
+        <div class="card-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1626074353765-517a1e9a4629?w=600&q=80" alt="Butter Naan">
+            </div>
+            <div class="menu-card-body">
+              <h3>Butter Naan</h3>
+              <p>Soft, pillowy leavened bread brushed with butter, baked fresh in our tandoor oven.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹95 <span>/ piece</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1617093727343-374698b1d08c?w=600&q=80" alt="Garlic Naan">
+            </div>
+            <div class="menu-card-body">
+              <h3>Garlic Naan</h3>
+              <p>Classic naan topped with freshly minced garlic and coriander, finished with a brush of ghee.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹125 <span>/ piece</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Tandoori Roti">
+            </div>
+            <div class="menu-card-body">
+              <h3>Tandoori Roti</h3>
+              <p>Whole wheat flatbread with a smoky char from the tandoor — the perfect accompaniment to any curry.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹65 <span>/ piece</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu-category" id="desserts">
+        <div class="card-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1587132136616-058a7f3c97de?w=600&q=80" alt="Gulab Jamun">
+            </div>
+            <div class="menu-card-body">
+              <h3>Gulab Jamun</h3>
+              <p>Soft milk-solid dumplings soaked in rose-scented sugar syrup — served warm with a scoop of kulfi.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹295 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Rasmalai">
+            </div>
+            <div class="menu-card-body">
+              <h3>Rasmalai</h3>
+              <p>Delicate cottage cheese patties in sweetened, cardamom-infused milk — a Bengali classic.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹325 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Kulfi">
+            </div>
+            <div class="menu-card-body">
+              <h3>Kesar Pista Kulfi</h3>
+              <p>Traditional Indian ice cream slow-frozen with saffron, pistachios, and reduced milk.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹275 <span>/ serving</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beverages -->
+      <div class="menu-category" id="beverages">
+        <div class="card-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80" alt="Masala Chai">
+            </div>
+            <div class="menu-card-body">
+              <h3>Masala Chai</h3>
+              <p>Spiced tea brewed with ginger, cardamom, cinnamon, and cloves — served in traditional kulhad.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹195 <span>/ cup</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1546173159-315724a31648?w=600&q=80" alt="Mango Lassi">
+            </div>
+            <div class="menu-card-body">
+              <h3>Mango Lassi</h3>
+              <p>Creamy yogurt blended with Alphonso mango pulp, rose water, and a hint of cardamom.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹245 <span>/ glass</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <div class="menu-card-image">
+              <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80" alt="Nimbu Pani">
+            </div>
+            <div class="menu-card-body">
+              <h3>Nimbu Pani</h3>
+              <p>Fresh lemonade with rock salt, cumin, and mint — the quintessential Indian refresher.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price">₹175 <span>/ glass</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Ready to Dine?</h2>
+      <p>Reserve your table and let us take you on a culinary journey through India.</p>
+      <a href="reservations.html" class="btn btn-primary">Make a Reservation</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-text">
+              <span>Taj Heritage</span>
+              <span>Kitchen</span>
+            </div>
+          </a>
+          <p>Experience the finest Indian cuisine inspired by the legendary Taj Hotels.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">t</a>
+            <a href="#" class="social-link" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Private Dining</a></li>
+            <li><a href="#">Catering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon – Thu: 12 PM – 11 PM</li>
+            <li>Fri – Sat: 12 PM – 12 AM</li>
+            <li>Sunday: 11 AM – 10 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Taj Heritage Kitchen. All rights reserved.</span>
+        <span>Designed with ♥ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

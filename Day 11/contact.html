@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Taj Heritage Kitchen — get in touch for reservations, events, and inquiries.">
+  <title>Contact Us | Taj Heritage Kitchen</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">T</div>
+        <div class="logo-text">
+          <span>Taj Heritage</span>
+          <span>Kitchen</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-cta">
+          <a href="reservations.html" class="btn btn-primary">Reserve</a>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1920&q=80');">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Cards -->
+  <section class="map-section">
+    <iframe
+      class="map-container"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.020389774489!2d72.8316!3d18.9218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c0c0c0c0c1%3A0x0!2sTaj%20Mahal%20Palace%20Mumbai!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Taj Heritage Kitchen location on Google Maps">
+    </iframe>
+    <div class="container">
+      <div class="contact-cards">
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">📍</div>
+          <h3>Visit Us</h3>
+          <p>Taj Heritage Kitchen<br>Apollo Bunder, Colaba<br>Mumbai, Maharashtra 400001</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">📞</div>
+          <h3>Call Us</h3>
+          <p>Reservations: <a href="tel:+912266651234">+91 22 6665 1234</a><br>General: <a href="tel:+912266651235">+91 22 6665 1235</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">✉️</div>
+          <h3>Email Us</h3>
+          <p><a href="mailto:info@tajheritage.com">info@tajheritage.com</a><br><a href="mailto:reservations@tajheritage.com">reservations@tajheritage.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="section form-section">
+    <div class="container">
+      <div class="form-grid">
+        <div class="form-info reveal-left">
+          <span class="section-label">Get in Touch</span>
+          <h2>Send Us a Message</h2>
+          <p>Whether you have a question about our menu, want to plan a private event, or simply want to share your dining experience — we're here to help.</p>
+          <div class="form-info-list">
+            <div class="form-info-item">
+              <div class="form-info-icon">🕐</div>
+              <div>
+                <strong>Response Time</strong>
+                <span>We typically respond within 24 hours</span>
+              </div>
+            </div>
+            <div class="form-info-item">
+              <div class="form-info-icon">🎉</div>
+              <div>
+                <strong>Private Events</strong>
+                <span>Host up to 80 guests in our private dining room</span>
+              </div>
+            </div>
+            <div class="form-info-item">
+              <div class="form-info-icon">🍽️</div>
+              <div>
+                <strong>Catering</strong>
+                <span>Off-site catering available for events of 50+ guests</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email <span class="required">*</span></label>
+            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject <span class="required">*</span></label>
+            <input type="text" id="contact-subject" name="subject" placeholder="What is this regarding?" required>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message <span class="required">*</span></label>
+            <textarea id="contact-message" name="message" placeholder="Tell us how we can help..." required></textarea>
+            <div class="error-message"></div>
+          </div>
+
+          <button type="submit" class="btn btn-dark" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-text">
+              <span>Taj Heritage</span>
+              <span>Kitchen</span>
+            </div>
+          </a>
+          <p>Experience the finest Indian cuisine inspired by the legendary Taj Hotels.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">t</a>
+            <a href="#" class="social-link" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Private Dining</a></li>
+            <li><a href="#">Catering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon – Thu: 12 PM – 11 PM</li>
+            <li>Fri – Sat: 12 PM – 12 AM</li>
+            <li>Sunday: 11 AM – 10 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Taj Heritage Kitchen. All rights reserved.</span>
+        <span>Designed with ♥ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
