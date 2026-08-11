@@ -47,29 +47,67 @@
     </div>
   </section>
 
-  <!-- Contact Cards -->
-  <section class="map-section">
-    <iframe
-      class="map-container"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.020389774489!2d72.8316!3d18.9218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c0c0c0c0c1%3A0x0!2sTaj%20Mahal%20Palace%20Mumbai!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Taj Heritage Kitchen location on Google Maps">
-    </iframe>
+  <!-- Map & Contact Cards -->
+  <section class="section map-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Location</span>
+        <h2>Find Us on the Map</h2>
+        <p>Nestled beside the iconic Gateway of India in Colaba — experience royal Indian dining in the heart of Mumbai.</p>
+      </div>
+    </div>
+
+    <div class="map-wrapper reveal-map">
+      <div class="map-frame">
+        <div class="map-loader">
+          <div class="map-loader-pin"></div>
+          <span>Loading map…</span>
+        </div>
+        <iframe
+          class="map-container"
+          src="https://maps.google.com/maps?q=The+Taj+Mahal+Palace,+Apollo+Bunder,+Colaba,+Mumbai,+Maharashtra+400001&hl=en&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Taj Heritage Kitchen — Apollo Bunder, Colaba, Mumbai">
+        </iframe>
+
+        <div class="map-overlay-card">
+          <div class="map-pin-marker">
+            <span class="map-pin-dot"></span>
+            <span class="map-pin-pulse"></span>
+          </div>
+          <div class="map-overlay-content">
+            <h3>Taj Heritage Kitchen</h3>
+            <p class="map-overlay-address">Apollo Bunder, Colaba<br>Mumbai, Maharashtra 400001</p>
+            <div class="map-overlay-hours">
+              <span>Open Now</span> · Mon–Sun
+            </div>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=The+Taj+Mahal+Palace,+Apollo+Bunder,+Colaba,+Mumbai,+Maharashtra+400001"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary map-directions-btn">
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="contact-cards">
-        <div class="contact-card reveal">
+        <div class="contact-card reveal" style="transition-delay: 0.1s;">
           <div class="contact-card-icon">📍</div>
           <h3>Visit Us</h3>
           <p>Taj Heritage Kitchen<br>Apollo Bunder, Colaba<br>Mumbai, Maharashtra 400001</p>
         </div>
-        <div class="contact-card reveal">
+        <div class="contact-card reveal" style="transition-delay: 0.2s;">
           <div class="contact-card-icon">📞</div>
           <h3>Call Us</h3>
           <p>Reservations: <a href="tel:+912266651234">+91 22 6665 1234</a><br>General: <a href="tel:+912266651235">+91 22 6665 1235</a></p>
         </div>
-        <div class="contact-card reveal">
+        <div class="contact-card reveal" style="transition-delay: 0.3s;">
           <div class="contact-card-icon">✉️</div>
           <h3>Email Us</h3>
           <p><a href="mailto:info@tajheritage.com">info@tajheritage.com</a><br><a href="mailto:reservations@tajheritage.com">reservations@tajheritage.com</a></p>
