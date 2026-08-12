@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Confirmed | Vanveda</title>
+<meta name="description" content="Your Vanveda order is confirmed. Track your Ayurvedic skincare delivery, arriving in 3 to 5 days across India.">
+<meta property="og:title" content="Order Confirmed | Vanveda">
+<meta property="og:description" content="Thank you for your Vanveda order — arriving in 3 to 5 days.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div data-header></div>
+<main>
+  <section class="section"><div class="wrap" style="max-width:760px">
+    <div id="order"></div>
+  </div></section>
+</main>
+<div data-footer></div>
+<script src="/js/data.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/ui.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var o = window.Cart.lastOrder();
+  var root = document.getElementById("order");
+  if (!o) {
+    root.innerHTML = '<div class="empty panel"><h1>No recent order</h1><p class="muted">Once you place an order, its confirmation appears here.</p><a class="btn" href="/products.html">Shop the range</a></div>';
+    return;
+  }
+  root.innerHTML =
+    '<p class="eyebrow">Order ' + o.id + "</p>" +
+    "<h1>Thank you, " + o.name.split(" ")[0] + ".</h1>" +
+    '<p class="lede">Your ritual is on its way. We have emailed the invoice to ' + o.email +
+    " and you'll get an SMS with tracking within 24 hours.</p>" +
+    '<div class="panel" style="margin-top:2rem">' +
+      o.lines.map(function (l) {
+        return '<div class="summary-row"><span>' + l.name + " × " + l.qty + "</span><span>" + window.formatINR(l.amount) + "</span></div>";
+      }).join("") +
+      '<div class="summary-row"><span>Shipping</span><span>' + (o.shipping ? window.formatINR(o.shipping) : "Free") + "</span></div>" +
+      (o.cod ? '<div class="summary-row"><span>COD handling</span><span>' + window.formatINR(o.cod) + "</span></div>" : "") +
+      '<div class="summary-row summary-total"><span>Total paid</span><span>' + window.formatINR(o.total) + "</span></div>" +
+      '<p class="muted" style="margin-top:1rem;font-size:.85rem">Payment method: ' + o.payment + "<br>Delivering to: " + o.address + "</p>" +
+    "</div>" +
+    '<div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem">' +
+      '<a class="btn" href="/products.html">Continue shopping</a>' +
+      '<a class="btn btn-ghost" href="/journal.html">Read the journal</a></div>';
+});
+</script>
+</body>
+</html>

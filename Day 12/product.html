@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Details | Vanveda Ayurvedic Beauty</title>
+<meta name="description" content="Ingredients, ritual steps and pricing for this Vanveda Ayurvedic formula, made in India with farm-traced botanicals.">
+<meta property="og:title" content="Product Details | Vanveda">
+<meta property="og:description" content="Ingredients, ritual and pricing for this Vanveda Ayurvedic formula.">
+<meta property="og:type" content="product">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div data-header></div>
+<main>
+  <section class="section"><div class="wrap">
+    <p class="crumbs"><a href="/home.html">Home</a> / <a href="/products.html">Shop</a> / <span id="crumb">Product</span></p>
+    <div class="pdp" id="pdp"></div>
+  </div></section>
+
+  <section class="section" style="padding-top:0"><div class="wrap">
+    <h2 style="margin-bottom:1.8rem">Pairs well with</h2>
+    <div class="grid" id="related"></div>
+  </div></section>
+</main>
+<div data-footer></div>
+<script src="/js/data.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/ui.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var id = new URLSearchParams(location.search).get("id");
+  var all = window.VANVEDA_PRODUCTS;
+  var p = all.filter(function (x) { return x.id === id; })[0] || all[0];
+  document.getElementById("crumb").textContent = p.name;
+  document.title = p.name + " | Vanveda";
+
+  var gallery = [p.img, "/images/story.jpg", "/images/hero.jpg"];
+  document.getElementById("pdp").innerHTML =
+    '<div class="pdp-gallery">' +
+      '<div class="pdp-main"><img id="main-img" src="' + p.img + '" alt="' + p.name + '"></div>' +
+      '<div class="thumbs">' + gallery.map(function (g, i) {
+        return '<button class="' + (i === 0 ? "active" : "") + '" data-thumb="' + g + '"><img src="' + g + '" alt="View ' + (i + 1) + '"></button>';
+      }).join("") + "</div>" +
+    "</div>" +
+    "<div>" +
+      '<p class="eyebrow">' + p.category + " · " + p.size + "</p>" +
+      "<h1 style=\"font-size:clamp(2rem,4vw,3rem)\">" + p.name + "</h1>" +
+      '<p class="price" style="font-size:1.8rem">' + window.formatINR(p.price) +
+        (p.mrp ? '<span class="strike">' + window.formatINR(p.mrp) + "</span>" : "") + "</p>" +
+      '<p class="lede">' + p.blurb + "</p>" +
+      '<div style="display:flex;gap:.8rem;align-items:center;margin:1.5rem 0 2rem;flex-wrap:wrap">' +
+        '<div class="qty"><button data-q="-1" aria-label="Decrease quantity">−</button><span id="qty">1</span><button data-q="1" aria-label="Increase quantity">+</button></div>' +
+        '<button class="btn" id="add">Add to bag</button>' +
+        '<a class="btn btn-ghost" href="/cart.html">View bag</a>' +
+      "</div>" +
+      '<h3 style="font-size:1.1rem">Key ingredients</h3>' +
+      '<ul class="ing-list">' + p.ingredients.map(function (i) { return "<li>" + i + "</li>"; }).join("") + "</ul>" +
+      '<h3 style="font-size:1.1rem">The ritual</h3>' +
+      '<ol class="muted" style="padding-left:1.2rem">' + p.ritual.map(function (r) { return "<li>" + r + "</li>"; }).join("") + "</ol>" +
+      '<p class="muted" style="font-size:.85rem;margin-top:1.5rem">Made in India · Free shipping over ₹999 · COD available</p>' +
+    "</div>";
+
+  var qty = 1;
+  document.querySelectorAll("[data-q]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      qty = Math.max(1, qty + Number(b.getAttribute("data-q")));
+      document.getElementById("qty").textContent = qty;
+    });
+  });
+  document.querySelectorAll("[data-thumb]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.getElementById("main-img").src = b.getAttribute("data-thumb");
+      document.querySelectorAll("[data-thumb]").forEach(function (o) { o.classList.toggle("active", o === b); });
+    });
+  });
+  document.getElementById("add").addEventListener("click", function () { window.Cart.add(p.id, qty); });
+
+  document.getElementById("related").innerHTML = all.filter(function (x) { return x.id !== p.id; })
+    .slice(0, 4).map(window.VanvedaUI.productCard).join("");
+  window.VanvedaUI.initReveal();
+});
+</script>
+</body>
+</html>
