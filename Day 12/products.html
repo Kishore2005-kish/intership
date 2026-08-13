@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop All Ayurvedic Skincare &amp; Makeup | Vanveda</title>
+<meta name="description" content="Browse Vanveda's full range — cleansers, serums, moisturisers, clay masks, hair oils and kohl kajal, all made in India with Ayurvedic botanicals.">
+<meta property="og:title" content="Shop All Products | Vanveda">
+<meta property="og:description" content="Cleansers, serums, masks, oils and makeup made with Indian botanicals.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div data-header></div>
+<main>
+  <section class="page-head"><div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> / Shop</p>
+    <h1>The full ritual</h1>
+    <p class="lede">Twelve formulas, each built on a classical Ayurvedic recipe and reworked for modern skin. Inclusive of all taxes.</p>
+  </div></section>
+
+  <section class="section" style="padding-top:1rem"><div class="wrap">
+    <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+      <div class="chips" id="chips"></div>
+      <div class="field" style="margin:0;min-width:200px">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid" style="margin-top:1.5rem"></div>
+    <p class="muted" id="count" style="margin-top:1.5rem"></p>
+  </div></section>
+</main>
+<div data-footer></div>
+<script src="/js/data.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/ui.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var all = window.VANVEDA_PRODUCTS;
+  var cats = ["All"].concat(all.map(function (p) { return p.category; }).filter(function (c, i, a) { return a.indexOf(c) === i; }));
+  var active = new URLSearchParams(location.search).get("category") || "All";
+  var sort = "featured";
+
+  document.getElementById("chips").innerHTML = cats.map(function (c) {
+    return '<button class="chip' + (c === active ? " active" : "") + '" data-cat="' + c + '">' + c + "</button>";
+  }).join("");
+
+  function render() {
+    var list = all.filter(function (p) { return active === "All" || p.category === active; });
+    if (sort === "low") list = list.slice().sort(function (a, b) { return a.price - b.price; });
+    if (sort === "high") list = list.slice().sort(function (a, b) { return b.price - a.price; });
+    if (sort === "name") list = list.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+    document.getElementById("grid").innerHTML = list.map(window.VanvedaUI.productCard).join("");
+    document.getElementById("count").textContent = list.length + " product" + (list.length === 1 ? "" : "s");
+    window.VanvedaUI.initReveal();
+  }
+
+  document.getElementById("chips").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-cat]");
+    if (!b) return;
+    active = b.getAttribute("data-cat");
+    document.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("active", c === b); });
+    render();
+  });
+  document.getElementById("sort").addEventListener("change", function (e) { sort = e.target.value; render(); });
+  render();
+});
+</script>
+</body>
+</html>
