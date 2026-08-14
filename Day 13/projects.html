@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selected Projects — FORMA Architecture</title>
+<meta name="description" content="A portfolio of residential, commercial, renovation and interior projects designed and built by FORMA.">
+<meta property="og:title" content="Selected Projects — FORMA Architecture">
+<meta property="og:description" content="Houses, workplaces, renovations and interiors delivered by FORMA.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="bg-shapes" aria-hidden="true">
+  <div class="background-shape background-shape--a"></div>
+  <div class="background-shape background-shape--b"></div>
+</div>
+
+<div class="page">
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="26" height="26"><span>Forma</span></a>
+      <div class="nav-links"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="services.html">Services</a><a href="process.html">Process</a><a href="faq.html">FAQ</a></div>
+      <a class="btn btn--dark" href="contact.html">Start a Project <span class="arrow">&rarr;</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="process.html">Process</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li></ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Portfolio</p>
+      <h1 class="display">Selected Projects</h1>
+      <p class="lead">Nine projects across housing, workplace, renovation and interiors — each one designed, engineered and built by the same team.</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button class="filter is-active" type="button" data-filter="All" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="Residential" aria-pressed="false">Residential</button>
+        <button class="filter" type="button" data-filter="Commercial" aria-pressed="false">Commercial</button>
+        <button class="filter" type="button" data-filter="Renovation" aria-pressed="false">Renovation</button>
+        <button class="filter" type="button" data-filter="Interior" aria-pressed="false">Interior</button>
+      </div>
+      <div class="project-grid" id="project-grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta reveal">
+        <h2 class="h2">Your project could be next.</h2>
+        <p>We take on a limited number of projects each year so every one gets the studio's full attention.</p>
+        <a class="btn btn--light" href="contact.html">Start a Project <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="26" height="26"><span>Forma</span></a>
+        <p class="muted small" style="margin-top:16px;max-width:32ch">An architecture and construction studio building calm, durable, contemporary spaces.</p>
+      </div>
+      <div><h4>Pages</h4><ul><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="process.html">Process</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li><li><a href="project-detail.html">Case study</a></li></ul></div>
+      <div><h4>Studio</h4><ul><li>MG Road, Banglore</li><li><a href="mailto:studio@forma.build">studio@forma.build</a></li><li><a href="tel:+919876543210">+91 98765 43210</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 FORMA Architecture &amp; Construction</span><span>Designed and built in-house</span></div>
+  </div>
+</footer>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/projects.js" defer></script>
+</body>
+</html>
