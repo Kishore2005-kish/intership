@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Fresh Kirana</title>
+<meta name="description" content="Enter your Indian delivery address, pick a slot and pay by UPI, card or cash on delivery at Fresh Kirana.">
+<meta property="og:title" content="Checkout — Fresh Kirana">
+<meta property="og:description" content="Secure checkout with UPI, cards and cash on delivery across India.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap"><h1>Checkout</h1><p>Delivering across India · payment in ₹ INR</p></div></div>
+  <div class="wrap section">
+    <form class="cart-layout" data-checkout novalidate>
+      <div>
+        <fieldset class="fieldset">
+          <h4>Contact</h4>
+          <div class="form-grid">
+            <label class="field">Full name<input name="name" required placeholder="Ananya Iyer"></label>
+            <label class="field">Mobile number<input name="phone" required inputmode="numeric" placeholder="98765 43210"></label>
+            <label class="field full">Email<input name="email" type="email" required placeholder="ananya@example.in"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <h4>Delivery address</h4>
+          <div class="form-grid">
+            <label class="field full">Flat / House &amp; street<input name="address" required placeholder="B-402, Sunbeam Residency, Linking Road"></label>
+            <label class="field">Landmark<input name="landmark" placeholder="Near Shivaji Park"></label>
+            <label class="field">PIN code<input name="pin" required inputmode="numeric" placeholder="400028"></label>
+            <label class="field">City
+              <select name="city">
+                <option>Mumbai</option><option>Bengaluru</option><option>Delhi NCR</option>
+                <option>Chennai</option><option>Hyderabad</option><option>Pune</option>
+                <option>Kolkata</option><option>Ahmedabad</option><option>Jaipur</option><option>Kochi</option>
+              </select>
+            </label>
+            <label class="field">State
+              <select name="state">
+                <option>Maharashtra</option><option>Karnataka</option><option>Delhi</option>
+                <option>Tamil Nadu</option><option>Telangana</option><option>West Bengal</option>
+                <option>Gujarat</option><option>Rajasthan</option><option>Kerala</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <h4>Delivery slot</h4>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="slot" value="Today, 6–9 AM" checked> Today, 6–9 AM</label>
+            <label class="choice"><input type="radio" name="slot" value="Today, 5–8 PM"> Today, 5–8 PM</label>
+            <label class="choice"><input type="radio" name="slot" value="Tomorrow, 7–10 AM"> Tomorrow, 7–10 AM</label>
+            <label class="choice"><input type="radio" name="slot" value="Tomorrow, 4–7 PM"> Tomorrow, 4–7 PM</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <h4>Payment</h4>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="pay" value="UPI" checked> UPI (GPay / PhonePe / Paytm)</label>
+            <label class="choice"><input type="radio" name="pay" value="Card"> Credit / Debit card</label>
+            <label class="choice"><input type="radio" name="pay" value="Netbanking"> Net banking</label>
+            <label class="choice"><input type="radio" name="pay" value="Cash on delivery"> Cash on delivery</label>
+          </div>
+          <label class="field full" data-upi style="margin-top:12px">UPI ID<input name="upi" placeholder="ananya@okhdfcbank"></label>
+        </fieldset>
+
+        <p class="err" data-err hidden></p>
+      </div>
+
+      <aside class="summary">
+        <h3>Order summary</h3>
+        <div data-summary></div>
+        <button class="btn btn-solid btn-block" type="submit" style="margin-top:14px">Place order</button>
+        <p class="free-note">This is a demo store — no real payment is taken.</p>
+      </aside>
+    </form>
+  </div>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.querySelector("[data-checkout]");
+  var promo = sessionStorage.getItem("fk-promo") === "1";
+  var lines = cartLines();
+  var subtotal = cartSubtotal();
+  var discount = promo ? Math.round(subtotal * 0.1) : 0;
+  var delivery = subtotal === 0 || subtotal - discount >= 499 ? 0 : 39;
+  var total = subtotal - discount + delivery;
+
+  document.querySelector("[data-summary]").innerHTML =
+    lines.map(function (l) {
+      return '<div class="summary-row"><span>' + l.product.name + ' × ' + l.qty + '</span><span>' + formatINR(l.product.price * l.qty) + '</span></div>';
+    }).join("") +
+    (discount ? '<div class="summary-row"><span>Promo FRESH10</span><span>− ' + formatINR(discount) + '</span></div>' : '') +
+    '<div class="summary-row"><span>Delivery</span><span>' + (delivery ? formatINR(delivery) : "Free") + '</span></div>' +
+    '<div class="summary-row"><strong>Total payable</strong><strong>' + formatINR(total) + '</strong></div>';
+
+  function toggleUpi() {
+    var pay = form.querySelector('input[name="pay"]:checked').value;
+    form.querySelector("[data-upi]").hidden = pay !== "UPI";
+  }
+  form.querySelectorAll('input[name="pay"]').forEach(function (r) { r.addEventListener("change", toggleUpi); });
+  toggleUpi();
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var err = form.querySelector("[data-err]");
+    var d = Object.fromEntries(new FormData(form).entries());
+    var problems = [];
+    if (!lines.length) problems.push("your basket is empty");
+    if (!d.name) problems.push("full name");
+    if (!/^[0-9\s]{10,12}$/.test((d.phone || "").trim())) problems.push("a valid 10-digit mobile number");
+    if (!/^\S+@\S+\.\S+$/.test(d.email || "")) problems.push("a valid email");
+    if (!d.address) problems.push("a delivery address");
+    if (!/^[1-9][0-9]{5}$/.test((d.pin || "").trim())) problems.push("a valid 6-digit PIN code");
+    if (problems.length) {
+      err.hidden = false;
+      err.textContent = "Please check: " + problems.join(", ") + ".";
+      return;
+    }
+    sessionStorage.setItem("fk-order", JSON.stringify({
+      id: "FK" + Math.floor(100000 + Math.random() * 899999),
+      name: d.name, phone: d.phone, address: d.address, city: d.city, state: d.state,
+      pin: d.pin, slot: d.slot, pay: d.pay, total: total,
+      items: lines.map(function (l) { return { name: l.product.name, qty: l.qty, amount: l.product.price * l.qty }; })
+    }));
+    localStorage.removeItem("fresh-kirana-cart");
+    sessionStorage.removeItem("fk-promo");
+    location.href = "order-confirmed.html";
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop Indian Groceries Online — Fresh Kirana</title>
+<meta name="description" content="Browse fruits, vegetables, dals, atta, spices, ghee and household essentials with prices in ₹. Filter by category and price.">
+<meta property="og:title" content="Shop Indian Groceries Online — Fresh Kirana">
+<meta property="og:description" content="Twelve categories of Indian kitchen staples, delivered same day.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <h1 data-title>Shop all</h1>
+      <p data-sub>Everyday Indian groceries, priced honestly in rupees.</p>
+    </div>
+  </div>
+
+  <div class="wrap section">
+    <div class="shop-layout">
+      <aside>
+        <div class="filter-block">
+          <h4>Categories</h4>
+          <div class="filter-list" data-filters></div>
+        </div>
+        <div class="filter-block">
+          <h4>Max price</h4>
+          <input type="range" min="50" max="800" step="50" value="800" data-price style="width:100%">
+          <p class="free-note" data-price-label>Up to ₹800</p>
+        </div>
+      </aside>
+
+      <div>
+        <div class="shop-toolbar">
+          <span data-count></span>
+          <label>Sort
+            <select data-sort>
+              <option value="popular">Popularity</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </label>
+        </div>
+        <div class="product-grid" data-grid></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var category = qs("category") || "all";
+  var grid = document.querySelector("[data-grid]");
+  var priceInput = document.querySelector("[data-price]");
+  var sortSel = document.querySelector("[data-sort]");
+
+  document.querySelector("[data-filters]").innerHTML =
+    ['<button data-slug="all"' + (category === "all" ? ' class="on"' : "") + ">All products</button>"]
+      .concat(CATEGORIES.map(function (c) {
+        return '<button data-slug="' + c.slug + '"' + (c.slug === category ? ' class="on"' : "") + ">" + c.name + "</button>";
+      })).join("");
+
+  function render() {
+    var max = Number(priceInput.value);
+    var list = PRODUCTS.filter(function (p) {
+      return (category === "all" || p.category === category) && p.price <= max;
+    });
+    var sort = sortSel.value;
+    if (sort === "low") list.sort(function (a, b) { return a.price - b.price; });
+    else if (sort === "high") list.sort(function (a, b) { return b.price - a.price; });
+    else if (sort === "name") list.sort(function (a, b) { return a.name.localeCompare(b.name); });
+    else list.sort(function (a, b) { return (b.bestseller ? 1 : 0) - (a.bestseller ? 1 : 0); });
+
+    document.querySelector("[data-title]").textContent = category === "all" ? "Shop all" : categoryName(category);
+    document.querySelector("[data-count]").textContent = list.length + " products";
+    document.querySelector("[data-price-label]").textContent = "Up to " + formatINR(max);
+    grid.innerHTML = list.length
+      ? list.map(cardHTML).join("")
+      : '<p class="empty">No products match this filter. Try raising the price limit.</p>';
+  }
+
+  document.querySelector("[data-filters]").addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    category = b.dataset.slug;
+    this.querySelectorAll("button").forEach(function (x) { x.classList.toggle("on", x === b); });
+    history.replaceState(null, "", "shop.html?category=" + category);
+    render();
+  });
+  priceInput.addEventListener("input", render);
+  sortSel.addEventListener("change", render);
+  bindCards(grid);
+  render();
+});
+</script>
+</body>
+</html>
