@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grocery Deals & Offers in ₹ — Fresh Kirana</title>
+<meta name="description" content="Discounted Indian groceries: atta, dals, ghee, spices and fresh produce at reduced rupee prices with a live deal countdown.">
+<meta property="og:title" content="Grocery Deals & Offers in ₹ — Fresh Kirana">
+<meta property="og:description" content="Limited-time price drops on everyday Indian kitchen staples.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>Deals &amp; offers</h1>
+    <p>Every product below is discounted off MRP. Offers refresh every Monday morning.</p>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="deal-layout">
+        <div class="deal-promo">
+          <img src="images/editorial-2.jpg" alt="Spices in bowls" loading="lazy">
+          <div><span class="tagline">Ends soon</span><h3>Festive hamper at <em>₹1,499</em></h3></div>
+          <div class="countdown" data-countdown></div>
+        </div>
+        <div>
+          <div class="section-head"><div><h2>Price drops this week</h2><span class="script">Straight off the MRP</span></div><span data-count></span></div>
+          <div class="product-grid" data-grid></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="wrap">
+    <span>Extra 5% off on UPI</span><span>Free delivery above ₹499</span><span>Same-day slots in 4 metros</span><span>No hidden packing fee</span>
+  </div></div>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  startCountdown(document.querySelector("[data-countdown]"));
+  var list = PRODUCTS.filter(function (p) { return p.mrp; })
+    .sort(function (a, b) { return (b.mrp - b.price) / b.mrp - (a.mrp - a.price) / a.mrp; });
+  var grid = document.querySelector("[data-grid]");
+  grid.innerHTML = list.map(cardHTML).join("");
+  document.querySelector("[data-count]").textContent = list.length + " offers live";
+  bindCards(grid);
+});
+</script>
+</body>
+</html>

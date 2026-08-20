@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign In to Your Account — Fresh Kirana</title>
+<meta name="description" content="Sign in to your Fresh Kirana account to track grocery orders, manage Indian delivery addresses and reorder staples in one tap.">
+<meta property="og:title" content="Sign In to Your Account — Fresh Kirana">
+<meta property="og:description" content="Track orders, save addresses and reorder your staples.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>My account</h1>
+    <p>Sign in with your mobile number to track orders and reorder in one tap.</p>
+  </div></div>
+
+  <section class="section"><div class="wrap-narrow">
+    <div class="fieldset">
+      <h2>Sign in</h2>
+      <form data-login>
+        <div class="form-grid">
+          <div class="full">
+            <label class="lbl" for="mob">Mobile number</label>
+            <input class="field" id="mob" name="mob" type="tel" pattern="[6-9][0-9]{9}" placeholder="98200 45678" required>
+          </div>
+          <div class="full">
+            <button class="btn btn-solid" type="submit">Send OTP</button>
+          </div>
+        </div>
+      </form>
+      <p class="free-note" data-sent hidden>OTP sent — this is a demo store, so no real message is delivered.</p>
+    </div>
+
+    <div class="fieldset">
+      <h2>Why create an account</h2>
+      <ul class="spec">
+        <li><span>Order tracking</span>Live slot updates over SMS</li>
+        <li><span>Saved addresses</span>Home, office and parents' place</li>
+        <li><span>Quick reorder</span>Last month's basket in one tap</li>
+        <li><span>GST billing</span>Add a GSTIN for business invoices</li>
+      </ul>
+    </div>
+  </div></section>
+</main>
+<footer class="site-footer" data-footer></footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.querySelector("[data-login]");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    document.querySelector("[data-sent]").hidden = false;
+  });
+});
+</script>
+</body>
+</html>

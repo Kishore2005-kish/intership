@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Confirmed — Fresh Kirana</title>
+<meta name="description" content="Your Fresh Kirana grocery order is confirmed. See your order number, delivery slot and amount payable in ₹.">
+<meta property="og:title" content="Order Confirmed — Fresh Kirana">
+<meta property="og:description" content="Order placed. Your groceries are on the way.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main class="wrap-narrow section" data-page></main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var page = document.querySelector("[data-page]");
+  var order = null;
+  try { order = JSON.parse(sessionStorage.getItem("fk-order")); } catch (e) {}
+  if (!order) {
+    page.innerHTML = '<p class="empty">No recent order found. <a class="link-btn" href="shop.html?category=all">Shop groceries</a></p>';
+    return;
+  }
+  page.innerHTML =
+    '<div class="confirm-box">' +
+      '<span class="script" style="font-size:30px">Thank you, ' + order.name.split(" ")[0] + '</span>' +
+      '<h1>Your order is confirmed</h1>' +
+      '<p>Order number <span class="oid">' + order.id + '</span></p>' +
+      '<ul class="spec">' +
+        '<li><span>Delivery slot</span>' + order.slot + '</li>' +
+        '<li><span>Address</span>' + order.address + ', ' + order.city + ' ' + order.pin + ', ' + order.state + '</li>' +
+        '<li><span>Payment</span>' + order.pay + '</li>' +
+        '<li><span>Amount</span>' + formatINR(order.total) + '</li>' +
+      '</ul>' +
+      '<h3 style="margin-top:24px">Items</h3>' +
+      order.items.map(function (i) {
+        return '<div class="summary-row"><span>' + i.name + ' × ' + i.qty + '</span><span>' + formatINR(i.amount) + '</span></div>';
+      }).join("") +
+      '<div style="margin-top:24px"><a class="btn btn-solid" href="shop.html?category=all">Continue shopping</a> <a class="btn btn-outline" href="track-order.html">Track order</a></div>' +
+    '</div>';
+});
+</script>
+</body>
+</html>

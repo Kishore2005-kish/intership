@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Wishlist — Fresh Kirana</title>
+<meta name="description" content="Saved Indian grocery items in your Fresh Kirana wishlist, with rupee prices and one-tap add to basket.">
+<meta property="og:title" content="My Wishlist — Fresh Kirana">
+<meta property="og:description" content="Everything you saved for the next grocery run.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>My wishlist</h1>
+    <p>Saved on this device. Tap the heart on any product to add or remove it.</p>
+  </div></div>
+  <section class="section"><div class="wrap">
+    <div class="product-grid" data-grid></div>
+  </div></section>
+</main>
+<footer class="site-footer" data-footer></footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var grid = document.querySelector("[data-grid]");
+  function render() {
+    var list = readWish().map(function (id) { return P_BY_ID[id]; }).filter(Boolean);
+    if (!list.length) {
+      grid.style.display = "block";
+      grid.innerHTML = '<p class="empty">Nothing saved yet. <a class="link-btn" href="shop.html?category=all">Browse groceries</a></p>';
+      return;
+    }
+    grid.style.display = "";
+    grid.innerHTML = list.map(cardHTML).join("");
+  }
+  bindCards(grid);
+  document.addEventListener("wish:change", render);
+  render();
+});
+</script>
+</body>
+</html>

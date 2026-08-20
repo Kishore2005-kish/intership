@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stores &amp; Contact — Fresh Kirana</title>
+<meta name="description" content="Fresh Kirana store addresses in Mumbai, Bengaluru, Delhi and Chennai, delivery slot details and a customer support form.">
+<meta property="og:title" content="Stores &amp; Contact — Fresh Kirana">
+<meta property="og:description" content="Find a Fresh Kirana store near you or write to our support team.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap"><h1>Stores &amp; contact</h1><p>Walk in for the fresh counter, or write to us — we reply within a day.</p></div></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Find us</h2><span class="script">across India</span></div>
+      <div class="store-grid">
+        <article class="store-card"><h4>Mumbai · Dadar West</h4><p>17 Gokhale Road North, near Shivaji Park<br>Mumbai 400028 · 7 AM – 10 PM<br>+91 98200 41728</p></article>
+        <article class="store-card"><h4>Bengaluru · Indiranagar</h4><p>412, 100 Feet Road, HAL 2nd Stage<br>Bengaluru 560038 · 7 AM – 10 PM<br>+91 98450 33612</p></article>
+        <article class="store-card"><h4>Delhi · Lajpat Nagar</h4><p>C-9 Central Market, Lajpat Nagar II<br>New Delhi 110024 · 8 AM – 10 PM<br>+91 98110 55290</p></article>
+        <article class="store-card"><h4>Chennai · Adyar</h4><p>28 Sardar Patel Road, Adyar<br>Chennai 600020 · 7 AM – 9.30 PM<br>+91 98400 77145</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="wrap-narrow">
+      <div class="section-head"><h2>Write to</h2><span class="script">our team</span></div>
+      <form class="fieldset" data-contact novalidate>
+        <div class="form-grid">
+          <label class="field">Your name<input name="name" required placeholder="Rahul Menon"></label>
+          <label class="field">Mobile number<input name="phone" inputmode="numeric" placeholder="98765 43210"></label>
+          <label class="field full">Email<input name="email" type="email" required placeholder="rahul@example.in"></label>
+          <label class="field full">Topic
+            <select name="topic">
+              <option>Order or delivery slot</option>
+              <option>Returns and refunds</option>
+              <option>Product quality</option>
+              <option>Bulk and corporate orders</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label class="field full">Message<textarea name="message" rows="5" required placeholder="Tell us what happened, with your order number if you have one."></textarea></label>
+        </div>
+        <p class="err" data-err hidden></p>
+        <p class="free-note" data-ok hidden>Thanks — our Mumbai support desk will reply within 24 hours.</p>
+        <button class="btn btn-solid" type="submit" style="margin-top:14px">Send message</button>
+      </form>
+
+      <div class="section-head" style="margin-top:48px"><h2>Delivery</h2><span class="script">slots</span></div>
+      <ul class="spec">
+        <li><span>Metro cities</span>Same-day, 6–9 AM and 5–8 PM</li>
+        <li><span>Other cities</span>Next-day, 7–10 AM</li>
+        <li><span>Free delivery</span>On baskets above ₹499</li>
+        <li><span>Support</span>1800 202 4477 · care@freshkirana.in</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.querySelector("[data-contact]");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var d = Object.fromEntries(new FormData(form).entries());
+    var err = form.querySelector("[data-err]");
+    var ok = form.querySelector("[data-ok]");
+    if (!d.name || !/^\S+@\S+\.\S+$/.test(d.email || "") || !d.message) {
+      ok.hidden = true;
+      err.hidden = false;
+      err.textContent = "Please add your name, a valid email and a message.";
+      return;
+    }
+    err.hidden = true;
+    ok.hidden = false;
+    form.reset();
+  });
+});
+</script>
+</body>
+</html>

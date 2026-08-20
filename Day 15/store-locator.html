@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store Locator — Fresh Kirana Outlets in India</title>
+<meta name="description" content="Find Fresh Kirana grocery stores and pickup points in Mumbai, Bengaluru, Delhi, Chennai, Pune and Hyderabad with timings and phone numbers.">
+<meta property="og:title" content="Store Locator — Fresh Kirana Outlets in India">
+<meta property="og:description" content="Store addresses, timings and pickup points across Indian cities.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>Store locator</h1>
+    <p>Walk in for same-hour pickup, or use the counter to return anything that wasn't fresh.</p>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="shop-toolbar">
+        <span data-count></span>
+        <label>City
+          <select data-city>
+            <option value="all">All cities</option>
+            <option>Mumbai</option><option>Bengaluru</option><option>Delhi</option>
+            <option>Chennai</option><option>Pune</option><option>Hyderabad</option>
+          </select>
+        </label>
+      </div>
+      <div class="store-grid" data-stores></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" data-footer></footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+var STORES = [
+  { city: "Mumbai", name: "Dadar West", addr: "Shop 4, Gokhale Road North, Dadar West, Mumbai 400028", ph: "+91 98200 45678", hrs: "7:00 AM – 10:00 PM" },
+  { city: "Mumbai", name: "Andheri Lokhandwala", addr: "12 Crystal Plaza, Lokhandwala, Andheri West, Mumbai 400053", ph: "+91 98200 45679", hrs: "7:30 AM – 10:00 PM" },
+  { city: "Bengaluru", name: "Indiranagar", addr: "778, 12th Main, HAL 2nd Stage, Indiranagar, Bengaluru 560038", ph: "+91 90080 12345", hrs: "7:00 AM – 9:30 PM" },
+  { city: "Bengaluru", name: "Jayanagar", addr: "31, 9th Block, Jayanagar, Bengaluru 560069", ph: "+91 90080 12346", hrs: "7:00 AM – 9:30 PM" },
+  { city: "Delhi", name: "Hauz Khas", addr: "S-14 Main Market, Hauz Khas, New Delhi 110016", ph: "+91 98110 33445", hrs: "8:00 AM – 10:00 PM" },
+  { city: "Delhi", name: "Rajouri Garden", addr: "A-2 Ring Road, Rajouri Garden, New Delhi 110027", ph: "+91 98110 33446", hrs: "8:00 AM – 10:00 PM" },
+  { city: "Chennai", name: "T. Nagar", addr: "44 Thanikachalam Road, T. Nagar, Chennai 600017", ph: "+91 94440 55667", hrs: "7:00 AM – 9:00 PM" },
+  { city: "Pune", name: "Koregaon Park", addr: "Lane 6, Koregaon Park, Pune 411001", ph: "+91 98220 77889", hrs: "7:30 AM – 9:30 PM" },
+  { city: "Hyderabad", name: "Jubilee Hills", addr: "Road No. 36, Jubilee Hills, Hyderabad 500033", ph: "+91 90000 66554", hrs: "7:30 AM – 10:00 PM" }
+];
+document.addEventListener("DOMContentLoaded", function () {
+  var sel = document.querySelector("[data-city]");
+  function render() {
+    var list = STORES.filter(function (s) { return sel.value === "all" || s.city === sel.value; });
+    document.querySelector("[data-count]").textContent = list.length + " stores";
+    document.querySelector("[data-stores]").innerHTML = list.map(function (s) {
+      return '<div class="store-card"><h3>' + s.name + '</h3><p>' + s.addr + '</p>' +
+        '<p>' + s.hrs + '</p><p><a href="tel:' + s.ph.replace(/\s/g, "") + '">' + s.ph + '</a></p>' +
+        '<a class="btn btn-outline" href="contact.html">Get directions</a></div>';
+    }).join("");
+  }
+  sel.addEventListener("change", render);
+  render();
+});
+</script>
+</body>
+</html>

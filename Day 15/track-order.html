@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Your Grocery Order — Fresh Kirana</title>
+<meta name="description" content="Enter your Fresh Kirana order number to see live status: confirmed, packed, shipped, out for delivery and delivered, with your slot and amount in ₹.">
+<meta property="og:title" content="Track Your Grocery Order — Fresh Kirana">
+<meta property="og:description" content="Live delivery timeline for every Fresh Kirana order across India.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>Track your order</h1>
+    <p>Enter the order number from your confirmation screen — it looks like <strong>FK123456</strong>.</p>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap-narrow">
+      <form class="track-form" data-form>
+        <input class="field" name="oid" placeholder="Order number, e.g. FK123456" aria-label="Order number" autocomplete="off">
+        <button class="btn btn-solid" type="submit">Track order</button>
+      </form>
+      <p class="err" data-err hidden></p>
+      <p class="free-note" data-hint></p>
+      <div data-out></div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="wrap">
+    <span>Same-day slots in 4 metros</span><span>Live rider updates</span><span>Contactless handover</span><span>Easy returns within 24 hrs</span>
+  </div></div>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var STEPS = [
+    ["Order confirmed", "Payment verified and your order was sent to the fulfilment centre."],
+    ["Packed", "Fresh produce weighed, staples sealed and your crate labelled."],
+    ["Shipped", "Handed to the delivery hub nearest your PIN code."],
+    ["Out for delivery", "Your rider has the crate and is on the way."],
+    ["Delivered", "Handed over at your doorstep. Invoice emailed."]
+  ];
+
+  var form = document.querySelector("[data-form]");
+  var out = document.querySelector("[data-out]");
+  var err = document.querySelector("[data-err]");
+  var hint = document.querySelector("[data-hint]");
+
+  function orders() {
+    var list = [];
+    try { list = JSON.parse(localStorage.getItem("fk-orders")) || []; } catch (e) {}
+    var last = null;
+    try { last = JSON.parse(sessionStorage.getItem("fk-order")); } catch (e) {}
+    if (last && !list.some(function (o) { return o.id === last.id; })) list.unshift(last);
+    return list;
+  }
+
+  /* deterministic stage from the order id so the timeline is stable per order */
+  function stageOf(id) {
+    var h = 0;
+    for (var i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) % 9973;
+    return h % STEPS.length;
+  }
+
+  function render(order) {
+    var stage = stageOf(order.id);
+    var base = new Date();
+    base.setHours(base.getHours() - stage * 5);
+    out.innerHTML =
+      '<div class="track-panel">' +
+        '<div class="track-head">' +
+          '<div><h2>' + STEPS[stage][0] + '</h2><span>Order <span class="oid">' + order.id + '</span></span></div>' +
+          '<div style="text-align:right"><strong>' + (order.total != null ? formatINR(order.total) : "Amount on delivery") + '</strong><br><span style="font-size:13px;color:var(--muted)">' + (order.slot || "Standard slot") + '</span></div>' +
+        '</div>' +
+        '<ul class="timeline">' +
+          STEPS.map(function (s, i) {
+            var cls = i < stage ? "done" : i === stage ? "done now" : "pending";
+            var t = new Date(base.getTime() + i * 5 * 3600000);
+            var when = i <= stage
+              ? t.toLocaleString("en-IN", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" })
+              : "Expected " + t.toLocaleString("en-IN", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
+            return '<li class="' + cls + '"><b>' + s[0] + '</b><span>' + s[1] + '</span><span>' + when + '</span></li>';
+          }).join("") +
+        '</ul>' +
+        (order.address ? '<p class="free-note">Delivering to ' + order.address + ', ' + (order.city || "") + ' ' + (order.pin || "") + '</p>' : '') +
+        (order.items && order.items.length
+          ? '<h3 style="margin:22px 0 8px">Items</h3>' + order.items.map(function (i) {
+              return '<div class="summary-row"><span>' + i.name + ' × ' + i.qty + '</span><span>' + formatINR(i.amount) + '</span></div>';
+            }).join("")
+          : '') +
+        '<div style="margin-top:22px"><a class="btn btn-outline" href="contact.html">Need help with this order?</a></div>' +
+      '</div>';
+  }
+
+  var list = orders();
+  if (list.length) {
+    hint.textContent = "Showing your most recent order. Enter another number to switch.";
+    render(list[0]);
+  } else {
+    hint.textContent = "No orders on this device yet — place one, or try the demo number FK482913.";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var id = (new FormData(form).get("oid") || "").toString().trim().toUpperCase();
+    err.hidden = true;
+    if (!/^FK[0-9]{6}$/.test(id)) {
+      err.hidden = false;
+      err.textContent = "Order numbers look like FK followed by 6 digits.";
+      return;
+    }
+    var found = orders().find(function (o) { return o.id === id; });
+    hint.textContent = found ? "Live status for your order." : "Showing tracking for " + id + ".";
+    render(found || { id: id, slot: "Today, 5–8 pm" });
+  });
+
+  var pre = qs("id");
+  if (pre) {
+    form.querySelector('[name="oid"]').value = pre;
+    form.dispatchEvent(new Event("submit"));
+  }
+});
+</script>
+</body>
+</html>

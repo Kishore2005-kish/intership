@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indian Recipes with One-Click Ingredients — Fresh Kirana</title>
+<meta name="description" content="Cook paneer butter masala, kanda poha and rajma chawal. Every recipe lists its Indian grocery ingredients in ₹ and adds them to your basket in one tap.">
+<meta property="og:title" content="Indian Recipes with One-Click Ingredients — Fresh Kirana">
+<meta property="og:description" content="Pick a recipe, add every ingredient to your basket at once and get it delivered the same day.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>Recipes</h1>
+    <p>Everyday Indian cooking, costed in rupees. Tap <strong>Add all ingredients</strong> and the whole shopping list lands in your basket.</p>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>This week's kitchen</h2><span class="script">From the Fresh Kirana test kitchen</span></div>
+        <span data-count></span>
+      </div>
+      <div class="recipe-grid" data-grid></div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="wrap">
+    <span>Ingredients priced live</span><span>Free delivery above ₹499</span><span>Swap any item in your basket</span><span>Serves adjusted per recipe</span>
+  </div></div>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var grid = document.querySelector("[data-grid]");
+
+  function recipeHTML(r) {
+    var items = r.items.map(function (id) { return P_BY_ID[id]; }).filter(Boolean);
+    var total = items.reduce(function (n, p) { return n + p.price; }, 0);
+    return '<article class="recipe-card">' +
+      '<img src="' + r.image + '" alt="' + r.name + '" loading="lazy" width="600" height="400">' +
+      '<div class="body">' +
+        '<span class="kicker">' + r.kicker + '</span>' +
+        '<h3>' + r.name + '</h3>' +
+        '<div class="recipe-meta"><span><strong>' + r.time + '</strong> total</span><span>Serves <strong>' + r.serves + '</strong></span><span><strong>' + items.length + '</strong> items</span></div>' +
+        '<p class="blurb">' + r.blurb + '</p>' +
+        '<ul class="ing-list">' +
+          items.map(function (p) {
+            return '<li><a href="product.html?id=' + p.id + '">' + p.name + '</a><span>' + p.unit + ' · ' + formatINR(p.price) + '</span></li>';
+          }).join("") +
+        '</ul>' +
+        '<div class="recipe-foot">' +
+          '<span class="total">Basket ' + formatINR(total) + '</span>' +
+          '<button class="btn btn-solid" data-recipe="' + r.id + '">Add all ingredients</button>' +
+        '</div>' +
+      '</div></article>';
+  }
+
+  grid.innerHTML = RECIPES.map(recipeHTML).join("");
+  document.querySelector("[data-count]").textContent = RECIPES.length + " recipes";
+
+  grid.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-recipe]");
+    if (!btn) return;
+    var r = RECIPES.find(function (x) { return x.id === btn.dataset.recipe; });
+    if (!r) return;
+    r.items.forEach(function (id) { if (P_BY_ID[id]) addToCart(id, 1); });
+    btn.textContent = "Added to basket ✓";
+    setTimeout(function () { btn.textContent = "Add all ingredients"; }, 1600);
+  });
+});
+</script>
+</body>
+</html>

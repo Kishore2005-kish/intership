@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coupon Codes & Bank Offers in ₹ — Fresh Kirana</title>
+<meta name="description" content="All live Fresh Kirana coupons: store-wide discounts, UPI cashback, bank card offers and festive hamper savings on Indian groceries. Copy a code and use it at checkout.">
+<meta property="og:title" content="Coupon Codes & Bank Offers in ₹ — Fresh Kirana">
+<meta property="og:description" content="Copy a coupon, paste it at checkout and save on your Indian grocery basket.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header data-header></header>
+<main>
+  <div class="page-head"><div class="wrap">
+    <h1>Offers &amp; coupons</h1>
+    <p>Every live code in one place. Copy it here, paste it in the promo box at checkout.</p>
+  </div></div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Live codes</h2><span class="script">Stack one coupon per order</span></div>
+        <span data-count></span>
+      </div>
+      <div class="coupon-grid" data-grid></div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="wrap-narrow">
+      <div class="section-head"><div><h2>How coupons work</h2></div></div>
+      <div class="faq">
+        <details open><summary>Can I use two coupons together?</summary><p>One coupon code applies per order. Bank card offers are settled by your bank and may appear as a separate cashback on your statement.</p></details>
+        <details><summary>Where do I enter the code?</summary><p>On the checkout page there is a promo field above the payment options. Paste the code and the discount updates your total instantly.</p></details>
+        <details><summary>Why was my code rejected?</summary><p>The most common reasons are a basket below the minimum value, an expired code, or a category-specific coupon used on an ineligible product.</p></details>
+        <details><summary>Do coupons apply to delivery charges?</summary><p>Only SLOTFREE waives the ₹39 express slot fee. Orders above ₹499 already ship free across our delivery cities.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="wrap">
+    <span>Extra 5% off on UPI</span><span>Free delivery above ₹499</span><span>New customers save ₹125</span><span>Bank offers refresh monthly</span>
+  </div></div>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var grid = document.querySelector("[data-grid]");
+  grid.innerHTML = COUPONS.map(function (c) {
+    return '<article class="coupon' + (c.featured ? ' featured' : '') + '">' +
+      '<span class="kind">' + c.kind + '</span>' +
+      '<h3>' + c.value + '</h3>' +
+      '<div class="meta"><span>' + c.cap + '</span><span>' + c.min + '</span><span>Valid till ' + c.until + '</span></div>' +
+      '<p class="terms">' + c.terms + '</p>' +
+      '<div class="code-row"><span class="code-chip">' + c.code + '</span>' +
+      '<button class="btn btn-outline copy-btn" data-copy="' + c.code + '">Copy code</button></div>' +
+      '</article>';
+  }).join("");
+  document.querySelector("[data-count]").textContent = COUPONS.length + " offers live";
+
+  grid.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-copy]");
+    if (!btn) return;
+    var code = btn.dataset.copy;
+    function done() {
+      btn.textContent = "Copied ✓";
+      setTimeout(function () { btn.textContent = "Copy code"; }, 1400);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(done, fallback);
+    } else fallback();
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (err) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+});
+</script>
+</body>
+</html>
