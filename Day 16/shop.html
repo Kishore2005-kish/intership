@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop All Pieces — Lou Leisure</title>
+    <meta
+      name="description"
+      content="Browse the full Lou Leisure catalogue: outerwear, knitwear, denim, footwear and accessories. Filter by category, size and price."
+    />
+    <meta property="og:title" content="Shop All Pieces — Lou Leisure" />
+    <meta property="og:description" content="The full Lou Leisure catalogue — filter by category, size and price." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div data-header data-header-light></div>
+
+    <main>
+      <header class="wrap" style="padding-top:56px">
+        <span class="label">| Shop |</span>
+        <h1 class="display" style="margin-top:12px;max-width:16em">Find Your <span class="serif-italic">Perfect</span> Essential</h1>
+        <p class="muted" style="margin-top:16px;max-width:40em">
+          Explore thoughtfully curated categories designed to make dressing for every occasion
+          effortless, stylish and unforgettable.
+        </p>
+      </header>
+
+      <div class="shop">
+        <aside class="filters">
+          <div class="filter-group">
+            <h4>Category</h4>
+            <div id="catFilters"></div>
+          </div>
+          <div class="filter-group">
+            <h4>Size</h4>
+            <div class="chips" id="sizeFilters"></div>
+          </div>
+          <div class="filter-group">
+            <h4>Price</h4>
+            <input id="priceRange" type="range" min="10000" max="100000" step="2000" value="100000" style="width:100%" aria-label="Maximum price" />
+            <div id="priceOut" class="muted" style="font-size:12px;margin-top:6px">Up to ₹1,00,000</div>
+          </div>
+          <button id="clearFilters" class="link-underline" type="button" style="justify-self:start">Clear all</button>
+        </aside>
+
+        <section>
+          <div class="shop-bar">
+            <span class="label" id="shopCount">0 products</span>
+            <label class="label" style="display:flex;align-items:center;gap:10px">
+              Sort
+              <select id="sortBy" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="low">Price: low to high</option>
+                <option value="high">Price: high to low</option>
+                <option value="name">Alphabetical</option>
+              </select>
+            </label>
+          </div>
+          <div class="grid" id="shopGrid"></div>
+          <div style="text-align:center;margin-top:36px">
+            <button class="btn btn--ghost" id="loadMore" type="button"><span>See more</span></button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div data-footer></div>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

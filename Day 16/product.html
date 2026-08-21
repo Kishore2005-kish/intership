@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product — Lou Leisure</title>
+    <meta
+      name="description"
+      content="Explore the details, fabric and fit of this Lou Leisure piece, then choose your size and add it to your bag."
+    />
+    <meta property="og:title" content="Product — Lou Leisure" />
+    <meta property="og:description" content="Fabric, fit and details for this Lou Leisure piece." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div data-header data-header-light></div>
+
+    <main id="pdp">
+      <div class="pdp">
+        <div class="pdp-gallery">
+          <div class="pdp-thumbs" id="pdpThumbs"></div>
+          <div class="pdp-main"><img id="pdpMain" src="img/p-jacket.jpg" alt="Product image" /></div>
+        </div>
+
+        <div class="pdp-info">
+          <nav class="label" style="margin-bottom:22px">
+            <a href="index.html">Home</a> / <a href="shop.html">Shop</a>
+          </nav>
+          <span class="card-tag" id="pdpTag"></span>
+          <h1 class="title" id="pdpName" style="margin-top:10px"></h1>
+          <div class="pdp-price" id="pdpPrice"></div>
+          <p class="muted" id="pdpDesc" style="margin-top:18px;max-width:36em"></p>
+
+          <div style="margin-top:30px">
+            <span class="label">| Size |</span>
+            <div class="size-row" id="pdpSizes"></div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
+            <div class="qty">
+              <button type="button" id="qtyMinus" aria-label="Decrease quantity">&minus;</button>
+              <span id="qtyOut">1</span>
+              <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="btn btn--solid" type="button" id="addToCart" style="flex:1;justify-content:center">
+              <span>Add to bag</span>
+            </button>
+            <button class="heart" type="button" id="pdpWish" data-wish="" style="font-size:18px">&#9825;</button>
+          </div>
+
+          <div class="acc" style="margin-top:38px">
+            <div class="acc-item is-open">
+              <button class="acc-head" type="button">Fabric &amp; care<span>+</span></button>
+              <div class="acc-body"><span id="pdpFabric"></span> Dry clean only. Store folded on a flat shelf.</div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-head" type="button">Fit<span>+</span></button>
+              <div class="acc-body">Relaxed through the body. Model is 180cm and wears a size M. Between sizes? Take the smaller.</div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-head" type="button">Shipping &amp; returns<span>+</span></button>
+              <div class="acc-body">Complimentary shipping on orders over ₹40,000. Free returns within 30 days, unworn with tags attached.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <span class="label">| You may also like |</span>
+        <div class="grid" id="pdpRelated" style="margin-top:26px"></div>
+      </section>
+    </main>
+
+    <div data-footer></div>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

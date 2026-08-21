@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopping Bag — Lou Leisure</title>
+    <meta
+      name="description"
+      content="Review the pieces in your Lou Leisure bag, adjust quantities and see your order total before checkout."
+    />
+    <meta property="og:title" content="Shopping Bag — Lou Leisure" />
+    <meta property="og:description" content="Review your bag, adjust quantities and see your order total." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div data-header data-header-light></div>
+
+    <main>
+      <header class="wrap" style="padding:56px 24px 0">
+        <span class="label">| Bag |</span>
+        <h1 class="display" style="margin-top:12px">Your selection</h1>
+      </header>
+
+      <div class="cart">
+        <section id="cartLines"></section>
+
+        <aside class="summary">
+          <h2 class="label label--ink" style="margin-bottom:14px">Order summary</h2>
+          <div class="summary-row"><span class="muted">Subtotal</span><span id="sumSub">₹0</span></div>
+          <div class="summary-row"><span class="muted">Shipping</span><span id="sumShip">Complimentary</span></div>
+          <div class="summary-row summary-row--total"><span>Total</span><span id="sumTotal">₹0</span></div>
+          <button class="btn btn--solid btn--block" type="button" id="checkout" style="margin-top:22px">
+            <span>Proceed to checkout</span>
+          </button>
+          <p class="form-note">Complimentary shipping on orders over ₹40,000. Free returns within 30 days.</p>
+          <a class="link-underline" href="shop.html" style="display:inline-block;margin-top:18px">Continue shopping</a>
+        </aside>
+      </div>
+    </main>
+
+    <div data-footer></div>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
