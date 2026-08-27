@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#eef1ef" stroke-width="1">
+  <g opacity="0.9">
+    <circle cx="200" cy="200" r="40"/>
+    <circle cx="200" cy="200" r="70"/>
+    <circle cx="200" cy="200" r="118"/>
+    <circle cx="200" cy="200" r="150"/>
+    <circle cx="200" cy="200" r="182"/>
+    <g id="petals">
+      <path d="M200 60 C 226 110, 226 140, 200 160 C 174 140, 174 110, 200 60 Z"/>
+      <path d="M200 18 C 214 46, 214 52, 200 62 C 186 52, 186 46, 200 18 Z"/>
+      <circle cx="200" cy="92" r="9"/>
+      <path d="M200 168 q 18 14 0 30 q -18 -16 0 -30 Z"/>
+    </g>
+    <use href="#petals" transform="rotate(22.5 200 200)"/>
+    <use href="#petals" transform="rotate(45 200 200)"/>
+    <use href="#petals" transform="rotate(67.5 200 200)"/>
+    <use href="#petals" transform="rotate(90 200 200)"/>
+    <use href="#petals" transform="rotate(112.5 200 200)"/>
+    <use href="#petals" transform="rotate(135 200 200)"/>
+    <use href="#petals" transform="rotate(157.5 200 200)"/>
+    <use href="#petals" transform="rotate(180 200 200)"/>
+    <use href="#petals" transform="rotate(202.5 200 200)"/>
+    <use href="#petals" transform="rotate(225 200 200)"/>
+    <use href="#petals" transform="rotate(247.5 200 200)"/>
+    <use href="#petals" transform="rotate(270 200 200)"/>
+    <use href="#petals" transform="rotate(292.5 200 200)"/>
+    <use href="#petals" transform="rotate(315 200 200)"/>
+    <use href="#petals" transform="rotate(337.5 200 200)"/>
+  </g>
+</svg>
