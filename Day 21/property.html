@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property Details — Nestora India</title>
+<meta name="description" content="Full details, amenities, RERA registration and EMI estimate for this Nestora-verified Indian property, plus similar homes in the same budget.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 6 4 9 4 13a8 8 0 0 0 16 0c0-4-3-7-8-11z"/></svg> NESTORA</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About Us</a><a href="properties.html">Properties</a><a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-ghost" href="contact.html">Contact Us</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="detail-root">
+  <section class="wrap section-sm">
+    <p class="muted" style="font-size:12.5px"><a href="properties.html">Properties</a> / <span id="d-loc"></span></p>
+    <div class="sec-head" style="margin:10px 0 22px">
+      <div><h1 id="d-title" style="font-size:clamp(28px,4vw,42px)"></h1></div>
+      <div style="text-align:right"><p class="price-l">Asking price</p><p class="price" id="d-price" style="font-size:26px"></p></div>
+    </div>
+
+    <div class="gallery">
+      <div class="main"><img id="d-main-img" src="" alt=""></div>
+      <div class="side">
+        <div><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=70" alt="Living room interior"></div>
+        <div><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=70" alt="Bedroom interior"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section-sm">
+    <div class="detail-grid">
+      <div>
+        <h2>Overview</h2>
+        <p class="lead" id="d-desc"></p>
+
+        <div class="grid-3" id="d-specs" style="margin-top:24px"></div>
+
+        <h2 style="margin-top:44px">Amenities</h2>
+        <ul class="amenities" style="margin-top:16px">
+          <li>Covered car parking</li><li>24×7 power backup</li>
+          <li>Clubhouse &amp; gymnasium</li><li>Swimming pool</li>
+          <li>Rainwater harvesting</li><li>CCTV &amp; gated security</li>
+          <li>Children’s play area</li><li>Vaastu-compliant layout</li>
+          <li>Piped gas connection</li><li>EV charging points</li>
+        </ul>
+      </div>
+
+      <aside>
+        <div class="card card-pad">
+          <h3>EMI Calculator</h3>
+          <p class="muted" style="font-size:12.5px;margin-bottom:14px">Estimate your monthly home loan instalment.</p>
+          <div class="field" style="margin-bottom:12px"><label for="emi-amount">Loan amount (₹)</label><input id="emi-amount" type="number" min="0" step="100000"></div>
+          <div class="field" style="margin-bottom:12px"><label for="emi-rate">Interest rate (% p.a.)</label><input id="emi-rate" type="number" value="8.6" step="0.05"></div>
+          <div class="field" style="margin-bottom:16px"><label for="emi-years">Tenure (years)</label><input id="emi-years" type="number" value="20" min="1" max="30"></div>
+          <p class="price-l">Estimated EMI</p>
+          <p class="emi-out" id="emi-out">—</p>
+        </div>
+
+        <div class="card card-pad" style="margin-top:16px">
+          <h3>Talk to the listing advisor</h3>
+          <div class="person"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=70" alt="Vikram Rao"><div><strong>Vikram Rao</strong><span>Principal Advisor · +91 98200 41120</span></div></div>
+          <a class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center" href="contact.html">Schedule a site visit</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2>Similar Properties</h2>
+    <p class="lead" style="margin-bottom:24px">Other verified homes our buyers shortlisted alongside this one.</p>
+    <div class="grid-3" id="d-similar"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 6 4 9 4 13a8 8 0 0 0 16 0c0-4-3-7-8-11z"/></svg> NESTORA</a>
+        <p class="muted" style="font-size:13px;margin-top:12px">Nestora Realty Advisors Pvt. Ltd.<br>Bandra Kurla Complex, Mumbai 400051</p>
+        <form class="newsletter" data-newsletter><input type="email" placeholder="Enter your email" aria-label="Email address"><button type="submit" aria-label="Subscribe">→</button></form>
+      </div>
+      <div class="foot-col"><h4>Home</h4><a href="index.html">Hero Section</a><a href="properties.html">Properties</a><a href="index.html">Testimonials</a><a href="contact.html">FAQs</a></div>
+      <div class="foot-col"><h4>About Us</h4><a href="about.html">Our Story</a><a href="about.html">Our Values</a><a href="about.html">Our Team</a><a href="about.html">Our Clients</a></div>
+      <div class="foot-col"><h4>Properties</h4><a href="properties.html">Portfolio</a><a href="properties.html">Categories</a><a href="properties.html">New Launches</a></div>
+      <div class="foot-col"><h4>Services</h4><a href="about.html">Valuation Mastery</a><a href="about.html">Strategic Marketing</a><a href="about.html">Closing Success</a><a href="about.html">Property Management</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nestora Realty Advisors Pvt. Ltd. All rights reserved. · MahaRERA A51800009911</span>
+      <span>Terms &amp; Conditions · Privacy Policy</span>
+      <span class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">x</a><a href="#" aria-label="YouTube">▶</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

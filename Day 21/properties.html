@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Properties for Sale in India — Apartments, Villas &amp; Plots | Nestora</title>
+<meta name="description" content="Search RERA-verified apartments, villas, bungalows and plots for sale in Mumbai, Bengaluru, Pune, Gurugram, Hyderabad, Chennai, Kolkata, Kochi and Jaipur.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 6 4 9 4 13a8 8 0 0 0 16 0c0-4-3-7-8-11z"/></svg> NESTORA</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About Us</a><a href="properties.html">Properties</a><a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-ghost" href="contact.html">Contact Us</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="wrap section">
+    <p class="eyebrow">Property search</p>
+    <h1>Find Your Dream Property</h1>
+    <p class="lead">Filter our live inventory across nine Indian cities. Prices shown are the current asking price, exclusive of stamp duty and registration.</p>
+
+    <div style="margin-top:26px">
+      <div class="searchbar">
+        <input id="f-search" type="search" placeholder="Search by locality, city or project — e.g. Whitefield" aria-label="Search properties">
+        <button class="btn btn-primary" id="f-reset" type="button">Reset Filters</button>
+      </div>
+      <div class="filters">
+        <select id="f-city" aria-label="City">
+          <option value="">All cities</option>
+          <option>Mumbai</option><option>Bengaluru</option><option>Pune</option><option>Gurugram</option>
+          <option>Hyderabad</option><option>Chennai</option><option>Kolkata</option><option>Kochi</option><option>Jaipur</option>
+        </select>
+        <select id="f-type" aria-label="Property type">
+          <option value="">All property types</option>
+          <option>Apartment</option><option>Villa</option><option>Bungalow</option><option>Duplex</option><option>Plot</option>
+        </select>
+        <select id="f-budget" aria-label="Budget">
+          <option value="">Any budget</option>
+          <option value="0-10000000">Under ₹1 Cr</option>
+          <option value="10000000-30000000">₹1 Cr – ₹3 Cr</option>
+          <option value="30000000-60000000">₹3 Cr – ₹6 Cr</option>
+          <option value="60000000-2000000000">Above ₹6 Cr</option>
+        </select>
+        <select id="f-beds" aria-label="Bedrooms">
+          <option value="">Any bedrooms</option>
+          <option value="2">2 BHK &amp; above</option>
+          <option value="3">3 BHK &amp; above</option>
+          <option value="4">4 BHK &amp; above</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:60px">
+    <div class="sec-head">
+      <div><h2>Discover a World of Possibilities</h2><p class="muted" id="result-count"></p></div>
+    </div>
+    <div class="grid-3" id="property-grid"></div>
+  </section>
+
+  <section class="wrap section">
+    <h2>Let’s Make it Happen</h2>
+    <p class="lead" style="margin-bottom:24px">Tell us what you are looking for and an advisor from that city will call you within one working day.</p>
+    <div class="card card-pad">
+      <form class="form-grid" data-validate novalidate>
+        <div class="field"><label for="fn">First Name</label><input id="fn" required placeholder="Aarav"><span class="err"></span></div>
+        <div class="field"><label for="ln">Last Name</label><input id="ln" required placeholder="Sharma"><span class="err"></span></div>
+        <div class="field"><label for="em">Email</label><input id="em" type="email" required placeholder="aarav@example.in"><span class="err"></span></div>
+        <div class="field"><label for="ph">Phone</label><input id="ph" type="tel" required placeholder="+91 98200 12345"><span class="err"></span></div>
+        <div class="field"><label for="pl">Preferred Location</label>
+          <select id="pl"><option>Mumbai</option><option>Bengaluru</option><option>Pune</option><option>Gurugram</option><option>Hyderabad</option><option>Chennai</option><option>Kolkata</option><option>Kochi</option><option>Jaipur</option></select><span class="err"></span></div>
+        <div class="field"><label for="pt">Property Type</label>
+          <select id="pt"><option>Apartment</option><option>Villa</option><option>Bungalow</option><option>Duplex</option><option>Plot</option></select><span class="err"></span></div>
+        <div class="field"><label for="bd">No. of Bedrooms</label>
+          <select id="bd"><option>1 BHK</option><option>2 BHK</option><option>3 BHK</option><option>4 BHK</option><option>5+ BHK</option></select><span class="err"></span></div>
+        <div class="field"><label for="bg">Budget</label>
+          <select id="bg"><option>Under ₹1 Cr</option><option>₹1 Cr – ₹3 Cr</option><option>₹3 Cr – ₹6 Cr</option><option>Above ₹6 Cr</option></select><span class="err"></span></div>
+        <div class="field full"><label for="msg">Message</label><textarea id="msg" rows="4" placeholder="Looking for a 3 BHK near a good school, possession within a year."></textarea><span class="err"></span></div>
+        <div class="field full" style="flex-direction:row;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+          <p class="form-note">By submitting you agree to our Terms &amp; Privacy Policy.</p>
+          <button class="btn btn-primary" type="submit">Send Your Message</button>
+        </div>
+      </form>
+      <div class="form-success hidden">Thank you — your enquiry has reached our team. An advisor will call you within one working day.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 6 4 9 4 13a8 8 0 0 0 16 0c0-4-3-7-8-11z"/></svg> NESTORA</a>
+        <p class="muted" style="font-size:13px;margin-top:12px">Nestora Realty Advisors Pvt. Ltd.<br>Bandra Kurla Complex, Mumbai 400051</p>
+        <form class="newsletter" data-newsletter><input type="email" placeholder="Enter your email" aria-label="Email address"><button type="submit" aria-label="Subscribe">→</button></form>
+      </div>
+      <div class="foot-col"><h4>Home</h4><a href="index.html">Hero Section</a><a href="properties.html">Properties</a><a href="index.html">Testimonials</a><a href="contact.html">FAQs</a></div>
+      <div class="foot-col"><h4>About Us</h4><a href="about.html">Our Story</a><a href="about.html">Our Values</a><a href="about.html">Our Team</a><a href="about.html">Our Clients</a></div>
+      <div class="foot-col"><h4>Properties</h4><a href="properties.html">Portfolio</a><a href="properties.html">Categories</a><a href="properties.html">New Launches</a></div>
+      <div class="foot-col"><h4>Services</h4><a href="about.html">Valuation Mastery</a><a href="about.html">Strategic Marketing</a><a href="about.html">Closing Success</a><a href="about.html">Property Management</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nestora Realty Advisors Pvt. Ltd. All rights reserved. · MahaRERA A51800009911</span>
+      <span>Terms &amp; Conditions · Privacy Policy</span>
+      <span class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">x</a><a href="#" aria-label="YouTube">▶</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
