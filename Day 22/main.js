@@ -37,6 +37,7 @@
   /* ---------------- 3+4. Hero -> collage -> hero recompose (pinned, scrubbed) --- */
   function initCollageTransition() {
     if (reduced) return;
+    if (!q(".hero-wrap")) return;
     var tall = q(".panel--tall"), wide = q(".panel--wide"), narrow = q(".panel--narrow");
     gsap.set([tall, wide, narrow], { opacity: 0, scale: 0.9, y: 60 });
 
@@ -77,6 +78,7 @@
 
   /* ---------------- 5+6. About section ---------------- */
   function initAboutScroll() {
+    if (!q(".about")) return;
     var lines = qa(".about__statement .line");
     if (reduced) return;
     gsap.set(lines, { yPercent: 110 });
@@ -102,18 +104,21 @@
       gsap.to(o, {
         v: target, ease: "none",
         onUpdate: function () { el.textContent = Math.round(o.v) + suffix; },
-        scrollTrigger: { trigger: ".stats", start: "top 88%", end: "top 45%", scrub: 0.6 }
+        scrollTrigger: { trigger: el, start: "top 92%", end: "top 50%", scrub: 0.6 }
       });
     });
     if (reduced) return;
-    gsap.from(".stat", {
+    var grp = q(".stats");
+    if (!grp) return;
+    gsap.from(grp.querySelectorAll(".stat"), {
       y: 40, opacity: 0, ease: "none", stagger: 0.1,
-      scrollTrigger: { trigger: ".stats", start: "top 92%", end: "top 50%", scrub: 0.6 }
+      scrollTrigger: { trigger: grp, start: "top 92%", end: "top 50%", scrub: 0.6 }
     });
   }
 
   /* ---------------- 8. Large planning image ---------------- */
   function initPlanningImage() {
+    if (!q(".planning")) return;
     if (reduced) { gsap.set(".planning__img", { scale: 1 }); return; }
     gsap.to(".planning__img", {
       scale: 1, ease: "none",
@@ -127,6 +132,7 @@
 
   /* ---------------- 9+11. Property introduction ---------------- */
   function initPropertyIntroduction() {
+    if (!q(".intro")) return;
     if (reduced) { gsap.set(".intro__shot", { clipPath: "inset(0 0 0 0)" }); return; }
     var lines = qa(".intro__title .line");
     gsap.set(lines, { yPercent: 110 });
@@ -163,6 +169,7 @@
 
   /* ---------------- 12-14. Destinations + property state change ---------------- */
   function initDestinationSection() {
+    if (!q(".dest")) return;
     var stateLabel = q("#destState");
     if (reduced) return;
     var lines = qa(".dest__title .line");
@@ -211,6 +218,7 @@
 
   /* ---------------- 15+16. Services ---------------- */
   function initServices() {
+    if (!q(".services")) return;
     if (reduced) return;
     var lines = qa(".services__title .line");
     gsap.set(lines, { yPercent: 110 });
@@ -223,18 +231,9 @@
   }
 
   /* ---------------- 17-24. Property navigator (arc wheel) ---------------- */
-  var PROPERTIES = [
-    { name: "Ocean View Manor", place: "Seaside City, CA 90265", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Willowbrook Estates", place: "Woodland Heights, TX 77002", img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Sunset Ridge Villas", place: "Sunset Hills, FL 33602", img: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Cedarwood Retreat", place: "Serenity Springs, AZ 85001", img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Lakeside Haven", place: "Waterfront Bay, MN 55401", img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Mountain View Acres", place: "Mountainville, CO 80303", img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Oakridge Meadows", place: "Peaceful Grove, WA 98001", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Riverbend Ranch", place: "Riverside Ranch, OR 97001", img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Prairie Pointe Residence", place: "Prairieville, IL 60601", img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80" },
-    { name: "Sentinal Ridge", place: "Summit Park, UT 84098", img: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80" }
-  ];
+  var PROPERTIES = (window.NN && window.NN.properties) ? window.NN.properties.map(function (p) {
+    return { name: p.name, place: p.place, img: p.hero };
+  }) : [];
 
   function initPropertyNavigator() {
     var shotsWrap = q("[data-shots]");
@@ -373,6 +372,7 @@
 
   /* ---------------- 25+26. Final CTA ---------------- */
   function initFinalCTA() {
+    if (!q(".cta")) return;
     if (reduced) return;
     var lines = qa(".cta__title .line");
     gsap.set(lines, { yPercent: 110 });
@@ -398,6 +398,292 @@
     });
   }
 
+  /* ============= MULTI-PAGE CHROME ============= */
+
+  /* mark the current page link active in the topbar + footer */
+  function initActiveNav() {
+    var here = location.pathname.split("/").pop() || "index.html";
+    qa('a[data-nav="' + here + '"]').forEach(function (a) { a.classList.add("is-active"); });
+  }
+
+  /* transparent over hero, solid hairline bar once scrolled */
+  function initTopbarScroll() {
+    var bar = q(".topbar");
+    if (!bar) return;
+    var onScroll = function () {
+      bar.classList.toggle("is-solid", (window.scrollY || window.pageYOffset) > window.innerHeight * 0.7);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* sub-page hero: masked title + image settle */
+  function initSubhero() {
+    var img = q(".subhero__img");
+    var lines = qa(".subhero__title .line");
+    if (reduced) { gsap.set(lines, { y: 0 }); gsap.set(img, { scale: 1 }); return; }
+    gsap.set(lines, { yPercent: 115 });
+    gsap.to(lines, { yPercent: 0, duration: 1.4, ease: "power3.out", stagger: 0.1, delay: 0.15 });
+    if (img) gsap.to(img, { scale: 1, duration: 2.6, ease: "power2.out" });
+    gsap.from(".subhero__label, .subhero__sub", {
+      opacity: 0, y: 22, ease: "power2.out", stagger: 0.12, delay: 0.4, duration: 1
+    });
+  }
+
+  /* generic masked-line reveal for any [data-reveal] block */
+  function initReveals() {
+    qa("[data-reveal]").forEach(function (el) {
+      var lines = qa(".line", el);
+      if (!lines.length) return;
+      if (reduced) { gsap.set(lines, { y: 0 }); return; }
+      gsap.set(lines, { yPercent: 115 });
+      gsap.to(lines, {
+        yPercent: 0, ease: "power2.out", stagger: 0.1,
+        scrollTrigger: { trigger: el, start: "top 85%", end: "top 30%", scrub: 0.5 }
+      });
+    });
+  }
+
+  /* fade-up for [data-rise] elements */
+  function initRise() {
+    if (reduced) return;
+    qa("[data-rise]").forEach(function (el) {
+      gsap.from(el, {
+        opacity: 0, y: 44, ease: "power2.out", duration: 0.8,
+        scrollTrigger: { trigger: el, start: "top 90%" }
+      });
+    });
+  }
+
+  /* clip-in images: container [data-clip] reveals its inner img */
+  function initClipImages() {
+    qa("[data-clip]").forEach(function (el) {
+      var img = el.querySelector("img");
+      if (reduced) { gsap.set(el, { clipPath: "inset(0 0 0 0)" }); gsap.set(img, { scale: 1 }); return; }
+      gsap.set(el, { clipPath: "inset(100% 0 0 0)" });
+      gsap.timeline({ scrollTrigger: { trigger: el, start: "top 90%", end: "top 45%", scrub: 0.6 } })
+        .to(el, { clipPath: "inset(0 0 0 0)", ease: "none" }, 0)
+        .fromTo(img, { scale: 1.12 }, { scale: 1, ease: "none" }, 0);
+    });
+  }
+
+  /* animated horizontal rule 0 -> 100% */
+  function initRules() {
+    if (reduced) return;
+    qa("[data-rule]").forEach(function (el) {
+      gsap.from(el, {
+        scaleX: 0, ease: "none", transformOrigin: "left center",
+        scrollTrigger: { trigger: el, start: "top 92%", end: "top 60%", scrub: 0.5 }
+      });
+    });
+  }
+
+  /* ---------- listings gallery ---------- */
+  function initPropertyGallery() {
+    var grid = q("[data-gallery]");
+    if (!grid) return;
+    var data = (window.NN && window.NN.properties) || [];
+    var active = { region: "all", type: "all", status: "all" };
+    var countEl = q("[data-count-label]");
+
+    function card(p) {
+      return '<a class="pcard" href="property.html?id=' + p.slug + '">' +
+        '<figure class="pcard__media" data-clip><img loading="lazy" src="' + p.hero + '" alt="' + p.name + '" />' +
+        '<span class="pcard__badge">' + p.status + '</span></figure>' +
+        '<div class="pcard__body"><span class="label">' + p.region + ' &middot; ' + p.type + '</span>' +
+        '<h3 class="pcard__name">' + p.name + '</h3>' +
+        '<p class="pcard__place">' + p.place + '</p>' +
+        '<div class="pcard__meta"><span>' + p.sqm + 'm&sup2;</span><span>' + p.beds + ' beds</span><span>' + p.priceBand + '</span></div>' +
+        '</div></a>';
+    }
+
+    function render() {
+      var list = data.filter(function (p) {
+        return (active.region === "all" || p.region === active.region) &&
+               (active.type === "all" || p.type === active.type) &&
+               (active.status === "all" || p.status === active.status);
+      });
+      grid.innerHTML = list.map(card).join("");
+      if (countEl) countEl.textContent = list.length;
+      initClipImages();
+      if (!reduced) {
+        gsap.from(grid.querySelectorAll(".pcard"), {
+          opacity: 0, y: 40, stagger: 0.06, duration: 0.6, ease: "power2.out",
+          scrollTrigger: { trigger: grid, start: "top 92%" }
+        });
+      }
+    }
+
+    qa("[data-filter]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var group = btn.getAttribute("data-group");
+        active[group] = btn.getAttribute("data-filter");
+        qa("[data-group=\"" + group + "\"]").forEach(function (b) { b.classList.remove("is-on"); });
+        btn.classList.add("is-on");
+        render();
+      });
+    });
+
+    render();
+  }
+
+  /* ---------- property detail ---------- */
+  function initPropertyDetail() {
+    var root = q("[data-detail]");
+    if (!root) return;
+    var data = (window.NN && window.NN.properties) || [];
+    var id = new URLSearchParams(location.search).get("id");
+    var p = null;
+    for (var i = 0; i < data.length; i++) { if (data[i].slug === id) { p = data[i]; break; } }
+
+    if (!p) {
+      var nf = q("[data-notfound]");
+      if (nf) { nf.style.display = "grid"; document.title = "Property not found — Dhome"; }
+      return;
+    }
+
+    document.title = p.name + " — Dhome Estates";
+    var set = function (sel, val, attr) {
+      var el = q(sel, root);
+      if (!el) return;
+      if (attr) el.setAttribute(attr, val); else el.innerHTML = val;
+    };
+    var titleLines = qa(".subhero__title .line", root);
+    if (titleLines.length && p.name) {
+      var parts = p.name.split(" ");
+      titleLines[0].textContent = parts.slice(0, Math.ceil(parts.length / 2)).join(" ");
+      if (titleLines[1]) titleLines[1].textContent = parts.slice(Math.ceil(parts.length / 2)).join(" ");
+    }
+    set(".subhero__img", p.hero, "src");
+    set(".subhero__img", p.name + " — " + p.place, "alt");
+    set(".subhero__label", p.region + " · " + p.type + " · " + p.status);
+    set(".detail__lede", p.summary);
+    set(".detail__price", p.price);
+
+    var specs = q("[data-spec]", root);
+    if (specs) {
+      specs.innerHTML = [
+        ["Bedrooms", p.beds], ["Bathrooms", p.baths], ["Interior", p.sqm + "m²"],
+        ["Lot", p.lot], ["Year", p.year], ["Region", p.region]
+      ].map(function (r) {
+        return '<div class="spec"><span class="spec__k">' + r[0] + '</span><span class="spec__v">' + r[1] + '</span></div>';
+      }).join("");
+    }
+
+    var mat = q("[data-materials]", root);
+    if (mat) {
+      mat.innerHTML = p.materials.map(function (m) {
+        return '<div class="swatch" data-rise><span class="swatch__chip" style="background:' + m.color + '"></span><span class="swatch__name">' + m.name + '</span></div>';
+      }).join("");
+    }
+
+    var shots = qa("[data-detail-shot]", root);
+    if (shots.length && p.gallery) {
+      shots.forEach(function (s, i) { var g = p.gallery[i % p.gallery.length]; s.querySelector("img").src = g; });
+    }
+
+    var light = q("[data-light] img", root);
+    if (light) { light.src = p.light; }
+    var map = q("[data-map] img", root);
+    if (map) { map.src = p.map; }
+    var mapPlace = q("[data-map-place]", root);
+    if (mapPlace) { mapPlace.innerHTML = p.place; }
+
+    var enq = q("[data-enquire]", root);
+    if (enq) enq.setAttribute("href", "contact.html?id=" + p.slug);
+
+    var idx = data.indexOf(p);
+    var prev = data[(idx - 1 + data.length) % data.length];
+    var next = data[(idx + 1) % data.length];
+    var prevEl = q("[data-prev]", root);
+    if (prevEl) { prevEl.setAttribute("href", "property.html?id=" + prev.slug); var pn = prevEl.querySelector(".pn__name"); if (pn) pn.textContent = prev.name; }
+    var nextEl = q("[data-next]", root);
+    if (nextEl) { nextEl.setAttribute("href", "property.html?id=" + next.slug); var nn2 = nextEl.querySelector(".pn__name"); if (nn2) nn2.textContent = next.name; }
+
+    initBlueprintAnimation();
+  }
+
+  /* ---------- journal index + article reader ---------- */
+  function initJournal() {
+    var grid = q("[data-jgrid]");
+    var feat = q("[data-jfeatured]");
+    var data = (window.NN && window.NN.articles) || [];
+    if (!data.length) return;
+
+    if (feat) {
+      var f = data[0];
+      feat.setAttribute("href", "article.html?id=" + f.slug);
+      q(".jfeatured__media img", feat).src = f.cover;
+      q(".jfeatured__cat", feat).textContent = f.category;
+      q(".jfeatured__title", feat).textContent = f.title;
+      q(".jfeatured__excerpt", feat).textContent = f.excerpt;
+      q(".jfeatured__meta", feat).textContent = f.author + " · " + f.date + " · " + f.read;
+    }
+
+    if (grid) {
+      var rest = feat ? data.slice(1) : data;
+      grid.innerHTML = rest.map(function (a) {
+        return '<a class="jcard" href="article.html?id=' + a.slug + '">' +
+          '<figure class="jcard__media" data-clip><img loading="lazy" src="' + a.cover + '" alt="' + a.title + '" /></figure>' +
+          '<span class="jcard__cat">' + a.category + '</span>' +
+          '<h3 class="jcard__title">' + a.title + '</h3>' +
+          '<p class="jcard__excerpt">' + a.excerpt + '</p>' +
+          '<p class="jcard__meta">' + a.author + ' · ' + a.date + ' · ' + a.read + '</p></a>';
+      }).join("");
+      initClipImages();
+    }
+
+    /* category filter */
+    qa("[data-jfilter]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var cat = btn.getAttribute("data-jfilter");
+        qa("[data-jfilter]").forEach(function (b) { b.classList.remove("is-on"); });
+        btn.classList.add("is-on");
+        if (!grid) return;
+        qa(".jcard", grid).forEach(function (c) {
+          c.style.display = (cat === "all" || c.querySelector(".jcard__cat").textContent === cat) ? "" : "none";
+        });
+      });
+    });
+  }
+
+  function initArticle() {
+    var root = q("[data-article]");
+    if (!root) return;
+    var data = (window.NN && window.NN.articles) || [];
+    var id = new URLSearchParams(location.search).get("id");
+    var a = null;
+    for (var i = 0; i < data.length; i++) { if (data[i].slug === id) { a = data[i]; break; } }
+    if (!a) {
+      var nf = q("[data-notfound]");
+      if (nf) { nf.style.display = "grid"; document.title = "Article not found — Dhome"; }
+      return;
+    }
+    document.title = a.title + " — Dhome Journal";
+    q(".article__cat", root).textContent = a.category;
+    q(".article__title", root).innerHTML = a.title;
+    q(".article__meta", root).innerHTML = "<span>" + a.author + "</span><span>" + a.date + "</span><span>" + a.read + " read</span>";
+    q(".article__cover img", root).src = a.cover;
+    q(".article__body", root).innerHTML = a.body;
+  }
+
+  /* ---------- contact form ---------- */
+  function initContact() {
+    var form = q("[data-contact-form]");
+    if (!form) return;
+    var id = new URLSearchParams(location.search).get("id");
+    if (id) {
+      var prop = ((window.NN && window.NN.properties) || []).find(function (x) { return x.slug === id; });
+      var sel = q("[data-property-select]", form);
+      if (prop && sel) sel.value = prop.name;
+    }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      form.classList.add("is-sent");
+      form.reset();
+    });
+  }
+
   function boot() {
     var lenis = initLenis();
     initHeroScroll();
@@ -411,6 +697,18 @@
     initServices();
     initPropertyNavigator();
     initFinalCTA();
+    initActiveNav();
+    initTopbarScroll();
+    initSubhero();
+    initReveals();
+    initRise();
+    initClipImages();
+    initRules();
+    initPropertyGallery();
+    initPropertyDetail();
+    initJournal();
+    initArticle();
+    initContact();
     initBackToTop(lenis);
 
     window.addEventListener("load", function () { ScrollTrigger.refresh(); });

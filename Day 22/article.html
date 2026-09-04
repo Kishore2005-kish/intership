@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Article — Dhome Journal</title>
+<meta name="description" content="A long-form note from the Dhome journal." />
+<meta property="og:title" content="Article — Dhome Journal" />
+<meta property="og:description" content="A long-form note from the Dhome journal." />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="./article.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <nav class="topbar__nav" aria-label="Primary">
+    <a href="properties.html" data-nav="properties.html">Properties</a>
+    <a href="studio.html" data-nav="studio.html">Studio</a>
+    <a href="services.html" data-nav="services.html">Services</a>
+    <a href="journal.html" data-nav="journal.html">Journal</a>
+    <a href="contact.html" data-nav="contact.html">Contact</a>
+  </nav>
+  <a class="topbar__brand" href="index.html">Dhome<span>&reg;</span></a>
+  <div class="topbar__meta">
+    <span>+1 415 022 88</span>
+    <button class="topbar__menu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+
+<main data-article>
+  <article class="article">
+    <p class="bread article__bread"><a href="index.html">Dhome</a> / <a href="journal.html">Journal</a> / Article</p>
+    <span class="article__cat label">Category</span>
+    <h1 class="article__title">Article title loads here</h1>
+    <p class="article__meta"></p>
+    <figure class="article__cover"><img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80" alt="Article cover" /></figure>
+    <div class="article__body"></div>
+    <div class="article__foot">
+      <div class="share">
+        <a href="#" aria-label="Share on X">X</a>
+        <a href="#" aria-label="Share on LinkedIn">LI</a>
+        <a href="#" aria-label="Copy link">↗</a>
+      </div>
+      <a class="pill" href="journal.html">Back to the journal</a>
+    </div>
+  </article>
+
+  <div class="notfound" data-notfound style="display:none">
+    <div>
+      <p class="notfound__num">404</p>
+      <p class="label" style="margin-top:18px">Article not found</p>
+      <a class="pill" style="display:inline-block;margin-top:30px" href="journal.html">Back to the journal</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <h2 class="footer__title">Unlock Your Dream Home:<br />Dive Into Our World Of Real<br />Estate Opportunities</h2>
+      <a class="footer__mail" href="mailto:studio@dhome.estate">studio@dhome.estate</a>
+    </div>
+    <div class="footer__cols">
+      <div><p class="label">Properties</p><a href="properties.html" data-nav="properties.html">All Residences</a><a href="properties.html">Collections</a><a href="index.html#navigator">Navigator</a></div>
+      <div><p class="label">Studio</p><a href="studio.html" data-nav="studio.html">About</a><a href="services.html" data-nav="services.html">Services</a><a href="journal.html" data-nav="journal.html">Journal</a></div>
+      <div><p class="label">Contact</p><a href="contact.html" data-nav="contact.html">Enquire</a><a href="tel:+141502288">Telephone</a><a href="contact.html">Visit</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__social">
+      <a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="LinkedIn">LI</a><a href="#" aria-label="Pinterest">PT</a>
+    </div>
+    <p>&copy; 2026 Dhome Estates</p>
+    <button class="footer__top-btn" type="button" id="backToTop">Back to top &uarr;</button>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="./data.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>

@@ -19,9 +19,11 @@
 
 <header class="topbar">
   <nav class="topbar__nav" aria-label="Primary">
-    <a href="#about">About</a>
-    <a href="#destinations">Properties</a>
-    <a href="#services">Services</a>
+    <a href="properties.html" data-nav="properties.html">Properties</a>
+    <a href="studio.html" data-nav="studio.html">Studio</a>
+    <a href="services.html" data-nav="services.html">Services</a>
+    <a href="journal.html" data-nav="journal.html">Journal</a>
+    <a href="contact.html" data-nav="contact.html">Contact</a>
   </nav>
   <a class="topbar__brand" href="#top">Dhome<span>&reg;</span></a>
   <div class="topbar__meta">
@@ -243,7 +245,7 @@
       <span class="mask"><span class="line"><em>Living</em> The Life You&rsquo;ve Always</span></span>
       <span class="mask"><span class="line">Imagined Right Here, Today!</span></span>
     </h2>
-    <button class="pill pill--dark cta__btn" type="button">Explore Properties</button>
+    <a class="pill pill--dark cta__btn" href="properties.html">Explore Properties</a>
   </section>
 </main>
 
@@ -255,9 +257,9 @@
       <a class="footer__mail" href="mailto:studio@dhome.estate">studio@dhome.estate</a>
     </div>
     <div class="footer__cols">
-      <div><p class="label">Projects</p><a href="#destinations">Residences</a><a href="#destinations">Collections</a><a href="#navigator">Navigator</a></div>
-      <div><p class="label">Studio</p><a href="#about">About</a><a href="#intro">Approach</a><a href="#services">Services</a></div>
-      <div><p class="label">Contact</p><a href="mailto:studio@dhome.estate">Email</a><a href="tel:+141502288">Telephone</a><a href="#top">Visit</a></div>
+      <div><p class="label">Properties</p><a href="properties.html" data-nav="properties.html">All Residences</a><a href="properties.html">Collections</a><a href="#navigator">Navigator</a></div>
+      <div><p class="label">Studio</p><a href="studio.html" data-nav="studio.html">About</a><a href="services.html" data-nav="services.html">Services</a><a href="journal.html" data-nav="journal.html">Journal</a></div>
+      <div><p class="label">Contact</p><a href="contact.html" data-nav="contact.html">Enquire</a><a href="tel:+141502288">Telephone</a><a href="contact.html">Visit</a></div>
     </div>
   </div>
   <div class="footer__bottom">
@@ -272,6 +274,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="./data.js"></script>
 <script src="./main.js"></script>
 </body>
 </html>
