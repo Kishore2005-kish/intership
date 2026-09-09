@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Train schedule and timings — Indian Railways prototype</title>
+<meta name="description" content="Look up a train by number or name to see its origin, destination, timings, running days and classes." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <div style="max-width:900px">
+    <h1>Train schedule</h1>
+    <p class="muted" style="margin-top:6px">Search by train number or name to see timings, running days and available classes.</p>
+
+    <div class="card card-pad" style="margin-top:20px">
+      <div class="field">
+        <label for="q">Train number or name</label>
+        <input type="text" id="q" placeholder="e.g. 12628 or Karnataka Express" />
+      </div>
+    </div>
+
+    <div id="out" role="region" aria-live="polite" style="margin-top:20px"></div>
+    <p class="demo-tag" style="margin-top:16px">Real services and routes; timings shown as prototype reference data.</p>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  const q = document.getElementById("q");
+  const out = document.getElementById("out");
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    const list = TRAINS.filter((t) => !term || (t.label || t.no).includes(term) || t.name.toLowerCase().includes(term)).slice(0, 25);
+    if (!list.length) { out.innerHTML = '<div class="card empty"><h2>No matching train</h2><p class="small">Try a train number such as 12951 or a name such as Shatabdi.</p></div>'; return; }
+    out.innerHTML = `<table class="data card" style="overflow:hidden">
+      <thead><tr><th>Number</th><th>Train</th><th>From</th><th>Dep</th><th>To</th><th>Arr</th><th>Runs</th><th>Classes</th></tr></thead>
+      <tbody>${list.map((t) => `<tr>
+        <td class="mono">${t.label || t.no}</td><td>${t.name}<br><span class="small muted">${t.type}</span></td>
+        <td>${t.from}</td><td class="mono">${t.dep}</td><td>${t.to}</td><td class="mono">${t.arr}</td>
+        <td class="small">${t.days}</td><td class="small">${t.classes.join(", ")}</td></tr>`).join("")}</tbody></table>`;
+  }
+  q.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

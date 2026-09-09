@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Passenger details — Indian Railways e-ticketing prototype</title>
+<meta name="description" content="Enter passenger names, age, gender and berth preference with contact details before reviewing your demo booking." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <ol class="steps">
+    <li>1. Search</li><li>2. Select train</li><li aria-current="step">3. Passengers</li><li>4. Review</li><li>5. Confirm</li>
+  </ol>
+
+  <div class="two-col">
+    <form class="card card-pad" id="pax-form" novalidate aria-labelledby="pax-title">
+      <h1 id="pax-title">Passenger details</h1>
+      <p class="small muted" style="margin-top:6px">Up to 6 passengers per booking. Names should match a valid government ID.</p>
+
+      <div id="pax-list" style="margin-top:20px"></div>
+
+      <button type="button" class="btn btn-secondary" id="add-pax">+ Add Passenger</button>
+
+      <h2 style="margin-top:28px">Contact details</h2>
+      <p class="small muted" style="margin:4px 0 12px">Journey updates are sent here. This prototype does not send messages.</p>
+      <div class="booking-grid-2" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="field">
+          <label for="mobile">Mobile number</label>
+          <input type="tel" id="mobile" inputmode="numeric" placeholder="10-digit mobile number" aria-describedby="mobile-error" />
+          <p class="error-text" id="mobile-error" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="name@example.com" aria-describedby="email-error" />
+          <p class="error-text" id="email-error" role="alert"></p>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:20px"><span aria-hidden="true">ℹ</span>
+        <span>Berth preference is a request only and is allotted subject to availability — the same rule Indian Railways applies.</span></p>
+
+      <p class="error-text" id="form-error" role="alert" style="margin-top:12px"></p>
+
+      <div class="search-actions">
+        <a class="btn btn-quiet" href="train.html">← Back</a>
+        <button class="btn btn-primary btn-lg" type="submit">Review booking</button>
+      </div>
+    </form>
+
+    <aside class="card card-pad sticky" aria-label="Journey summary">
+      <h2>Journey</h2>
+      <dl class="kv" id="side" style="margin-top:12px"></dl>
+      <div id="fare-preview" style="margin-top:16px"></div>
+      <p class="demo-tag" style="margin-top:12px">Demo booking — no real payment will be processed.</p>
+    </aside>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/passenger.js"></script>
+</body>
+</html>

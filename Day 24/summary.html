@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Review your booking — Indian Railways e-ticketing prototype</title>
+<meta name="description" content="Review journey, train, passengers and fare breakdown before confirming a demo railway booking." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <ol class="steps">
+    <li>1. Search</li><li>2. Select train</li><li>3. Passengers</li><li aria-current="step">4. Review</li><li>5. Confirm</li>
+  </ol>
+
+  <div class="two-col">
+    <section class="card card-pad" aria-labelledby="sum-title">
+      <h1 id="sum-title">Review your booking</h1>
+
+      <h2 style="margin-top:20px">Journey</h2>
+      <dl class="kv" id="journey" style="margin-top:10px"></dl>
+
+      <h2 style="margin-top:24px">Passengers</h2>
+      <table class="data" style="margin-top:10px">
+        <thead><tr><th>Name</th><th>Age</th><th>Gender</th><th>Preference</th></tr></thead>
+        <tbody id="pax-rows"></tbody>
+      </table>
+
+      <h2 style="margin-top:24px">Contact</h2>
+      <dl class="kv" id="contact" style="margin-top:10px"></dl>
+
+      <p class="note note-warn" style="margin-top:20px"><span aria-hidden="true">⚠</span>
+        <span><strong>Demo booking — no real payment will be processed.</strong> Nothing is submitted to Indian Railways or IRCTC.</span></p>
+
+      <div class="search-actions">
+        <a class="btn btn-quiet" href="passenger.html">← Edit passengers</a>
+        <button class="btn btn-primary btn-lg" id="confirm">Confirm Booking</button>
+      </div>
+    </section>
+
+    <aside class="card card-pad sticky" aria-label="Fare breakdown">
+      <h2>Fare breakdown</h2>
+      <div id="fare" style="margin-top:12px"></div>
+      <p class="demo-tag" style="margin-top:12px">Demo fares for prototype purposes.</p>
+    </aside>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/summary.js"></script>
+</body>
+</html>

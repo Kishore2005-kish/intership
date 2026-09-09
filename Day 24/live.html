@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live train status (demo) — Indian Railways prototype</title>
+<meta name="description" content="Track a train's current station, next halt and delay using demo running-status data for prototype purposes." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <div style="max-width:840px">
+    <h1>Live train status</h1>
+    <p class="muted" style="margin-top:6px">Demo live-status data. This prototype does not connect to Indian Railways control systems.</p>
+
+    <div class="card card-pad" style="margin-top:20px">
+      <div class="field" style="max-width:420px">
+        <label for="train-pick">Select a train</label>
+        <select id="train-pick"></select>
+      </div>
+    </div>
+
+    <div id="status" role="region" aria-live="polite" style="margin-top:20px"></div>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/live.js"></script>
+</body>
+</html>

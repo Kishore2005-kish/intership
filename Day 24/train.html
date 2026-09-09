@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Train details and class selection — Indian Railways prototype</title>
+<meta name="description" content="Review the selected train, timings, route and class fares before entering passenger details." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <ol class="steps">
+    <li>1. Search</li><li aria-current="step">2. Select train</li><li>3. Passengers</li><li>4. Review</li><li>5. Confirm</li>
+  </ol>
+
+  <div class="two-col">
+    <section class="card card-pad" aria-labelledby="t-name">
+      <div class="spread" style="align-items:flex-start">
+        <div>
+          <h1 class="train-name" id="t-name">—</h1>
+          <p class="train-no mono" id="t-no"></p>
+        </div>
+        <a class="btn btn-quiet" href="results.html">← Back to results</a>
+      </div>
+
+      <div class="timeline" id="t-timeline"></div>
+
+      <h2 style="margin-top:8px">Choose a class</h2>
+      <p class="small muted" style="margin:4px 0 12px">Fares include reservation charges shown separately at review.</p>
+      <div class="class-grid" id="t-classes"></div>
+
+      <h2 style="margin-top:24px">Journey details</h2>
+      <dl class="kv" id="t-kv" style="margin-top:10px"></dl>
+
+      <p class="demo-tag" style="margin-top:20px">Demo data — availability and fares shown for prototype purposes.</p>
+    </section>
+
+    <aside class="card card-pad sticky" aria-label="Selection summary">
+      <h2>Your selection</h2>
+      <dl class="kv" id="t-side" style="margin-top:12px"></dl>
+      <button class="btn btn-primary btn-block" id="continue" style="margin-top:16px">Continue</button>
+      <p class="small muted" style="margin-top:10px">Next: passenger details. No payment is taken in this prototype.</p>
+    </aside>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/train.js"></script>
+</body>
+</html>

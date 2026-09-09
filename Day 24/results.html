@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Train search results — Indian Railways e-ticketing prototype</title>
+<meta name="description" content="Compare trains, fares and demo availability for your route with filters for departure time, train type, class and duration." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<div class="journey-bar">
+  <div class="wrap spread">
+    <div>
+      <h1 id="journey-title">Loading journey…</h1>
+      <p class="meta" id="journey-meta"></p>
+    </div>
+    <a class="btn btn-secondary" href="index.html">Modify search</a>
+  </div>
+</div>
+
+<main id="main" class="wrap section">
+  <ol class="steps">
+    <li aria-current="step">1. Search</li><li>2. Select train</li><li>3. Passengers</li><li>4. Review</li><li>5. Confirm</li>
+  </ol>
+
+  <section aria-labelledby="dates-title" style="margin-bottom:24px">
+    <h2 id="dates-title" class="label" style="margin-bottom:8px">Compare nearby dates <span class="demo-tag">(demo fares)</span></h2>
+    <div class="date-strip" id="date-strip"></div>
+  </section>
+
+  <div class="results-layout">
+    <aside>
+      <div class="filter-bar-mobile">
+        <button class="btn btn-secondary btn-block" id="filter-open" aria-expanded="false" aria-controls="filters">Filters &amp; sort</button>
+      </div>
+      <form class="card filter-panel" id="filters" aria-label="Filter trains">
+        <div class="spread" style="margin-bottom:8px">
+          <h2 style="font-size:1rem">Filters</h2>
+          <button type="button" class="btn btn-quiet btn-sm" id="filter-clear">Clear all</button>
+        </div>
+        <div class="filter-group">
+          <h3>Departure time</h3>
+          <label class="check"><input type="checkbox" name="dep" value="0-6" /> Before 06:00</label>
+          <label class="check"><input type="checkbox" name="dep" value="6-12" /> 06:00 – 12:00</label>
+          <label class="check"><input type="checkbox" name="dep" value="12-18" /> 12:00 – 18:00</label>
+          <label class="check"><input type="checkbox" name="dep" value="18-24" /> After 18:00</label>
+        </div>
+        <div class="filter-group">
+          <h3>Arrival time</h3>
+          <label class="check"><input type="checkbox" name="arr" value="0-6" /> Before 06:00</label>
+          <label class="check"><input type="checkbox" name="arr" value="6-12" /> 06:00 – 12:00</label>
+          <label class="check"><input type="checkbox" name="arr" value="12-18" /> 12:00 – 18:00</label>
+          <label class="check"><input type="checkbox" name="arr" value="18-24" /> After 18:00</label>
+        </div>
+        <div class="filter-group">
+          <h3>Train type</h3>
+          <div id="type-filters"></div>
+        </div>
+        <div class="filter-group">
+          <h3>Class</h3>
+          <div id="class-filters"></div>
+        </div>
+        <div class="filter-group">
+          <h3>Availability</h3>
+          <label class="check"><input type="checkbox" name="avail" value="ok" /> Available</label>
+          <label class="check"><input type="checkbox" name="avail" value="warn" /> Limited / RAC</label>
+        </div>
+        <div class="filter-group">
+          <h3>Journey duration</h3>
+          <label for="dur">Up to <output id="dur-out">24h</output></label>
+          <input type="range" id="dur" min="60" max="1800" step="30" value="1800" />
+        </div>
+        <div class="filter-group no-print">
+          <button type="button" class="btn btn-primary btn-block" id="filter-done">Show trains</button>
+        </div>
+      </form>
+    </aside>
+
+    <section aria-labelledby="results-title">
+      <h2 id="results-title" class="sr-only">Available trains</h2>
+      <div class="sortbar">
+        <span class="label">Sort by</span>
+        <div class="seg" role="group" aria-label="Sort trains">
+          <button type="button" data-sort="dep" aria-pressed="true">Departure</button>
+          <button type="button" data-sort="arr" aria-pressed="false">Arrival</button>
+          <button type="button" data-sort="dur" aria-pressed="false">Duration</button>
+          <button type="button" data-sort="price" aria-pressed="false">Price</button>
+        </div>
+        <p class="small muted" id="result-count" role="status" aria-live="polite"></p>
+      </div>
+      <div id="train-list"></div>
+      <p class="demo-tag" style="margin-top:16px">Demo data — availability and fares shown for prototype purposes.</p>
+    </section>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/results.js"></script>
+</body>
+</html>

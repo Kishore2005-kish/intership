@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My trips, cancellations and refunds — Indian Railways prototype</title>
+<meta name="description" content="View demo bookings made in this prototype, cancel eligible tickets and track refund status." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <h1>My trips</h1>
+  <p class="muted" style="margin-top:6px">Demo bookings you completed in this browser. Nothing is stored on a server.</p>
+  <div id="trips" style="margin-top:20px"></div>
+</main>
+
+<div class="modal-backdrop" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-title">
+  <div class="modal">
+    <h2 id="cancel-title">Cancel this ticket?</h2>
+    <p class="small muted" style="margin-top:8px" id="cancel-body"></p>
+    <div class="row" style="margin-top:20px;justify-content:flex-end">
+      <button class="btn btn-quiet" id="cancel-no">Keep ticket</button>
+      <button class="btn btn-danger" id="cancel-yes">Cancel ticket</button>
+    </div>
+  </div>
+</div>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/trips.js"></script>
+</body>
+</html>

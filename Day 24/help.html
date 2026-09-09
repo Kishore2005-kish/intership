@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Help and accessibility — Indian Railways e-ticketing prototype</title>
+<meta name="description" content="How the prototype works, what is demo data, and the accessibility choices behind this railway booking redesign." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <div style="max-width:760px">
+    <h1>Help</h1>
+
+    <div class="card card-pad" style="margin-top:20px">
+      <h2>Sign in is disabled in this prototype</h2>
+      <p class="small muted" style="margin-top:8px">No accounts, passwords or payment details are collected. Login and Register are shown only to represent the real product's navigation. Your searches, passengers and demo bookings are stored in this browser only and never leave your device.</p>
+    </div>
+
+    <div class="card card-pad" style="margin-top:16px">
+      <h2>What is real and what is demo data</h2>
+      <ul class="small" style="margin-top:8px;padding-left:18px;line-height:1.8">
+        <li><strong>Real:</strong> station names, station codes, train names and route corridors.</li>
+        <li><strong>Demo:</strong> fares, availability, PNR numbers, coach and berth allotment, and live running status.</li>
+        <li>No IRCTC API is used and no booking is submitted to Indian Railways.</li>
+      </ul>
+    </div>
+
+    <div class="card card-pad" style="margin-top:16px">
+      <h2>Accessibility</h2>
+      <ul class="small" style="margin-top:8px;padding-left:18px;line-height:1.8">
+        <li>Every control has a visible label and a visible keyboard focus ring.</li>
+        <li>Station search works with arrow keys, Enter and Escape.</li>
+        <li>Availability is never colour-only — it always reads as text, e.g. "Waitlist — WL 18".</li>
+        <li>Form errors are announced and focus moves to the first field that needs attention.</li>
+        <li>Layout reflows for small screens without horizontal scrolling.</li>
+      </ul>
+    </div>
+
+    <div class="card card-pad" style="margin-top:16px">
+      <h2>Frequently asked</h2>
+      <details style="margin-top:8px"><summary>Why is only one journey shown per search?</summary><p class="small muted" style="margin-top:8px">The prototype focuses on the direct-train comparison problem, which is where most passengers spend time.</p></details>
+      <details style="margin-top:8px"><summary>Can I cancel a demo booking?</summary><p class="small muted" style="margin-top:8px">Yes — open My Trips and cancel. A demo refund status appears against the booking.</p></details>
+      <details style="margin-top:8px"><summary>How do I clear my data?</summary><p class="small muted" style="margin-top:8px">Use the button below to remove everything this prototype stored in your browser.</p></details>
+      <button class="btn btn-secondary" id="clear" style="margin-top:16px">Clear prototype data</button>
+    </div>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+document.getElementById("clear").addEventListener("click", function () {
+  Object.values(STORE_KEYS).forEach(store.remove);
+  toast("Prototype data cleared from this browser");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UX case study — Indian Railways e-ticketing redesign</title>
+<meta name="description" content="Problems in the current railway booking experience, the UX improvements made in this redesign, and a before-and-after comparison." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header data-site-header></header>
+
+<main id="main" class="wrap section">
+  <div style="max-width:860px">
+    <h1>UX case study: railway e-ticketing redesign</h1>
+    <p class="muted" style="margin-top:8px">An independent redesign concept exploring how a national railway booking service can stay information-dense while feeling simple.</p>
+
+    <section class="card card-pad" style="margin-top:24px">
+      <h2>1. The existing problem</h2>
+      <ul class="small" style="margin-top:10px;padding-left:18px;line-height:1.9">
+        <li><strong>Information overload:</strong> dozens of services compete with the one task most people came for — booking a ticket.</li>
+        <li><strong>Flat navigation:</strong> PNR, refunds, tourism, food and hotels all sit at the same level as booking.</li>
+        <li><strong>Hard-to-scan results:</strong> train name, number, timings, classes, fare and availability are visually similar, so comparison is slow.</li>
+        <li><strong>Colour-only status:</strong> availability communicated mainly through colour is a barrier for low-vision and colour-blind passengers.</li>
+        <li><strong>Weak mobile reflow:</strong> desktop tables shrink instead of restructuring, forcing horizontal scrolling.</li>
+        <li><strong>Late error feedback:</strong> invalid passenger data is often caught only after submission.</li>
+      </ul>
+    </section>
+
+    <section class="card card-pad" style="margin-top:16px">
+      <h2>2. UX improvements in this redesign</h2>
+      <ul class="small" style="margin-top:10px;padding-left:18px;line-height:1.9">
+        <li><strong>Booking-first homepage:</strong> the search card is the visual centre; Search Trains is the single dominant call to action.</li>
+        <li><strong>Task-oriented navigation:</strong> Book, My Trips, Services, Help — with everything secondary grouped under Services (progressive disclosure).</li>
+        <li><strong>Scannable train cards:</strong> a fixed hierarchy of name and number, a departure–arrival timeline, duration, then class chips with fare and availability.</li>
+        <li><strong>Comparison tools:</strong> sorting by departure, arrival, duration and price, plus filters for time bands, train type, class, availability and duration.</li>
+        <li><strong>Date discovery:</strong> a nearby-date strip shows the cheapest fare and availability for surrounding days.</li>
+        <li><strong>Text-first status:</strong> "Available — 42 seats", "RAC 12", "Waitlist — WL 18" — colour reinforces, never carries meaning alone.</li>
+        <li><strong>Error prevention:</strong> station selection is constrained to the real station list; passenger fields validate inline with focus moved to the first problem.</li>
+        <li><strong>Trust and honesty:</strong> demo data is labelled on every surface that shows a fare, availability, PNR or running status.</li>
+      </ul>
+    </section>
+
+    <section class="card card-pad" style="margin-top:16px">
+      <h2>3. Implementation</h2>
+      <p class="small muted" style="margin-top:8px">Plain HTML, CSS and JavaScript. No frameworks, no build step, no external data calls — only a web font. State moves through the flow in browser storage.</p>
+      <pre style="overflow-x:auto;background:#f2f7fd;border:1px solid #cfe0f2;border-radius:6px;padding:14px;margin-top:12px;font-size:13px">Homepage → Search → Results → Train selection → Passenger details → Summary → Confirmation
+                        ↘ PNR status   ↘ Live train status   ↘ My trips / cancellation / refund</pre>
+    </section>
+
+    <section class="card card-pad" style="margin-top:16px">
+      <h2>4. Before and after</h2>
+      <table class="data" style="margin-top:10px">
+        <thead><tr><th>Issue</th><th>Before</th><th>After</th></tr></thead>
+        <tbody>
+          <tr><td>Primary task</td><td>Booking competes with promotions and services</td><td>Booking card owns the first screen</td></tr>
+          <tr><td>Navigation</td><td>Long flat list of every service</td><td>Four items, secondary services grouped</td></tr>
+          <tr><td>Train comparison</td><td>Dense uniform rows</td><td>Card hierarchy, timeline, class chips, sorting</td></tr>
+          <tr><td>Choosing a date</td><td>Repeat the search for each date</td><td>Nearby-date strip with fare and availability</td></tr>
+          <tr><td>Availability</td><td>Colour-coded codes</td><td>Plain-language text plus colour</td></tr>
+          <tr><td>Passenger form</td><td>Errors after submission</td><td>Inline validation, focus management</td></tr>
+          <tr><td>Mobile</td><td>Shrunken desktop tables</td><td>Stacked fields, vertical cards, filter sheet</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="demo-tag" style="margin-top:20px">Prototype only — not affiliated with IRCTC or the Ministry of Railways.</p>
+  </div>
+</main>
+
+<footer data-site-footer></footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/chrome.js"></script>
+</body>
+</html>
