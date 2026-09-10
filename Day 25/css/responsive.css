@@ -1,0 +1,257 @@
+/* ============================================================
+   responsive.css : breakpoints 1200 / 992 / 768 / 480 / 375
+   Mobile is re-laid-out, not shrunk.
+   ============================================================ */
+
+/* ---------- <= 1200px ---------- */
+@media (max-width: 1200px) {
+  :root {
+    --section-y: 88px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .header-phone {
+    display: none;
+  }
+
+  .split {
+    gap: 44px;
+  }
+
+  .card-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-form .field--action {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- <= 992px : tablet ---------- */
+@media (max-width: 992px) {
+  .nav,
+  .header-actions .btn {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .split,
+  .contact-grid,
+  .room-detail,
+  .card-grid--3,
+  .card-grid--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .split__media {
+    order: -1;
+  }
+
+  .split__stat {
+    right: 16px;
+  }
+
+  .masonry {
+    columns: 2;
+  }
+
+  .stay-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-head--split {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+
+  .booking-widget--float {
+    margin-top: 0;
+  }
+
+  .page-hero__inner {
+    padding-top: 140px;
+  }
+}
+
+/* ---------- <= 768px : large phone ---------- */
+@media (max-width: 768px) {
+  :root {
+    --section-y: 66px;
+    --gutter: 18px;
+  }
+
+  body {
+    padding-bottom: 72px; /* room for the sticky booking bar */
+  }
+
+  .book-bar {
+    display: flex;
+  }
+
+  .hero__inner {
+    padding: 150px 0 96px;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .hero__actions .btn,
+  .cta-band .btn {
+    flex: 1 1 100%;
+  }
+
+  .booking-widget {
+    padding: 24px 18px 20px;
+  }
+
+  .booking-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* horizontal scroll rails on phones */
+  .card-grid--rail {
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+  }
+
+  .card-grid--rail > * {
+    scroll-snap-align: start;
+  }
+
+  .modal {
+    padding: 0;
+  }
+
+  .modal__panel {
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+  }
+
+  .modal__body {
+    padding: 22px 18px 34px;
+  }
+
+  .rate-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rate-row__side {
+    text-align: left;
+    justify-items: start;
+  }
+
+  .rate-row img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .masonry {
+    columns: 1;
+  }
+
+  .confirm-card {
+    padding: 28px 20px;
+  }
+
+  .split__stat {
+    position: static;
+    max-width: none;
+    margin-top: -1px;
+  }
+
+  .lightbox__btn--prev {
+    left: 8px;
+  }
+  .lightbox__btn--next {
+    right: 8px;
+  }
+}
+
+/* ---------- <= 480px : phone ---------- */
+@media (max-width: 480px) {
+  body {
+    font-size: 15.5px;
+  }
+
+  .brand__mark {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand__sub {
+    font-size: 0.52rem;
+  }
+
+  .section-head {
+    margin-bottom: 34px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stay-summary,
+  .kv li,
+  .spec-list li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .steps {
+    gap: 8px 16px;
+    font-size: 0.66rem;
+  }
+
+  .panel {
+    padding: 22px 18px;
+  }
+
+  .mobile-nav__links a {
+    font-size: 1.45rem;
+  }
+}
+
+/* ---------- <= 375px : small phone ---------- */
+@media (max-width: 375px) {
+  .btn {
+    padding: 13px 18px;
+    font-size: 0.72rem;
+  }
+
+  .card__body {
+    padding: 18px;
+  }
+
+  .card-grid--rail {
+    grid-auto-columns: 86%;
+  }
+}

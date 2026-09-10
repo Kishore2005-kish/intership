@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lalitha Mahal Palace Hotel | Heritage Stay in Mysuru</title>
+    <meta
+      name="description"
+      content="Stay in a real Maharaja's palace. Lalitha Mahal Palace Hotel, built in 1931, overlooks the Chamundi Hills in Mysuru — heritage rooms and suites, palace dining, experiences and royal event spaces."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html" aria-label="Lalitha Mahal Palace Hotel, home">
+          <span class="brand__mark">Lalitha Mahal</span>
+          <span class="brand__sub">Palace Hotel · Mysuru</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="rooms.html">Stay</a>
+          <a href="experiences.html#dining">Dining</a>
+          <a href="experiences.html#facilities">Experiences</a>
+          <a href="events.html">Events</a>
+          <a href="experiences.html#heritage">Heritage</a>
+          <a href="experiences.html#gallery">Gallery</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-phone" href="tel:+918040554055">+91-80-40554055</a>
+          <a class="btn btn--primary btn--sm" href="booking.html">Book your stay</a>
+          <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE NAV ============ -->
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Site menu">
+      <div class="mobile-nav__top">
+        <span class="brand__mark">Lalitha Mahal</span>
+        <button class="mobile-nav__close" type="button" aria-label="Close menu">&#10005;</button>
+      </div>
+      <ul class="mobile-nav__links">
+        <li><a href="rooms.html">Stay</a></li>
+        <li><a href="experiences.html#dining">Dining</a></li>
+        <li><a href="experiences.html#facilities">Experiences</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="experiences.html#heritage">Heritage</a></li>
+        <li><a href="experiences.html#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="booking.html">Book your stay</a></li>
+      </ul>
+      <div class="mobile-nav__foot">
+        <a href="tel:+918040554055">Reservations · +91-80-40554055</a>
+        <a href="mailto:info@junglelodges.com">info@junglelodges.com</a>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero">
+        <div class="hero__media">
+          <img
+            src="assets/images/hero-palace.jpg"
+            alt="The Italianate facade of Lalitha Mahal Palace Hotel with its central dome and twin columns, seen across the palace lawns"
+            width="1920"
+            height="1080"
+          />
+        </div>
+        <div class="shell hero__inner">
+          <p class="hero__eyebrow">Mysuru, Karnataka · Since 1931</p>
+          <h1>Stay like royalty</h1>
+          <p class="hero__copy">Experience princely living in a real Maharaja's palace in Mysuru.</p>
+          <p class="hero__copy hero__copy--small">A historic palace overlooking the Chamundi Hills.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#plan">Book your stay</a>
+            <a class="btn btn--ghost" href="#heritage-intro">Explore the palace</a>
+          </div>
+        </div>
+        <a class="scroll-hint" href="#plan" aria-label="Scroll to the booking section">Scroll</a>
+      </section>
+
+      <!-- ============ BOOKING WIDGET ============ -->
+      <section class="section section--tight" id="plan" aria-labelledby="planTitle">
+        <div class="shell">
+          <div class="booking-widget booking-widget--float">
+            <div class="booking-widget__head">
+              <h2 id="planTitle">Plan your stay</h2>
+              <p class="note">Demo availability shown for prototype purposes.</p>
+            </div>
+            <form class="booking-form" id="stayForm" novalidate>
+              <div class="field">
+                <label for="checkin">Check-in</label>
+                <input type="date" id="checkin" name="checkin" required />
+                <p class="field__error" id="checkinError" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="checkout">Check-out</label>
+                <input type="date" id="checkout" name="checkout" required />
+                <p class="field__error" id="checkoutError" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="rooms">Rooms</label>
+                <select id="rooms" name="rooms">
+                  <option value="1">1 room</option>
+                  <option value="2">2 rooms</option>
+                  <option value="3">3 rooms</option>
+                  <option value="4">4 rooms</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="guests">Guests</label>
+                <select id="guests" name="guests">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests or more</option>
+                </select>
+              </div>
+              <div class="field field--action">
+                <button class="btn btn--forest btn--block" type="submit">Check availability</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HERITAGE INTRO ============ -->
+      <section class="section section--paper" id="heritage-intro">
+        <div class="shell split reveal">
+          <div class="split__media">
+            <img
+              src="assets/images/heritage-interior.jpg"
+              alt="Marble hallway of the palace with columns, a sweeping staircase, stained glass dome and royal portraits"
+              loading="lazy"
+              width="1200"
+              height="1400"
+            />
+            <p class="split__stat"><strong>1931</strong><span>The palace was built</span></p>
+          </div>
+          <div>
+            <p class="eyebrow">Heritage</p>
+            <h2>A palace with a story</h2>
+            <p class="lede">
+              Lalitha Mahal was commissioned by the erstwhile Maharaja of Mysore to host the palace's most
+              important guests, among them the Viceroy of India.
+            </p>
+            <ul class="fact-list">
+              <li>Built in 1931 at the foot of Chamundi Hill, overlooking the Chamundi Hills.</li>
+              <li>An Italianate palazzo with twin ionic columns, domes and a projecting porch.</li>
+              <li>A central dome above marble interiors, period furniture and royal portraits.</li>
+              <li>Terraced and landscaped gardens surrounding the palace.</li>
+            </ul>
+            <a class="link-arrow" href="experiences.html#heritage">Discover our heritage &#8594;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ROOMS ============ -->
+      <section class="section" id="stay">
+        <div class="shell">
+          <div class="section-head section-head--split reveal">
+            <div>
+              <p class="eyebrow">Rooms &amp; suites</p>
+              <h2>Sleep inside the palace</h2>
+              <p class="lede">
+                Rooms and suites within the palace building and grounds, from turret rooms to the 2000 sq ft
+                Viceroy Suite.
+              </p>
+            </div>
+            <a class="btn btn--outline" href="rooms.html">View all accommodation</a>
+          </div>
+          <div class="card-grid card-grid--4 card-grid--rail" id="featuredRooms"></div>
+          <p class="note" style="margin-top: 22px">
+            Indicative/demo tariff. Verify current rates during booking. Where a rate or size is not published,
+            the hotel confirms it directly.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCES ============ -->
+      <section class="section section--forest">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow">Experiences</p>
+            <h2>Experience the palace</h2>
+            <p class="lede">
+              Facilities and pastimes within the palace and its grounds — the same setting the palace was built
+              for.
+            </p>
+          </div>
+          <div class="card-grid card-grid--3 card-grid--rail reveal">
+            <article class="tile">
+              <img src="assets/images/exp-buggy.jpg" alt="An ornate horse-drawn royal buggy on the palace driveway" loading="lazy" />
+              <div class="tile__body">
+                <h3>Royal Buggy</h3>
+                <p>See the palace and its surroundings in a distinctly royal style.</p>
+              </div>
+            </article>
+            <article class="tile">
+              <img src="assets/images/exp-pool.jpg" alt="The outdoor swimming pool within the palace grounds" loading="lazy" />
+              <div class="tile__body">
+                <h3>Swimming Pool</h3>
+                <p>Relax within the palace grounds.</p>
+              </div>
+            </article>
+            <article class="tile">
+              <img src="assets/images/dining-bar.jpg" alt="A century-old billiards table in the wood-panelled lobby-level bar" loading="lazy" />
+              <div class="tile__body">
+                <h3>Billiards</h3>
+                <p>Play on a century-old table in the heritage setting of the palace.</p>
+              </div>
+            </article>
+          </div>
+          <ul class="chip-list reveal" style="margin-top: 26px">
+            <li>Tennis Court</li>
+            <li>Chess</li>
+            <li>Jogging Track</li>
+            <li>Health Club</li>
+            <li>Business Centre</li>
+            <li>Wi-Fi in public areas</li>
+            <li>Laundry</li>
+            <li>In-room dining</li>
+            <li>Money changer</li>
+            <li>Helipad</li>
+          </ul>
+          <p style="margin-top: 26px">
+            <a class="btn btn--ghost" href="experiences.html#facilities">Explore experiences</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ DINING ============ -->
+      <section class="section section--paper" id="dining">
+        <div class="shell">
+          <div class="section-head section-head--split reveal">
+            <div>
+              <p class="eyebrow">Dining</p>
+              <h2>Dine like royalty</h2>
+              <p class="lede">Three settings inside the palace, from the main restaurant to a candle-lit terrace.</p>
+            </div>
+            <a class="btn btn--outline" href="experiences.html#dining">Explore dining</a>
+          </div>
+          <div class="card-grid card-grid--3 card-grid--rail reveal">
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/dining-sapphire.jpg" alt="The Sapphire restaurant with white columns and linen-laid tables" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <h3>The Sapphire</h3>
+                <p class="card__meta"><span>96 covers</span><span>Alfresco &amp; private dining</span></p>
+                <p class="card__text">
+                  Indian, Continental and Chinese specialities, with live flute and tabla performances during lunch
+                  and dinner.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/dining-terrace.jpg" alt="A candle-lit dinner table on the palace terrace with the city and hills beyond" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <h3>Royal Terrace</h3>
+                <p class="card__meta"><span>First floor</span><span>Candle-lit dinner</span></p>
+                <p class="card__text">
+                  Panoramic views of Mysore from the first floor, and an exclusive candle-lit dinner experience.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/dining-bar.jpg" alt="The lobby-level bar with dark wood panelling and a heritage billiards table" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <h3>Cue Bar / Relax n Lounge Bar</h3>
+                <p class="card__meta"><span>Lobby level</span><span>Heritage ambience</span></p>
+                <p class="card__text">
+                  A lobby-level bar in a heritage ambience, with a century-old billiards table.
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="note" style="margin-top: 22px">
+            Restaurant timings are confirmed by the hotel — please call +91-0821-2526100 for current service hours.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ EVENTS ============ -->
+      <section class="section">
+        <div class="shell split reveal">
+          <div>
+            <p class="eyebrow">Weddings &amp; events</p>
+            <h2>Celebrate at the palace</h2>
+            <p class="lede">Weddings, conferences and celebrations in a truly royal setting.</p>
+            <ul class="fact-list">
+              <li>The Emerald Royal Ballroom for large celebrations.</li>
+              <li>The Coral Conference Room for meetings and smaller gatherings.</li>
+              <li>Front Lawns for outdoor ceremonies and receptions.</li>
+              <li>Customised wedding packages, event planning and cultural activities.</li>
+            </ul>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="events.html#enquiry">Plan your event</a>
+              <a class="btn btn--outline" href="events.html">See event spaces</a>
+            </div>
+          </div>
+          <div class="split__media">
+            <img
+              src="assets/images/events-ballroom.jpg"
+              alt="The palace ballroom laid out with round tables and chandeliers for a wedding reception"
+              loading="lazy"
+              width="1600"
+              height="1000"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DISCOVER MYSURU ============ -->
+      <section class="section section--paper">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow">Discover Mysuru</p>
+            <h2>A base for the royal city</h2>
+            <p class="lede">
+              The palace sits at the foot of Chamundi Hill, within reach of the city's landmarks and the forests
+              beyond.
+            </p>
+          </div>
+          <div class="card-grid card-grid--4 card-grid--rail reveal">
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/chamundi-hills.jpg" alt="Chamundi Hill with the temple at its summit above forested slopes" loading="lazy" />
+              </div>
+              <div class="card__body"><h3>Chamundi Hills</h3><p class="card__text">The hill the palace overlooks.</p></div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/mysuru-palace.jpg" alt="Mysuru Palace illuminated at dusk" loading="lazy" />
+              </div>
+              <div class="card__body"><h3>Mysuru Palace</h3><p class="card__text">The city's royal residence.</p></div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/gardens.jpg" alt="Terraced gardens and lawns" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <h3>Mysuru Zoo &amp; museums</h3>
+                <p class="card__text">Mysuru Zoo and the Regional Museum of Natural History.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="assets/images/nagarahole.jpg" alt="Elephants beside a lake in the forest at Nagarahole" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <h3>Nagarahole &amp; Somnathpur</h3>
+                <p class="card__text">Forest and temple excursions from the city.</p>
+              </div>
+            </article>
+          </div>
+          <p class="note" style="margin-top: 22px">
+            Distances to attractions are confirmed by the hotel — contact hotel for details.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ LOCATION / CONTACT ============ -->
+      <section class="section" id="contact">
+        <div class="shell contact-grid reveal">
+          <div>
+            <p class="eyebrow">Location</p>
+            <h2>Finding the palace</h2>
+            <ul class="contact-list">
+              <li>
+                <span>Address</span>
+                Lalitha Mahal Palace Hotel<br />
+                Lalitha Mahal Nagar<br />
+                Mysore – 570 028, Karnataka, India
+              </li>
+              <li><span>Reservations</span><a href="tel:+918040554055">+91-80-40554055</a></li>
+              <li>
+                <span>Hotel</span>
+                <a href="tel:+918212526100">+91-0821-2526100</a> ·
+                <a href="tel:+918212470444">+91-0821-2470444</a>
+              </li>
+              <li><span>Email</span><a href="mailto:info@junglelodges.com">info@junglelodges.com</a></li>
+            </ul>
+            <ul class="fact-list">
+              <li>15 km from Mysore Airport</li>
+              <li>8 km from Mysore Railway Station</li>
+              <li>Overlooking the Chamundi Hills</li>
+            </ul>
+            <a
+              class="btn btn--outline"
+              href="https://www.google.com/maps/search/?api=1&query=Lalitha+Mahal+Palace+Hotel%2C+Lalitha+Mahal+Nagar%2C+Mysore+570028%2C+Karnataka%2C+India"
+              target="_blank"
+              rel="noopener"
+              >Get directions</a
+            >
+          </div>
+          <div class="map-frame">
+            <img src="assets/images/gardens.jpg" alt="The terraced palace gardens with the hills of Mysuru behind" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FINAL CTA ============ -->
+      <section class="cta-band">
+        <img src="assets/images/detail-columns.jpg" alt="" aria-hidden="true" loading="lazy" />
+        <div class="shell cta-band__inner">
+          <p class="eyebrow" style="justify-content: center">Your stay</p>
+          <h2>Book a night in a Maharaja's palace</h2>
+          <p>Choose your dates and see the palace accommodation available for your stay.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="booking.html">Book your stay</a>
+            <a class="btn btn--ghost" href="tel:+918040554055">Call +91-80-40554055</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="brand__mark">Lalitha Mahal</span>
+            <p style="margin-top: 14px">
+              Lalitha Mahal Palace Hotel<br />
+              Lalitha Mahal Nagar<br />
+              Mysore – 570 028, Karnataka, India
+            </p>
+            <p>
+              Reservations <a href="tel:+918040554055">+91-80-40554055</a><br />
+              Hotel <a href="tel:+918212526100">+91-0821-2526100</a>,
+              <a href="tel:+918212470444">+91-0821-2470444</a><br />
+              <a href="mailto:info@junglelodges.com">info@junglelodges.com</a>
+            </p>
+          </div>
+          <nav aria-label="Footer">
+            <h2 class="footer-title">Explore</h2>
+            <ul class="footer-list">
+              <li><a href="rooms.html">Stay</a></li>
+              <li><a href="experiences.html#dining">Dining</a></li>
+              <li><a href="experiences.html#facilities">Experiences</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="experiences.html#heritage">Heritage</a></li>
+              <li><a href="experiences.html#gallery">Gallery</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2 class="footer-title">Guests</h2>
+            <ul class="footer-list">
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="booking.html">Book now</a></li>
+              <li><a href="events.html#enquiry">Event enquiry</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span data-year></span> Lalitha Mahal Palace Hotel, Mysuru.</p>
+          <p>Student UI/UX redesign prototype. Not the official website. No real reservations are created here.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- sticky mobile booking bar -->
+    <div class="book-bar">
+      <a class="btn btn--outline btn--sm" href="tel:+918040554055">Call</a>
+      <a class="btn btn--primary btn--sm" href="booking.html">Book your stay</a>
+    </div>
+
+    <!-- room detail modal -->
+    <div class="modal" id="roomModal" role="dialog" aria-modal="true" aria-labelledby="roomModalTitle" aria-hidden="true">
+      <div class="modal__panel">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close room details">&#10005;</button>
+        <div class="modal__body" data-room-body></div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/rooms.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>
