@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Your Stay | Lalitha Mahal Palace Hotel, Mysuru</title>
+    <meta
+      name="description"
+      content="Prototype booking flow for Lalitha Mahal Palace Hotel, Mysuru: choose dates, review demo palace availability, enter guest details and see a demonstration confirmation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="index.html" aria-label="Lalitha Mahal Palace Hotel, home">
+          <span class="brand__mark">Lalitha Mahal</span>
+          <span class="brand__sub">Palace Hotel · Mysuru</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="rooms.html">Stay</a>
+          <a href="experiences.html#dining">Dining</a>
+          <a href="experiences.html#facilities">Experiences</a>
+          <a href="events.html">Events</a>
+          <a href="experiences.html#heritage">Heritage</a>
+          <a href="experiences.html#gallery">Gallery</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-phone" href="tel:+918040554055">+91-80-40554055</a>
+          <a class="btn btn--primary btn--sm" href="booking.html" aria-current="page">Book your stay</a>
+          <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Site menu">
+      <div class="mobile-nav__top">
+        <span class="brand__mark">Lalitha Mahal</span>
+        <button class="mobile-nav__close" type="button" aria-label="Close menu">&#10005;</button>
+      </div>
+      <ul class="mobile-nav__links">
+        <li><a href="rooms.html">Stay</a></li>
+        <li><a href="experiences.html#dining">Dining</a></li>
+        <li><a href="experiences.html#facilities">Experiences</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="experiences.html#heritage">Heritage</a></li>
+        <li><a href="experiences.html#gallery">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="booking.html">Book your stay</a></li>
+      </ul>
+      <div class="mobile-nav__foot">
+        <a href="tel:+918040554055">Reservations · +91-80-40554055</a>
+        <a href="mailto:info@junglelodges.com">info@junglelodges.com</a>
+      </div>
+    </div>
+
+    <main id="main" class="plain-head">
+      <div class="shell" style="padding-top: 24px; padding-bottom: 40px">
+        <p class="crumbs" style="color: var(--gray-warm)"><a href="index.html">Home</a> · Book your stay</p>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem)">Book your stay</h1>
+        <p class="lede">
+          A prototype booking flow. Demo availability shown for prototype purposes — this does not show live hotel
+          availability and no real reservation is created.
+        </p>
+      </div>
+
+      <div class="shell section--tight" id="bookingFlow" style="padding-top: 0">
+        <ol class="steps">
+          <li data-step="1" aria-current="step">Availability</li>
+          <li data-step="2">Guest details</li>
+          <li data-step="3">Summary</li>
+          <li data-step="4">Confirmation</li>
+        </ol>
+
+        <!-- ============ STEP 1 : demo availability ============ -->
+        <section class="panel" id="step1" aria-labelledby="step1Title">
+          <div class="panel__head">
+            <h2 id="step1Title">Your stay</h2>
+            <p class="note">Demo availability shown for prototype purposes.</p>
+          </div>
+
+          <form class="booking-form" id="editStayForm" novalidate>
+            <div class="field">
+              <label for="ecu">Check-in</label>
+              <input type="date" id="ecu" name="checkin" required />
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="eco">Check-out</label>
+              <input type="date" id="eco" name="checkout" required />
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="erooms">Rooms</label>
+              <select id="erooms" name="rooms">
+                <option value="1">1 room</option>
+                <option value="2">2 rooms</option>
+                <option value="3">3 rooms</option>
+                <option value="4">4 rooms</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="eguests">Guests</label>
+              <select id="eguests" name="guests">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests or more</option>
+              </select>
+            </div>
+            <div class="field field--action">
+              <button class="btn btn--forest btn--block" type="submit">Update stay</button>
+            </div>
+          </form>
+
+          <div class="stay-summary" data-stay-strip style="margin-top: 26px"></div>
+
+          <p class="callout">
+            Indicative/demo tariff. Verify current rates during booking. The official website lists INR 30,000 for
+            the Duplex Suite and INR 40,000 for the Viceroy Suite, taxes separate where stated. Other categories are
+            confirmed by the hotel.
+          </p>
+
+          <div id="availabilityList"></div>
+        </section>
+
+        <!-- ============ STEP 2 : guest details ============ -->
+        <section class="panel" id="step2" aria-labelledby="step2Title" hidden>
+          <div class="panel__head">
+            <h2 id="step2Title">Guest details</h2>
+            <p class="note">Selected: <strong data-chosen-room></strong></p>
+          </div>
+
+          <div class="stay-summary" data-stay-strip></div>
+
+          <form id="guestForm" class="form-grid" novalidate>
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input type="text" id="fullName" name="fullName" autocomplete="name" required />
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="gemail">Email</label>
+              <input type="email" id="gemail" name="email" autocomplete="email" required />
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="gphone">Phone</label>
+              <input type="tel" id="gphone" name="phone" autocomplete="tel" required />
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="requests">Requests (optional)</label>
+              <input type="text" id="requests" name="requests" />
+            </div>
+            <div class="form-grid--full">
+              <p class="note" style="margin-bottom: 16px">
+                No card details are collected. This prototype never processes payments.
+              </p>
+              <div class="card__actions">
+                <button class="btn btn--outline" type="button" data-goto-step="1">Back to availability</button>
+                <button class="btn btn--primary" type="submit">Continue to summary</button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- ============ STEP 3 : summary ============ -->
+        <section class="panel" id="step3" aria-labelledby="step3Title" hidden>
+          <div class="panel__head">
+            <h2 id="step3Title">Booking summary</h2>
+            <p class="note">Nothing is sent to the hotel.</p>
+          </div>
+          <ul class="kv" id="reviewList"></ul>
+          <div class="card__actions" style="margin-top: 26px">
+            <button class="btn btn--outline" type="button" data-goto-step="2">Back to guest details</button>
+            <button class="btn btn--primary" type="button" id="confirmBooking">Confirm prototype booking</button>
+          </div>
+        </section>
+
+        <!-- ============ STEP 4 : demo confirmation ============ -->
+        <section class="panel" id="step4" aria-labelledby="step4Title" hidden style="border: 0; padding: 0">
+          <div class="confirm-card">
+            <svg class="confirm-tick" viewBox="0 0 66 66" aria-hidden="true">
+              <circle cx="33" cy="33" r="30" />
+              <path d="M20 34.5 L29.5 44 L46 25" />
+            </svg>
+            <p class="eyebrow" style="justify-content: center">Prototype booking confirmed</p>
+
+            <h2 id="step4Title">Thank you</h2>
+            <p>This is a demonstration. No real reservation has been created.</p>
+            <p class="confirm-card__code" id="bookingRef"></p>
+            <p class="note" id="confirmRecap"></p>
+            <p class="callout" style="margin-top: 26px; text-align: left">
+              To make a real reservation, call +91-80-40554055 or write to info@junglelodges.com. Rates and
+              availability are confirmed by the hotel.
+            </p>
+            <div class="card__actions" style="justify-content: center">
+              <a class="btn btn--outline" href="rooms.html">Back to rooms</a>
+              <a class="btn btn--primary" href="index.html">Return home</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="brand__mark">Lalitha Mahal</span>
+            <p style="margin-top: 14px">
+              Lalitha Mahal Palace Hotel<br />
+              Lalitha Mahal Nagar<br />
+              Mysore – 570 028, Karnataka, India
+            </p>
+            <p>
+              Reservations <a href="tel:+918040554055">+91-80-40554055</a><br />
+              Hotel <a href="tel:+918212526100">+91-0821-2526100</a>,
+              <a href="tel:+918212470444">+91-0821-2470444</a><br />
+              <a href="mailto:info@junglelodges.com">info@junglelodges.com</a>
+            </p>
+          </div>
+          <nav aria-label="Footer">
+            <h2 class="footer-title">Explore</h2>
+            <ul class="footer-list">
+              <li><a href="rooms.html">Stay</a></li>
+              <li><a href="experiences.html#dining">Dining</a></li>
+              <li><a href="experiences.html#facilities">Experiences</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="experiences.html#heritage">Heritage</a></li>
+              <li><a href="experiences.html#gallery">Gallery</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2 class="footer-title">Guests</h2>
+            <ul class="footer-list">
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="booking.html">Book now</a></li>
+              <li><a href="events.html#enquiry">Event enquiry</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span data-year></span> Lalitha Mahal Palace Hotel, Mysuru.</p>
+          <p>Student UI/UX redesign prototype. Not the official website. No real reservations are created here.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="roomModal" role="dialog" aria-modal="true" aria-labelledby="roomModalTitle" aria-hidden="true">
+      <div class="modal__panel">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close room details">&#10005;</button>
+        <div class="modal__body" data-room-body></div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/rooms.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>
