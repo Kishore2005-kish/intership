@@ -1,0 +1,761 @@
+/* ========================================
+GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #050505;
+color: #f5f5f5;
+min-height: 100vh;
+}
+
+/* ========================================
+HEADER
+======================================== */
+
+.header {
+padding: 80px 20px 60px;
+text-align: center;
+}
+
+.header-content {
+max-width: 750px;
+margin: auto;
+}
+
+.eyebrow {
+display: inline-block;
+
+margin-bottom: 18px;
+padding: 7px 14px;
+border: 1px solid #e10600;
+border-radius: 50px;
+color: #e10600;
+font-size: 11px;
+font-weight: bold;
+letter-spacing: 1.5px;
+
+}
+
+.header h1 {
+font-size: clamp(38px, 6vw, 64px);
+line-height: 1.05;
+
+margin-bottom: 18px;
+letter-spacing: -2px;
+
+}
+
+.header p {
+color: #a3a3a3;
+
+font-size: 17px;
+line-height: 1.7;
+
+}
+
+/* ========================================
+ANIMATION GRID
+======================================== */
+
+.animation-container {
+width: 90%;
+max-width: 1150px;
+
+margin: auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 24px;
+padding-bottom: 70px;
+
+}
+
+/* ========================================
+ANIMATION CARD
+======================================== */
+
+.animation-card {
+background: #0d0d0d;
+
+border: 1px solid #262626;
+border-radius: 16px;
+padding: 24px;
+transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+.animation-card:hover {
+transform: translateY(-5px);
+
+border-color: #e10600;
+box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.5);
+
+}
+
+/* ========================================
+CARD HEADER
+======================================== */
+
+.card-header {
+min-height: 125px;
+}
+
+.category {
+display: inline-block;
+
+margin-bottom: 10px;
+color: #e10600;
+font-size: 10px;
+font-weight: bold;
+letter-spacing: 1.3px;
+
+}
+
+.card-header h2 {
+font-size: 22px;
+
+margin-bottom: 8px;
+color: #f5f5f5;
+
+}
+
+.card-header p {
+color: #8f8f8f;
+
+font-size: 14px;
+line-height: 1.6;
+max-width: 500px;
+
+}
+
+/* ========================================
+ANIMATION AREA
+======================================== */
+
+.animation-area {
+height: 190px;
+
+margin-top: 10px;
+background: #050505;
+border: 1px solid #202020;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+
+}
+
+/* ========================================
+COMMON BOX
+======================================== */
+
+.box {
+width: 70px;
+height: 70px;
+
+background: #e10600;
+border-radius: 10px;
+box-shadow:
+    0 10px 30px rgba(225, 6, 0, 0.18);
+
+}
+
+/* ========================================
+01 - FADE IN
+======================================== */
+
+.fade-in {
+animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+
+}
+
+/* ========================================
+02 - SLIDE IN
+======================================== */
+
+.slide-in {
+animation: slideIn 1.5s ease;
+}
+
+@keyframes slideIn {
+
+from {
+    transform: translateX(-150px);
+}
+to {
+    transform: translateX(0);
+}
+
+}
+
+/* ========================================
+03 - SCALE
+======================================== */
+
+.scale-animation {
+animation: scaleAnimation 1.5s ease;
+}
+
+@keyframes scaleAnimation {
+
+from {
+    transform: scale(0);
+}
+to {
+    transform: scale(1);
+}
+
+}
+
+/* ========================================
+04 - ROTATE
+======================================== */
+
+.rotate-animation {
+animation: rotateAnimation 1.5s ease;
+}
+
+@keyframes rotateAnimation {
+
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+
+}
+
+/* ========================================
+05 - BOUNCE
+======================================== */
+
+.bounce-animation {
+animation: bounce 1.5s ease;
+}
+
+@keyframes bounce {
+
+0% {
+    transform: translateY(0);
+}
+30% {
+    transform: translateY(-80px);
+}
+50% {
+    transform: translateY(0);
+}
+70% {
+    transform: translateY(-40px);
+}
+100% {
+    transform: translateY(0);
+}
+
+}
+
+/* ========================================
+06 - PULSE
+======================================== */
+
+.pulse-animation {
+animation: pulse 1.5s ease;
+}
+
+@keyframes pulse {
+
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.25);
+}
+100% {
+    transform: scale(1);
+}
+
+}
+
+/* ========================================
+07 - SHAKE
+======================================== */
+
+.shake-animation {
+animation: shake 0.8s ease;
+}
+
+@keyframes shake {
+
+0% {
+    transform: translateX(0);
+}
+20% {
+    transform: translateX(-10px);
+}
+40% {
+    transform: translateX(10px);
+}
+60% {
+    transform: translateX(-10px);
+}
+80% {
+    transform: translateX(10px);
+}
+100% {
+    transform: translateX(0);
+}
+
+}
+
+/* ========================================
+08 - SWING
+======================================== */
+
+.swing-animation {
+transform-origin: top center;
+
+animation: swing 1.5s ease;
+
+}
+
+@keyframes swing {
+
+0% {
+    transform: rotate(0deg);
+}
+20% {
+    transform: rotate(15deg);
+}
+40% {
+    transform: rotate(-10deg);
+}
+60% {
+    transform: rotate(8deg);
+}
+80% {
+    transform: rotate(-5deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+
+}
+
+/* ========================================
+09 - FLIP CARD
+======================================== */
+
+.flip-card {
+width: 110px;
+height: 110px;
+
+perspective: 1000px;
+
+}
+
+.flip-card-inner {
+width: 100%;
+height: 100%;
+
+position: relative;
+transform-style: preserve-3d;
+animation: flipCard 2s ease;
+
+}
+
+.flip-card-front,
+.flip-card-back {
+position: absolute;
+
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 12px;
+font-size: 13px;
+font-weight: bold;
+backface-visibility: hidden;
+
+}
+
+.flip-card-front {
+background: #f5f5f5;
+color: #050505;
+}
+
+.flip-card-back {
+background: #e10600;
+color: #ffffff;
+
+transform: rotateY(180deg);
+
+}
+
+@keyframes flipCard {
+
+0% {
+    transform: rotateY(0deg);
+}
+100% {
+    transform: rotateY(180deg);
+}
+
+}
+
+/* ========================================
+10 - LOADING SPINNER
+======================================== */
+
+.spinner {
+width: 60px;
+height: 60px;
+
+border: 5px solid #262626;
+border-top: 5px solid #e10600;
+border-radius: 50%;
+animation: spinner 1s linear infinite;
+
+}
+
+@keyframes spinner {
+
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+
+}
+
+/* ========================================
+11 - TYPING EFFECT
+======================================== */
+
+#typing-text {
+max-width: 90%;
+
+font-size: 19px;
+font-weight: bold;
+color: #f5f5f5;
+border-right: 3px solid #e10600;
+padding-right: 5px;
+
+}
+
+/* ========================================
+12 - GRADIENT ANIMATION
+======================================== */
+
+.gradient-box {
+width: 200px;
+height: 90px;
+
+border-radius: 14px;
+background: linear-gradient(
+    120deg,
+    #050505,
+    #e10600,
+    #8b0000,
+    #050505
+);
+background-size: 300% 300%;
+animation: gradientMove 3s ease infinite;
+
+}
+
+@keyframes gradientMove {
+
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+
+}
+
+/* ========================================
+13 - BUTTON HOVER
+======================================== */
+
+button {
+margin-top: 20px;
+
+padding: 11px 20px;
+border: 1px solid #e10600;
+border-radius: 8px;
+background: #e10600;
+color: #ffffff;
+font-size: 13px;
+font-weight: bold;
+cursor: pointer;
+transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+button:hover {
+transform: translateY(-4px);
+
+background: #ff160f;
+box-shadow:
+    0 10px 25px rgba(225, 6, 0, 0.25);
+
+}
+
+button:active {
+transform: translateY(0);
+}
+
+/* ========================================
+DEMO BUTTON
+======================================== */
+
+.demo-button {
+margin-top: 0;
+}
+
+/* ========================================
+14 - CARD HOVER
+======================================== */
+
+.hover-box {
+width: 150px;
+height: 80px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+background: #f5f5f5;
+border: 1px solid #ffffff;
+border-radius: 12px;
+color: #050505;
+font-size: 14px;
+font-weight: bold;
+cursor: pointer;
+transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+
+}
+
+.hover-box:hover {
+transform: translateY(-10px) scale(1.05);
+
+background: #e10600;
+color: #ffffff;
+border-color: #e10600;
+box-shadow:
+    0 15px 30px rgba(225, 6, 0, 0.2);
+
+}
+
+/* ========================================
+FOOTER
+======================================== */
+
+.footer {
+border-top: 1px solid #1f1f1f;
+
+padding: 25px;
+text-align: center;
+color: #666666;
+font-size: 13px;
+
+}
+
+/* ========================================
+RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+
+.animation-container {
+    grid-template-columns: 1fr;
+    width: 92%;
+}
+.header {
+    padding-top: 60px;
+}
+
+}
+
+@media (max-width: 500px) {
+
+.header {
+    padding: 50px 18px 40px;
+}
+.header h1 {
+    font-size: 38px;
+}
+.header p {
+    font-size: 15px;
+}
+.animation-container {
+    width: 94%;
+}
+.animation-card {
+    padding: 18px;
+}
+.animation-area {
+    height: 170px;
+}
+.card-header {
+    min-height: auto;
+}
+.card-header h2 {
+    font-size: 20px;
+}
+.card-header p {
+    font-size: 13px;
+}
+
+}
+.header-actions {
+    margin-top: 30px;
+}
+
+.replay-all-button {
+    margin-top: 0;
+
+    padding: 13px 24px;
+
+    background: #f5f5f5;
+    color: #050505;
+
+    border: none;
+}
+
+.replay-all-button:hover {
+    background: #e10600;
+    color: #ffffff;
+}
+.zoom-in-animation {
+    animation: zoomIn 1.2s ease;
+}
+
+@keyframes zoomIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.slide-up-animation {
+    animation: slideUp 1.2s ease;
+}
+
+@keyframes slideUp {
+
+    from {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.rubber-band-animation {
+    animation: rubberBand 1.2s ease;
+}
+
+@keyframes rubberBand {
+
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+.heartbeat-animation {
+    animation: heartbeat 1.2s ease;
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.2);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

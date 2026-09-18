@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Showcase</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="header-content">
+        <span class="eyebrow">INTERNSHIP TASK</span>
+        <h1>Animation Showcase</h1>
+        <p>
+            A collection of animations implemented using
+            HTML, CSS and JavaScript.
+        </p>
+        <div class="header-actions">
+    <button class="replay-all-button" onclick="replayAllAnimations()">
+        Replay All
+    </button>
+</div>
+    </div>
+</header>
+<!-- Animation Collection -->
+<main class="animation-container">
+    <!-- 01 Fade In -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS KEYFRAME</span>
+            <h2>Fade In</h2>
+            <p>
+                Gradually changes the opacity of an element
+                from invisible to visible.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box fade-in"></div>
+        </div>
+        <button onclick="replayAnimation('fade-in')">
+            Replay
+        </button>
+    </section>
+    <!-- 02 Slide In -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS TRANSFORM</span>
+            <h2>Slide In</h2>
+            <p>
+                Moves an element horizontally into its
+                final position.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box slide-in"></div>
+        </div>
+        <button onclick="replayAnimation('slide-in')">
+            Replay
+        </button>
+    </section>
+    <!-- 03 Scale -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS TRANSFORM</span>
+            <h2>Scale</h2>
+            <p>
+                Changes the size of an element using
+                the scale transform.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box scale-animation"></div>
+        </div>
+        <button onclick="replayAnimation('scale-animation')">
+            Replay
+        </button>
+    </section>
+    <!-- 04 Rotate -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS TRANSFORM</span>
+            <h2>Rotate</h2>
+            <p>
+                Rotates an element around its center
+                using the rotate transform.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box rotate-animation"></div>
+        </div>
+        <button onclick="replayAnimation('rotate-animation')">
+            Replay
+        </button>
+    </section>
+    <!-- 05 Bounce -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS KEYFRAME</span>
+            <h2>Bounce</h2>
+            <p>
+                Simulates a bouncing motion using
+                multiple keyframe positions.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box bounce-animation"></div>
+        </div>
+        <button onclick="replayAnimation('bounce-animation')">
+            Replay
+        </button>
+    </section>
+    <!-- 06 Pulse -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS KEYFRAME</span>
+            <h2>Pulse</h2>
+            <p>
+                Repeatedly increases and decreases
+                the size of an element.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box pulse-animation"></div>
+        </div>
+        <button onclick="replayAnimation('pulse-animation')">
+            Replay
+        </button>
+    </section>
+    <!-- 07 Shake -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS KEYFRAME</span>
+            <h2>Shake</h2>
+            <p>
+                Quickly moves an element from side
+                to side to create a shake effect.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box shake-animation"></div>
+        </div>
+        <button onclick="replayAnimation('shake-animation')">
+            Replay
+        </button>
+    </section>
+    <!-- 08 Swing -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS KEYFRAME</span>
+            <h2>Swing</h2>
+            <p>
+                Rotates an element around a fixed
+                transform origin like a swinging object.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="box swing-animation"></div>
+        </div>
+        <button onclick="replayAnimation('swing-animation')">
+            Replay
+        </button>
+    </section>
+    <!-- 09 Flip Card -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS 3D</span>
+            <h2>Flip Card</h2>
+            <p>
+                Creates a 3D card rotation using
+                rotateY and perspective.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        FRONT
+                    </div>
+                    <div class="flip-card-back">
+                        BACK
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="replayAnimation('flip-card-inner')">
+            Replay
+        </button>
+    </section>
+    <!-- 10 Loading Spinner -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS KEYFRAME</span>
+            <h2>Loading Spinner</h2>
+            <p>
+                Continuously rotates a circular element
+                to represent a loading state.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="spinner"></div>
+        </div>
+    </section>
+    <!-- 11 Typing Effect -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">JAVASCRIPT</span>
+            <h2>Typing Effect</h2>
+            <p>
+                Displays text character by character
+                using JavaScript.
+            </p>
+        </div>
+        <div class="animation-area">
+            <p id="typing-text"></p>
+        </div>
+        <button onclick="typingEffect()">
+            Replay
+        </button>
+    </section>
+    <!-- 12 Gradient Animation -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS BACKGROUND</span>
+            <h2>Gradient Animation</h2>
+            <p>
+                Animates a gradient by continuously
+                changing its background position.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="gradient-box"></div>
+        </div>
+    </section>
+    <!-- 13 Button Hover -->
+    <section class="animation-card">
+        <div class="card-header">
+            <span class="category">CSS TRANSITION</span>
+            <h2>Button Hover</h2>
+            <p>
+                Changes the position and shadow of
+                a button when the cursor hovers over it.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <button class="demo-button">
+                Hover Me
+            </button>
+        </div>
+    </section>
+    <!-- 14 Card Hover -->
+    <section class="animation-card hover-demo-card">
+        <div class="card-header">
+            <span class="category">CSS TRANSITION</span>
+            <h2>Card Hover</h2>
+            <p>
+                Creates a smooth lifting effect when
+                the cursor moves over the card.
+            </p>
+            <br>
+        </div>
+        <div class="animation-area">
+            <div class="hover-box">
+                Hover Me
+            </div>
+        </div>
+    </section>
+    <!-- 15 Zoom In -->
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">CSS KEYFRAME</span>
+
+        <h2>Zoom In</h2>
+
+        <p>
+            Combines scaling and opacity to create
+            a smooth zoom-in entrance effect.
+        </p>
+        <br>
+    </div>
+
+    <div class="animation-area">
+        <div class="box zoom-in-animation"></div>
+    </div>
+
+    <button onclick="replayAnimation('zoom-in-animation')">
+        Replay
+    </button>
+
+</section>
+<!-- 16 Slide Up -->
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">CSS TRANSFORM</span>
+
+        <h2>Slide Up</h2>
+
+        <p>
+            Moves an element vertically from below
+            into its final position.
+        </p>
+        <br>
+    </div>
+
+    <div class="animation-area">
+        <div class="box slide-up-animation"></div>
+    </div>
+
+    <button onclick="replayAnimation('slide-up-animation')">
+        Replay
+    </button>
+
+</section>
+<!-- 17 Rubber Band -->
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">COMPLEX KEYFRAME</span>
+
+        <h2>Rubber Band</h2>
+
+        <p>
+            Stretches and compresses an element to
+            simulate a flexible rubber-band effect.
+        </p>
+        <br>
+    </div>
+
+    <div class="animation-area">
+        <div class="box rubber-band-animation"></div>
+    </div>
+
+    <button onclick="replayAnimation('rubber-band-animation')">
+        Replay
+    </button>
+
+</section>
+<!-- 18 Heartbeat -->
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">CSS KEYFRAME</span>
+
+        <h2>Heartbeat</h2>
+
+        <p>
+            Uses rapid scaling changes to reproduce
+            a heartbeat-like rhythm.
+        </p>
+        <br>
+    </div>
+
+    <div class="animation-area">
+        <div class="box heartbeat-animation"></div>
+    </div>
+
+    <button onclick="replayAnimation('heartbeat-animation')">
+        Replay
+    </button>
+
+</section>
+</main>
+<!-- Footer -->
+<footer class="footer">
+    <p>
+        Built with HTML, CSS & JavaScript
+    </p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
