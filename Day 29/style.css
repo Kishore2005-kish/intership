@@ -759,3 +759,1079 @@ RESPONSIVE
         transform: scale(1);
     }
 }
+/* ========================================
+   21 - MORPHING SHAPE
+======================================== */
+
+.morph-shape {
+    width: 85px;
+    height: 85px;
+
+    background: #e10600;
+
+    border-radius: 15px;
+
+    animation: morphShape 4s ease-in-out infinite;
+}
+
+@keyframes morphShape {
+
+    0% {
+        border-radius: 15px;
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        border-radius: 50%;
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    50% {
+        border-radius: 10px 50% 50% 10px;
+        transform: rotate(180deg) scale(0.9);
+    }
+
+    75% {
+        border-radius: 50% 10px 50% 10px;
+        transform: rotate(270deg) scale(1.1);
+    }
+
+    100% {
+        border-radius: 15px;
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
+/* ========================================
+   22 - 3D CUBE
+======================================== */
+
+.cube-area {
+    perspective: 800px;
+}
+
+.cube {
+    width: 90px;
+    height: 90px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    animation: rotateCube 6s linear infinite;
+}
+
+.cube-face {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e10600;
+
+    border: 2px solid #ffffff;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    opacity: 0.95;
+}
+
+.cube-front {
+    transform: translateZ(45px);
+}
+
+.cube-back {
+    transform: rotateY(180deg) translateZ(45px);
+}
+
+.cube-right {
+    transform: rotateY(90deg) translateZ(45px);
+}
+
+.cube-left {
+    transform: rotateY(-90deg) translateZ(45px);
+}
+
+.cube-top {
+    transform: rotateX(90deg) translateZ(45px);
+}
+
+.cube-bottom {
+    transform: rotateX(-90deg) translateZ(45px);
+}
+
+@keyframes rotateCube {
+
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+
+/* ========================================
+   23 - 3D CARD TILT
+======================================== */
+
+.tilt-card {
+    width: 170px;
+    height: 110px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e10600,
+            #050505
+        );
+
+    border: 1px solid #e10600;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.15s ease;
+
+    cursor: pointer;
+}
+
+.tilt-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    transform: translateZ(35px);
+}
+
+.tilt-content span {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+}
+
+.tilt-content strong {
+    font-size: 20px;
+
+    color: #ffffff;
+}
+
+.tilt-content small {
+    color: #dddddd;
+
+    font-size: 10px;
+}
+
+
+/* ========================================
+   24 - MAGNETIC BUTTON
+======================================== */
+
+.magnetic-button {
+    margin: 0;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.magnetic-button:hover {
+    background: #e10600;
+}
+
+
+/* ========================================
+   25 - SCROLL REVEAL
+======================================== */
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.scroll-reveal {
+    opacity: 0;
+
+    transform: translateY(80px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.reveal-content {
+    padding: 25px 40px;
+
+    background: #e10600;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    transform: scale(0.75);
+
+    opacity: 0;
+
+    transition:
+        transform 0.8s ease 0.2s,
+        opacity 0.8s ease 0.2s;
+}
+
+.scroll-reveal.visible .reveal-content {
+    transform: scale(1);
+
+    opacity: 1;
+}
+
+/* ========================================
+   26 - STAGGERED TEXT
+======================================== */
+
+.stagger-text {
+    display: flex;
+
+    overflow: hidden;
+
+    font-size: 30px;
+
+    letter-spacing: 4px;
+}
+
+.stagger-letter {
+    display: inline-block;
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    animation:
+        staggerLetter 0.5s ease forwards;
+}
+
+@keyframes staggerLetter {
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   27 - PROGRESS BARS
+======================================== */
+
+.progress-area {
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    align-items: stretch;
+
+    justify-content: center;
+}
+
+.progress-item {
+    width: 100%;
+}
+
+.progress-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+
+    color: #cccccc;
+
+    font-size: 11px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 7px;
+
+    background: #262626;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+
+    background: #e10600;
+
+    border-radius: 10px;
+
+    transition:
+        width 1.2s cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        );
+}
+
+
+/* ========================================
+   28 - PARTICLE SYSTEM
+======================================== */
+
+.particle-area {
+    position: relative;
+
+    padding: 0;
+}
+
+#particle-canvas {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    cursor: crosshair;
+}
+
+
+/* ========================================
+   29 - RIPPLE CLICK
+======================================== */
+
+.ripple-button {
+    position: relative;
+
+    overflow: hidden;
+
+    margin: 0;
+}
+
+.ripple {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.5
+    );
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    pointer-events: none;
+
+    animation:
+        rippleEffect 0.7s ease-out;
+}
+
+@keyframes rippleEffect {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            scale(12);
+
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   30 - MODAL
+======================================== */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(
+        0,
+        0,
+        0,
+        0.8
+    );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.modal {
+    width: min(
+        90%,
+        450px
+    );
+
+    padding: 35px;
+
+    background: #0d0d0d;
+
+    border: 1px solid #e10600;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    transform:
+        translateY(30px)
+        scale(0.85);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(
+            0.34,
+            1.56,
+            0.64,
+            1
+        );
+}
+
+.modal-overlay.active .modal {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.modal h2 {
+    margin-bottom: 12px;
+
+    font-size: 28px;
+}
+
+.modal p {
+    color: #999999;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.modal-close {
+    margin-top: 25px;
+}
+
+
+/* ========================================
+   RESPONSIVE ADVANCED ANIMATIONS
+======================================== */
+
+@media (max-width: 500px) {
+
+    .tilt-card {
+        width: 150px;
+        height: 100px;
+    }
+
+    .stagger-text {
+        font-size: 23px;
+
+        letter-spacing: 2px;
+    }
+
+    .progress-area {
+        padding: 18px;
+    }
+}
+/* ========================================
+   31 - TEXT GLITCH
+======================================== */
+
+.glitch-text {
+    position: relative;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    animation: glitchBase 2s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.glitch-text::before {
+    color: #e10600;
+    transform: translate(-3px, 0);
+    clip-path: inset(20% 0 60% 0);
+    animation: glitchTop 1.8s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    color: #ffffff;
+    transform: translate(3px, 0);
+    clip-path: inset(60% 0 10% 0);
+    animation: glitchBottom 1.4s infinite linear alternate-reverse;
+}
+
+@keyframes glitchBase {
+    0%, 90%, 100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-2px, 1px);
+    }
+
+    94% {
+        transform: translate(2px, -1px);
+    }
+}
+
+@keyframes glitchTop {
+    0% { clip-path: inset(10% 0 80% 0); }
+    25% { clip-path: inset(50% 0 30% 0); }
+    50% { clip-path: inset(20% 0 60% 0); }
+    75% { clip-path: inset(70% 0 10% 0); }
+    100% { clip-path: inset(30% 0 50% 0); }
+}
+
+@keyframes glitchBottom {
+    0% { clip-path: inset(70% 0 10% 0); }
+    25% { clip-path: inset(30% 0 50% 0); }
+    50% { clip-path: inset(60% 0 20% 0); }
+    75% { clip-path: inset(10% 0 70% 0); }
+    100% { clip-path: inset(50% 0 30% 0); }
+}
+
+
+/* ========================================
+   32 - NEON SCANLINE
+======================================== */
+
+.scan-screen {
+    position: relative;
+    width: 230px;
+    height: 130px;
+    border: 1px solid #e10600;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #080808 0px,
+            #080808 3px,
+            #101010 4px
+        );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.scan-screen span {
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background: #e10600;
+    box-shadow:
+        0 0 8px #e10600,
+        0 0 20px #e10600;
+    animation: scanLine 2.2s linear infinite;
+}
+
+@keyframes scanLine {
+    0% {
+        top: -5px;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+
+/* ========================================
+   33 - LIQUID BLOB
+======================================== */
+
+.liquid-blob {
+    width: 100px;
+    height: 100px;
+    background: #e10600;
+    border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
+    animation: liquidMorph 5s ease-in-out infinite;
+}
+
+@keyframes liquidMorph {
+    0% {
+        border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        border-radius: 70% 30% 40% 60% / 50% 60% 40% 50%;
+        transform: rotate(90deg);
+    }
+
+    50% {
+        border-radius: 30% 70% 55% 45% / 60% 40% 60% 40%;
+        transform: rotate(180deg);
+    }
+
+    75% {
+        border-radius: 60% 40% 30% 70% / 35% 65% 35% 65%;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   34 - ORBIT SYSTEM
+======================================== */
+
+.orbit-system {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit-center {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e10600;
+    box-shadow: 0 0 20px #e10600;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid #555;
+    border-radius: 50%;
+    animation: orbitRotate linear infinite;
+}
+
+.orbit span {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #e10600;
+    border-radius: 50%;
+    top: 50%;
+    left: -6px;
+    box-shadow: 0 0 10px #e10600;
+}
+
+.orbit-one {
+    width: 70px;
+    height: 70px;
+    animation-duration: 3s;
+}
+
+.orbit-two {
+    width: 120px;
+    height: 120px;
+    animation-duration: 5s;
+    animation-direction: reverse;
+}
+
+.orbit-three {
+    width: 170px;
+    height: 170px;
+    animation-duration: 8s;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   35 - DNA HELIX
+======================================== */
+
+.dna-helix {
+    position: relative;
+    width: 160px;
+    height: 150px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.dna-strand {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e10600;
+    box-shadow: 0 0 8px #e10600;
+    left: 50%;
+    transform-origin: center;
+}
+
+.strand-left {
+    animation: dnaLeft 3s linear infinite;
+}
+
+.strand-right {
+    animation: dnaRight 3s linear infinite;
+}
+
+.dna-rung {
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    left: 40px;
+    background: #ffffff;
+    transform-origin: center;
+}
+
+.rung-1 { top: 15px; animation: dnaRung 3s linear infinite; }
+.rung-2 { top: 40px; animation: dnaRung 3s linear infinite .2s; }
+.rung-3 { top: 65px; animation: dnaRung 3s linear infinite .4s; }
+.rung-4 { top: 90px; animation: dnaRung 3s linear infinite .6s; }
+.rung-5 { top: 115px; animation: dnaRung 3s linear infinite .8s; }
+.rung-6 { top: 140px; animation: dnaRung 3s linear infinite 1s; }
+
+@keyframes dnaLeft {
+    0%, 100% {
+        transform: translateX(-35px) translateY(0);
+    }
+
+    25% {
+        transform: translateX(0) translateY(35px);
+    }
+
+    50% {
+        transform: translateX(35px) translateY(70px);
+    }
+
+    75% {
+        transform: translateX(0) translateY(105px);
+    }
+}
+
+@keyframes dnaRight {
+    0%, 100% {
+        transform: translateX(35px) translateY(0);
+    }
+
+    25% {
+        transform: translateX(0) translateY(35px);
+    }
+
+    50% {
+        transform: translateX(-35px) translateY(70px);
+    }
+
+    75% {
+        transform: translateX(0) translateY(105px);
+    }
+}
+
+@keyframes dnaRung {
+    0%, 100% {
+        transform: rotateY(0deg) scaleX(1);
+    }
+
+    50% {
+        transform: rotateY(180deg) scaleX(.3);
+    }
+}
+
+
+/* ========================================
+   36 - RADAR
+======================================== */
+
+.radar {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle,
+            transparent 0 18px,
+            #333 19px 20px,
+            transparent 21px 48px,
+            #333 49px 50px,
+            transparent 51px 73px,
+            #333 74px 75px,
+            transparent 76px
+        );
+}
+
+.radar::before,
+.radar::after {
+    content: "";
+    position: absolute;
+    background: #333;
+}
+
+.radar::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+}
+
+.radar::after {
+    height: 100%;
+    width: 1px;
+    left: 50%;
+}
+
+.radar-sweep {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom left;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(225, 6, 0, .5)
+    );
+    animation: radarSweep 2s linear infinite;
+}
+
+.radar-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e10600;
+    box-shadow: 0 0 10px #e10600;
+}
+
+.dot-one {
+    top: 35px;
+    left: 105px;
+}
+
+.dot-two {
+    top: 95px;
+    left: 50px;
+}
+
+.dot-three {
+    top: 70px;
+    left: 115px;
+}
+
+@keyframes radarSweep {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   37 - ELECTRIC BORDER
+======================================== */
+
+.electric-border {
+    position: relative;
+    width: 180px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080808;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.electric-border::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 280deg,
+        #e10600 320deg,
+        #ffffff 340deg,
+        transparent 360deg
+    );
+    animation: electricRotate 2s linear infinite;
+}
+
+.electric-border::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #080808;
+}
+
+.electric-border span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+@keyframes electricRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   38 - SHATTER
+======================================== */
+
+.shatter-area {
+    overflow: hidden;
+}
+
+.shatter-object {
+    width: 150px;
+    height: 70px;
+    background: #e10600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 3px;
+    transition: transform .4s ease, opacity .4s ease;
+}
+
+.shatter-object.shattering {
+    transform: scale(1.2);
+    opacity: 0;
+}
+
+
+/* ========================================
+   39 - PIXEL EXPLOSION
+======================================== */
+
+#explosion-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* ========================================
+   40 - WAVE DISTORTION
+======================================== */
+
+.wave-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100px;
+}
+
+.wave-container span {
+    width: 5px;
+    height: 35px;
+    background: #e10600;
+    animation: waveMotion 1s ease-in-out infinite;
+}
+
+.wave-container span:nth-child(2) { animation-delay: .08s; }
+.wave-container span:nth-child(3) { animation-delay: .16s; }
+.wave-container span:nth-child(4) { animation-delay: .24s; }
+.wave-container span:nth-child(5) { animation-delay: .32s; }
+.wave-container span:nth-child(6) { animation-delay: .40s; }
+.wave-container span:nth-child(7) { animation-delay: .48s; }
+.wave-container span:nth-child(8) { animation-delay: .40s; }
+.wave-container span:nth-child(9) { animation-delay: .32s; }
+.wave-container span:nth-child(10) { animation-delay: .24s; }
+.wave-container span:nth-child(11) { animation-delay: .16s; }
+.wave-container span:nth-child(12) { animation-delay: .08s; }
+
+@keyframes waveMotion {
+    0%, 100% {
+        transform: scaleY(.5);
+    }
+
+    50% {
+        transform: scaleY(2);
+    }
+}
