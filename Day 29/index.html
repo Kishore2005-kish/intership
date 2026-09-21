@@ -373,6 +373,623 @@
     </button>
 
 </section>
+<!-- ========================================
+     21 - MORPHING SHAPE
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">ADVANCED CSS</span>
+
+        <h2>Morphing Shape</h2>
+
+        <p>
+            Changes the shape of an element by combining
+            border-radius and transform animations.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="morph-shape"></div>
+    </div>
+
+    <button onclick="replayAnimation('morph-shape')">
+        Replay
+    </button>
+
+</section>
+
+
+<!-- ========================================
+     22 - 3D CUBE
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">CSS 3D</span>
+
+        <h2>3D Cube</h2>
+
+        <p>
+            Creates a rotating three-dimensional cube
+            using CSS perspective and 3D transforms.
+        </p>
+    </div>
+
+    <div class="animation-area cube-area">
+
+        <div class="cube">
+
+            <div class="cube-face cube-front">
+                FRONT
+            </div>
+
+            <div class="cube-face cube-back">
+                BACK
+            </div>
+
+            <div class="cube-face cube-right">
+                RIGHT
+            </div>
+
+            <div class="cube-face cube-left">
+                LEFT
+            </div>
+
+            <div class="cube-face cube-top">
+                TOP
+            </div>
+
+            <div class="cube-face cube-bottom">
+                BOTTOM
+            </div>
+
+        </div>
+
+    </div>
+
+    <button onclick="replayAnimation('cube')">
+        Replay
+    </button>
+
+</section>
+
+
+<!-- ========================================
+     23 - 3D CARD TILT
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">JAVASCRIPT + 3D</span>
+
+        <h2>3D Card Tilt</h2>
+
+        <p>
+            Uses mouse position to dynamically rotate
+            the card in three-dimensional space.
+        </p>
+    </div>
+
+    <div class="animation-area">
+
+        <div class="tilt-card">
+
+            <div class="tilt-content">
+                <span>INTERACTIVE</span>
+                <strong>3D TILT</strong>
+                <small>Move your cursor</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     24 - MAGNETIC BUTTON
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">JAVASCRIPT INTERACTION</span>
+
+        <h2>Magnetic Button</h2>
+
+        <p>
+            The button follows the cursor slightly when
+            the pointer moves around it.
+        </p>
+    </div>
+
+    <div class="animation-area">
+
+        <button class="magnetic-button">
+            Magnetic
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     25 - SCROLL REVEAL
+======================================== -->
+
+<section class="animation-card scroll-reveal">
+
+    <div class="card-header">
+        <span class="category">INTERSECTION OBSERVER</span>
+
+        <h2>Scroll Reveal</h2>
+
+        <p>
+            Elements animate into view when they enter
+            the visible area of the page.
+        </p>
+    </div>
+
+    <div class="animation-area">
+
+        <div class="reveal-content">
+            REVEALED
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     26 - STAGGERED TEXT
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">CSS + JAVASCRIPT</span>
+
+        <h2>Staggered Text</h2>
+
+        <p>
+            Characters appear one after another using
+            dynamically generated animation delays.
+        </p>
+    </div>
+
+    <div class="animation-area">
+
+        <h3
+            class="stagger-text"
+            data-text="ANIMATION">
+        </h3>
+
+    </div>
+
+    <button onclick="animateStaggerText()">
+        Replay
+    </button>
+
+</section>
+
+
+<!-- ========================================
+     27 - PROGRESS BAR
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">CSS + JAVASCRIPT</span>
+
+        <h2>Animated Progress</h2>
+
+        <p>
+            Progress bars animate from zero to their
+            target percentage when triggered.
+        </p>
+    </div>
+
+    <div class="animation-area progress-area">
+
+        <div class="progress-item">
+
+            <div class="progress-label">
+                <span>HTML</span>
+                <span>95%</span>
+            </div>
+
+            <div class="progress-track">
+                <div
+                    class="progress-fill"
+                    data-progress="95">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-label">
+                <span>CSS</span>
+                <span>90%</span>
+            </div>
+
+            <div class="progress-track">
+                <div
+                    class="progress-fill"
+                    data-progress="90">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-label">
+                <span>JavaScript</span>
+                <span>80%</span>
+            </div>
+
+            <div class="progress-track">
+                <div
+                    class="progress-fill"
+                    data-progress="80">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button onclick="animateProgressBars()">
+        Animate
+    </button>
+
+</section>
+
+
+<!-- ========================================
+     28 - PARTICLE SYSTEM
+======================================== -->
+
+<section class="animation-card particle-card">
+
+    <div class="card-header">
+        <span class="category">CANVAS + JAVASCRIPT</span>
+
+        <h2>Particle System</h2>
+
+        <p>
+            Uses HTML Canvas and requestAnimationFrame
+            to render an interactive particle field.
+        </p>
+    </div>
+
+    <div class="animation-area particle-area">
+
+        <canvas id="particle-canvas"></canvas>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     29 - RIPPLE CLICK
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">JAVASCRIPT INTERACTION</span>
+
+        <h2>Ripple Click</h2>
+
+        <p>
+            Creates a ripple originating from the exact
+            location where the user clicks.
+        </p>
+    </div>
+
+    <div class="animation-area">
+
+        <button class="ripple-button">
+            Click Me
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     30 - MODAL ENTRANCE
+======================================== -->
+
+<section class="animation-card">
+
+    <div class="card-header">
+        <span class="category">UI ANIMATION</span>
+
+        <h2>Modal Entrance</h2>
+
+        <p>
+            Combines opacity, scale and translation
+            to create a smooth modal entrance.
+        </p>
+    </div>
+
+    <div class="animation-area">
+
+        <button onclick="openModal()">
+            Open Modal
+        </button>
+
+    </div>
+
+</section>
+<!-- 31 Text Glitch -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS GLITCH</span>
+        <h2>Text Glitch</h2>
+        <p>
+            Creates a digital glitch effect by shifting
+            duplicated text layers in different directions.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="glitch-text" data-text="SYSTEM ERROR">
+            SYSTEM ERROR
+        </div>
+    </div>
+
+    <button onclick="replayAnimation('glitch-text')">
+        Replay
+    </button>
+</section>
+
+
+<!-- 32 Neon Scanline -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS GRADIENT</span>
+        <h2>Neon Scanline</h2>
+        <p>
+            Simulates a scanning beam moving vertically
+            across a digital display.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="scan-screen">
+            <span>SCANNING...</span>
+            <div class="scan-line"></div>
+        </div>
+    </div>
+
+    <button onclick="replayAnimation('scan-line')">
+        Replay
+    </button>
+</section>
+
+
+<!-- 33 Liquid Blob -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">SVG + CSS</span>
+        <h2>Liquid Blob</h2>
+        <p>
+            Continuously morphs an irregular shape to create
+            an organic liquid-like animation.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="liquid-blob"></div>
+    </div>
+
+    <button onclick="replayAnimation('liquid-blob')">
+        Replay
+    </button>
+</section>
+
+
+<!-- 34 Orbit System -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS TRANSFORM</span>
+        <h2>Orbit System</h2>
+        <p>
+            Multiple objects rotate around a central point
+            using nested transforms.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="orbit-system">
+            <div class="orbit-center"></div>
+
+            <div class="orbit orbit-one">
+                <span></span>
+            </div>
+
+            <div class="orbit orbit-two">
+                <span></span>
+            </div>
+
+            <div class="orbit orbit-three">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 35 DNA Helix -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS 3D</span>
+        <h2>DNA Helix</h2>
+        <p>
+            Uses 3D transforms and multiple rotating elements
+            to simulate a DNA double helix.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="dna-helix">
+
+            <div class="dna-strand strand-left"></div>
+            <div class="dna-strand strand-right"></div>
+
+            <div class="dna-rung rung-1"></div>
+            <div class="dna-rung rung-2"></div>
+            <div class="dna-rung rung-3"></div>
+            <div class="dna-rung rung-4"></div>
+            <div class="dna-rung rung-5"></div>
+            <div class="dna-rung rung-6"></div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- 36 Radar Scanner -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS CONIC GRADIENT</span>
+        <h2>Radar Scanner</h2>
+        <p>
+            Uses a rotating conic gradient to simulate
+            a radar scanning system.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="radar">
+
+            <div class="radar-grid"></div>
+
+            <div class="radar-sweep"></div>
+
+            <span class="radar-dot dot-one"></span>
+            <span class="radar-dot dot-two"></span>
+            <span class="radar-dot dot-three"></span>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- 37 Electric Border -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS MASKING</span>
+        <h2>Electric Border</h2>
+        <p>
+            Creates the appearance of energy travelling
+            continuously around an element's border.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <div class="electric-border">
+            <span>ENERGY</span>
+        </div>
+    </div>
+
+    <button onclick="replayAnimation('electric-border')">
+        Replay
+    </button>
+</section>
+
+
+<!-- 38 Shatter Effect -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">JAVASCRIPT + CSS</span>
+        <h2>Shatter Effect</h2>
+        <p>
+            Breaks an element into multiple pieces and
+            animates them outward.
+        </p>
+    </div>
+
+    <div class="animation-area shatter-area">
+        <div class="shatter-object" id="shatter-object">
+            SHATTER
+        </div>
+    </div>
+
+    <button onclick="shatterEffect()">
+        Shatter
+    </button>
+</section>
+
+
+<!-- 39 Pixel Explosion -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CANVAS + JAVASCRIPT</span>
+        <h2>Pixel Explosion</h2>
+        <p>
+            Generates particles from an object and sends
+            them outward using canvas animation.
+        </p>
+    </div>
+
+    <div class="animation-area">
+        <canvas id="explosion-canvas"></canvas>
+    </div>
+
+    <button onclick="pixelExplosion()">
+        Explode
+    </button>
+</section>
+
+
+<!-- 40 Wave Distortion -->
+<section class="animation-card">
+    <div class="card-header">
+        <span class="category">CSS KEYFRAME</span>
+        <h2>Wave Distortion</h2>
+        <p>
+            Creates a travelling wave by applying different
+            vertical offsets to multiple elements.
+        </p>
+    </div>
+
+    <div class="animation-area wave-area">
+
+        <div class="wave-container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</section>
 </main>
 <!-- Footer -->
 <footer class="footer">
