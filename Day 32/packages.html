@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Packages — Wayfare Travel</title>
+<meta name="description" content="Compare Wayfare travel packages by duration, price and inclusions. Filter by category and budget, sort by rating, then book online in minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header" data-header></header>
+
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Packages</div>
+    <h1>Travel packages</h1>
+    <p>Fixed departures with everything priced up front — flights excluded, surprises excluded too.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="toolbar">
+      <div>
+        <label for="q">Search packages</label>
+        <input type="text" id="q" placeholder="Try “Kyoto”, “safari”, “rail”…">
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <select id="category"></select>
+      </div>
+      <div>
+        <label for="price">Budget per person</label>
+        <select id="price">
+          <option value="0">Any budget</option>
+          <option value="85000">Under ₹85,000</option>
+          <option value="125000">Under ₹1,25,000</option>
+          <option value="170000">Under ₹1,70,000</option>
+          <option value="250000">Under ₹2,50,000</option>
+        </select>
+      </div>
+      <div>
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="popular">Top rated</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="duration">Duration: shortest</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="chip-row" id="durationChips"></div>
+    <p class="results-count" id="count"></p>
+    <div class="grid grid-3" id="results"></div>
+    <div class="empty" id="empty" style="display:none">
+      <h3>No packages match those filters</h3>
+      <p class="muted" style="margin-top:8px">Widen your budget or clear the search to see everything.</p>
+      <button class="btn btn-ghost" style="margin-top:16px" id="reset">Reset filters</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-footer></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/packages.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Wayfare Travel — Our story and team</title>
+<meta name="description" content="Wayfare Travel has designed small-group and tailor-made journeys since 2011. Meet the team behind the itineraries and read how we plan trips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header" data-header></header>
+
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
+    <h1>We plan trips the way we'd want ours planned</h1>
+    <p>Fifteen people, four offices and a stubborn belief that a good itinerary leaves room to do nothing.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center;gap:40px">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2 style="margin:10px 0 16px">From one trekking group to 14,800 travellers</h2>
+        <p class="muted">Wayfare started in 2011 when two guides ran a single Himalayan trek for friends of friends. Word travelled faster than we did. Today we run fixed-departure and tailor-made journeys across 42 countries, still with the same rule: every itinerary is walked by someone on our team before it goes on sale.</p>
+        <p class="muted" style="margin-top:14px">We work with local operators on fair, long-term contracts, cap group sizes so guides actually know your name, and publish the full cost up front — no compulsory tipping pools, no surprise entry fees.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="packages.html">See our packages</a>
+          <a class="btn btn-ghost" href="contact.html">Talk to a planner</a>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80" alt="Travellers looking at a map" style="border-radius:14px" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;border-block:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">How we work</p><h2>Four things we never compromise on</h2></div>
+    <div class="grid grid-2">
+      <div class="panel"><h3>Local guides, properly paid</h3><p class="muted">Every trip is led by someone who lives there, on contracts we publish to our partners.</p></div>
+      <div class="panel"><h3>Small groups</h3><p class="muted">Six to sixteen travellers, never more. Safaris run at six per vehicle.</p></div>
+      <div class="panel"><h3>Honest pricing</h3><p class="muted">Inclusions and exclusions are listed on every package page before you pay a deposit.</p></div>
+      <div class="panel"><h3>24/7 support</h3><p class="muted">A named coordinator on WhatsApp and phone from booking until you land home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Our team</p><h2>The people behind your itinerary</h2></div>
+    <div class="grid grid-3" id="team"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><strong>2011</strong><span class="muted">Founded</span></div>
+      <div class="stat"><strong>42</strong><span class="muted">Countries</span></div>
+      <div class="stat"><strong>15</strong><span class="muted">Team members</span></div>
+      <div class="stat"><strong>96%</strong><span class="muted">Would travel again</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" data-footer></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  qs("#team").innerHTML = TEAM.map(function (m) {
+    return '<div class="team-card"><img src="' + m.img + '" alt="' + m.name + '" loading="lazy">' +
+      "<div><h3>" + m.name + '</h3><p class="muted" style="font-size:.9rem">' + m.role + "</p></div></div>";
+  }).join("");
+});
+</script>
+</body>
+</html>
