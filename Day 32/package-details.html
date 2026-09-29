@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package Details — Wayfare Travel</title>
+<meta name="description" content="Full itinerary, photo gallery, inclusions and pricing for your chosen Wayfare travel package, with instant online booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header" data-header></header>
+
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="packages.html">Packages</a> / <span id="crumb">Details</span></div>
+    <h1 id="title">Loading package…</h1>
+    <p id="subtitle"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" id="detailRoot"></div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button type="button" id="lightboxClose" aria-label="Close gallery">✕</button>
+  <img src="" alt="Package photo" id="lightboxImg">
+</div>
+
+<footer class="site-footer" data-footer></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/package-details.js"></script>
+</body>
+</html>

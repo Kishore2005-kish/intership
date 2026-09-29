@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wayfare Travel — Small-group journeys, thoughtfully planned</title>
+<meta name="description" content="Browse curated travel packages to Bali, Kyoto, Iceland, the Serengeti and more. Search destinations, compare prices and book online with Wayfare Travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header" data-header></header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow" style="color:#9fe0d3">Small groups · 40+ countries · Since 2011</p>
+    <h1>Journeys worth<br>the long way round.</h1>
+    <p class="lead">Handpicked itineraries with local guides, honest pricing and a real person on call while you travel.</p>
+    <div class="hero-actions">
+      <a class="btn btn-accent" href="packages.html">Explore packages</a>
+      <a class="btn btn-ghost" href="destinations.html">Browse destinations</a>
+    </div>
+
+    <form class="search-bar" id="heroSearch" novalidate>
+      <input type="text" id="heroQuery" placeholder="Search a destination or package…" aria-label="Search destinations">
+      <select id="heroCategory" aria-label="Category"></select>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><strong>14,800+</strong><span class="muted">Travellers hosted</span></div>
+      <div class="stat"><strong>42</strong><span class="muted">Countries covered</span></div>
+      <div class="stat"><strong>4.8/5</strong><span class="muted">Average trip rating</span></div>
+      <div class="stat"><strong>24/7</strong><span class="muted">On-trip support</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Popular right now</p>
+      <h2>Destinations travellers keep returning to</h2>
+      <p>Filter by the kind of trip you're after — beaches, mountains, culture, wildlife or pure adventure.</p>
+    </div>
+    <div class="chip-row" id="homeChips"></div>
+    <div class="grid grid-3" id="homeDestinations"></div>
+    <div class="center" style="margin-top:30px"><a class="btn btn-ghost" href="destinations.html">See all destinations</a></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Featured packages</p>
+      <h2>Trips ready to book this season</h2>
+    </div>
+    <div class="grid grid-3" id="homePackages"></div>
+    <div class="center" style="margin-top:30px"><a class="btn btn-primary" href="packages.html">View all packages</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Current offers</p>
+      <h2>Save more when you plan ahead</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="offer offer-1">
+        <h3 style="color:#fff">15% off early birds</h3>
+        <p style="font-size:.93rem">Book any 2026 departure at least 90 days ahead.</p>
+        <span class="code">WAYFARE15</span>
+      </div>
+      <div class="offer offer-2">
+        <h3 style="color:#fff">Free airport transfers</h3>
+        <p style="font-size:.93rem">On all beach and island packages of 5 nights or more.</p>
+        <span class="code">TRANSFER0</span>
+      </div>
+      <div class="offer offer-3">
+        <h3 style="color:#fff">Group of 4, pay for 3</h3>
+        <p style="font-size:.93rem">Selected cultural trips in Japan, Italy and Morocco.</p>
+        <span class="code">GROUP4</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Testimonials</p>
+      <h2>What travellers say</h2>
+    </div>
+    <div class="grid grid-3" id="homeTestimonials"></div>
+  </div>
+</section>
+
+<footer class="site-footer" data-footer></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
