@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summit.io — Conferences, Summits & Workshops for Builders</title>
+  <meta name="description" content="Summit.io runs technology conferences, hands-on workshops and founder meetups across India. Browse upcoming events, speakers and tickets.">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand__mark">S</span> Summit<span class="accent">.io</span></a>
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="registration.html">Register</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--primary btn--sm" href="registration.html">Get Tickets</a>
+      <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"><img src="images/hero.jpg" alt="Conference main stage with light beams" width="1600" height="900"></div>
+    <div class="container hero__inner">
+      <span class="eyebrow">2026 / 2027 Season</span>
+      <h1>Where builders<br><em>meet the stage</em></h1>
+      <p class="hero__lead">Eight years of running technology conferences, hands-on labs and founder nights. Real practitioners, no vendor pitches on the keynote stage, and schedules that start on time.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="events.html">Explore Events</a>
+        <a class="btn btn--ghost" href="registration.html">Register Now</a>
+      </div>
+      <p class="muted mt-3" style="font-size:.82rem;letter-spacing:.16em;text-transform:uppercase" id="countdownLabel"></p>
+      <div class="countdown" id="countdown">
+        <div class="countdown__box"><strong>00</strong><span>Days</span></div>
+        <div class="countdown__box"><strong>00</strong><span>Hours</span></div>
+        <div class="countdown__box"><strong>00</strong><span>Minutes</span></div>
+        <div class="countdown__box"><strong>00</strong><span>Seconds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Northwind Systems</span><span>Lumen Cloud</span><span>Studio Kaze</span><span>Ironvault Security</span>
+      <span>Ruta Labs</span><span>Helix Research</span>
+      <span>Northwind Systems</span><span>Lumen Cloud</span><span>Studio Kaze</span><span>Ironvault Security</span>
+      <span>Ruta Labs</span><span>Helix Research</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="section section--tight">
+    <div class="container grid grid-4">
+      <div class="stat reveal"><strong data-count="48" data-suffix="+">0</strong><span>Events hosted</span></div>
+      <div class="stat reveal"><strong data-count="320" data-suffix="+">0</strong><span>Speakers on stage</span></div>
+      <div class="stat reveal"><strong data-count="26" data-suffix="K">0</strong><span>Attendees</span></div>
+      <div class="stat reveal"><strong data-count="12">0</strong><span>Cities</span></div>
+    </div>
+  </section>
+
+  <!-- UPCOMING -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="flex between center wrap gap section-head" style="max-width:none">
+        <div>
+          <span class="eyebrow">Upcoming</span>
+          <h2 class="mt-1">Next on the calendar</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="events.html">View all events</a>
+      </div>
+      <div class="grid grid-3" id="upcomingGrid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Featured</span>
+        <h2 class="mt-1">Flagship conferences</h2>
+        <p>Our largest productions of the season — multi-day programmes, expo floors and a lot of coffee.</p>
+      </div>
+      <div id="featuredWrap"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center-head">
+        <span class="eyebrow">Categories</span>
+        <h2 class="mt-1">Pick your format</h2>
+        <p>From 5,000-seat keynote halls to 48-seat labs, every format has a different reason to show up.</p>
+      </div>
+      <div class="grid grid-4" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section class="section">
+    <div class="container">
+      <div class="flex between center wrap gap section-head" style="max-width:none">
+        <div>
+          <span class="eyebrow">Speakers</span>
+          <h2 class="mt-1">Voices on our stages</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="speakers.html">All speakers</a>
+      </div>
+      <div class="grid grid-4" id="speakerStrip"></div>
+      <p class="muted mt-2" style="font-size:.85rem">Tip: select a speaker card to read their full profile.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center-head">
+        <span class="eyebrow">Testimonials</span>
+        <h2 class="mt-1">What attendees say</h2>
+      </div>
+      <div class="grid grid-3" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter reveal">
+        <div>
+          <h2>Never miss a drop</h2>
+          <p class="muted mt-1">Early-bird tickets usually sell out in 72 hours. Get the announcement before the public does.</p>
+        </div>
+        <form data-newsletter novalidate>
+          <input class="input" type="email" placeholder="you@company.com" aria-label="Email address" required>
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand__mark">S</span> Summit<span class="accent">.io</span></a>
+        <p class="mt-2">We produce technology conferences, workshops and community nights across India — 48 events and counting.</p>
+        <div class="socials">
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">TW</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="events.html">All Events</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="registration.html">Group Bookings</a></li>
+          <li><a href="about.html#team">Our Team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p>Season announcements, speaker reveals and early-bird windows.</p>
+        <form class="mt-2" data-newsletter novalidate style="display:flex;gap:8px">
+          <input class="input" type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn--primary btn--sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> Summit.io Events Pvt Ltd. All rights reserved.</p>
+      <p>Aurora Convention Centre, Whitefield, Bengaluru 560066</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

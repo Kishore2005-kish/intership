@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Summit.io — Tickets, Sponsorship & Speaking</title>
+  <meta name="description" content="Get in touch with the Summit.io events team about tickets, group bookings, sponsorship or speaking. Office address, phone, email and map.">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand__mark">S</span> Summit<span class="accent">.io</span></a>
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="registration.html">Register</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--primary btn--sm" href="registration.html">Get Tickets</a>
+      <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">We reply within one business day</span>
+      <h1 class="mt-1">Contact Us</h1>
+      <p class="muted mt-1" style="max-width:620px">Tickets, group bookings, sponsorship, press or a talk proposal — one form, the right desk.</p>
+      <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <form class="panel" id="contactForm" novalidate>
+        <h2>Send a message</h2>
+        <div id="contactSuccess" class="notice notice--success mt-2 hidden"></div>
+        <div class="form-grid mt-3">
+          <div class="field">
+            <label for="cName">Your name *</label>
+            <input class="input" type="text" id="cName" placeholder="Rohan Desai" autocomplete="name">
+            <small class="error-msg" data-error-for="cName"></small>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email address *</label>
+            <input class="input" type="email" id="cEmail" placeholder="rohan@company.com" autocomplete="email">
+            <small class="error-msg" data-error-for="cEmail"></small>
+          </div>
+          <div class="field">
+            <label for="cPhone">Phone (optional)</label>
+            <input class="input" type="tel" id="cPhone" placeholder="+91 98765 43210" autocomplete="tel">
+            <small class="error-msg" data-error-for="cPhone"></small>
+          </div>
+          <div class="field">
+            <label for="cSubject">Subject *</label>
+            <select class="select" id="cSubject">
+              <option value="">Choose a subject…</option>
+              <option value="tickets">Tickets &amp; registration</option>
+              <option value="groups">Group booking (10+)</option>
+              <option value="sponsorship">Sponsorship &amp; exhibiting</option>
+              <option value="speaking">Speaking proposal</option>
+              <option value="press">Press &amp; media</option>
+            </select>
+            <small class="error-msg" data-error-for="cSubject"></small>
+          </div>
+          <div class="field full">
+            <label for="cMessage">Message *</label>
+            <textarea class="textarea" id="cMessage" maxlength="1000" placeholder="Tell us what you need and any dates you have in mind…"></textarea>
+            <div class="flex between">
+              <small class="error-msg" data-error-for="cMessage"></small>
+              <small class="muted" id="charCount">0 / 1000</small>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn--primary btn--block mt-2" type="submit">Send Message</button>
+      </form>
+
+      <aside>
+        <div class="panel">
+          <h3>Office</h3>
+          <div class="contact-item">
+            <div class="contact-item__icon">📍</div>
+            <div>
+              <strong>Summit.io Events Pvt Ltd</strong>
+              <p class="muted" style="font-size:.9rem">4th Floor, Aurora Convention Centre<br>Whitefield Main Road, Bengaluru 560066<br>Karnataka, India</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <p class="muted" style="font-size:.9rem"><a href="tel:+918041234567">+91 80 4123 4567</a><br>Mon–Fri, 09:30–18:30 IST</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon">✉️</div>
+            <div>
+              <strong>Email</strong>
+              <p class="muted" style="font-size:.9rem">
+                <a href="mailto:hello@summit.io">hello@summit.io</a> — general<br>
+                <a href="mailto:sponsors@summit.io">sponsors@summit.io</a> — partnerships
+              </p>
+            </div>
+          </div>
+          <div class="contact-item" style="border-bottom:none">
+            <div class="contact-item__icon">🔗</div>
+            <div>
+              <strong>Follow along</strong>
+              <div class="socials">
+                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">TW</a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="map-frame">
+        <iframe
+          title="Map showing the Summit.io office in Whitefield, Bengaluru"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=77.72%2C12.95%2C77.77%2C12.99&amp;layer=mapnik&amp;marker=12.9698%2C77.7500"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head center-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-1">Quick answers</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="panel"><h3>Can I transfer my ticket?</h3><p class="muted mt-1">Yes — name changes are free up to 48 hours before doors open. Email us the new attendee's details.</p></div>
+        <div class="panel"><h3>Do you offer refunds?</h3><p class="muted mt-1">Full refunds up to 14 days before the event, 50% up to 72 hours before, and none after that.</p></div>
+        <div class="panel"><h3>Are sessions recorded?</h3><p class="muted mt-1">Keynotes and main-track talks are recorded and shared with all pass holders within two weeks.</p></div>
+        <div class="panel"><h3>Is there a student discount?</h3><p class="muted mt-1">Every event has a student tier, plus a grant pool for travel support. Bring a valid student ID.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand__mark">S</span> Summit<span class="accent">.io</span></a>
+        <p class="mt-2">We produce technology conferences, workshops and community nights across India — 48 events and counting.</p>
+        <div class="socials">
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">TW</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="events.html">All Events</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="registration.html">Group Bookings</a></li>
+          <li><a href="about.html#team">Our Team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p>Season announcements, speaker reveals and early-bird windows.</p>
+        <form class="mt-2" data-newsletter novalidate style="display:flex;gap:8px">
+          <input class="input" type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn--primary btn--sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> Summit.io Events Pvt Ltd. All rights reserved.</p>
+      <p>Aurora Convention Centre, Whitefield, Bengaluru 560066</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
