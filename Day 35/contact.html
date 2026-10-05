@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Estate & Contact | Malnad Crest Coffee</title>
+  <meta name="description" content="Book a coffee tasting tour or stay at the 1892 Malnad Crest Planter's Homestay bungalow in Chikmagalur, Karnataka.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">☕</div>
+        <span>MALNAD CREST</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="estate.html" class="nav-link">Our Estate</a></li>
+        <li><a href="products.html" class="nav-link">Coffees & Store</a></li>
+        <li><a href="process.html" class="nav-link">Artisanal Process</a></li>
+        <li><a href="contact.html" class="nav-link active">Visit & Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartToggle" aria-label="View Shopping Cart">
+          <span>Cart</span>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="hero" style="min-height: 50vh; background: linear-gradient(to bottom, rgba(13, 9, 7, 0.7), var(--bg-dark)), url('images/estate_homestay.jpg') center/cover no-repeat;">
+    <div class="container hero-content" style="text-align: center; margin: 0 auto;">
+      <span class="sub-title">Western Ghats Retreat</span>
+      <h1 class="hero-title" style="font-size: 3.5rem;">Visit The Planter's Estate</h1>
+      <p class="hero-subtitle" style="margin: 0 auto;">
+        Stay in our 1892 colonial planter bungalow, experience morning plantation walks under canopy mist, and sample single-origin harvests.
+      </p>
+    </div>
+  </section>
+
+  <!-- Homestay & Tasting Tour Reservation Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; align-items: flex-start;">
+        
+        <!-- Booking Form Left -->
+        <div class="glass-card reveal" style="padding: 2.5rem;">
+          <span class="sub-title">Reservations</span>
+          <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Book Homestay & Tasting</h2>
+          
+          <form id="bookingForm" onsubmit="event.preventDefault(); window.showToast('🌿 Reservation request sent! Our estate manager will contact you.'); this.reset();">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Ananya Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="ananya@example.com" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Check-in Date</label>
+                <input type="date" class="form-control" required style="color-scheme: dark;">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Guests</label>
+                <select class="form-control">
+                  <option>1 Guest</option>
+                  <option selected>2 Guests</option>
+                  <option>3-4 Guests</option>
+                  <option>Family / Group (5+)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Experience Choice</label>
+              <select class="form-control">
+                <option>Heritage Bungalow Stay + Estate Walk</option>
+                <option>Master Cupping & Coffee Tasting Tour (Day Visit)</option>
+                <option>Photographic Sunrise Plantation Walk</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Special Requests / Dietary Needs</label>
+              <textarea class="form-control" rows="3" placeholder="Tell us about dietary preferences or special celebrations..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Submit Reservation Request
+            </button>
+          </form>
+        </div>
+
+        <!-- Estate Location & Details Right -->
+        <div class="reveal">
+          <div class="glass-card" style="padding: 2.5rem; margin-bottom: 2rem;">
+            <span class="sub-title">Estate Location</span>
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Malnad Crest Estate</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.2rem; line-height: 1.7;">
+              📍 Bababudan Giri Hills Road, Santaveri Post,<br>
+              Chikmagalur District, Karnataka – 577101, India.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
+              <strong>Distance:</strong> 250 km from Bengaluru (4.5 hrs drive through scenic Western Ghats ghat roads).
+            </p>
+            <div style="border-top: 1px solid var(--border-glass); padding-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+              <strong>Visiting Hours:</strong> Tuesday – Sunday: 8:00 AM – 5:00 PM (Prior Booking Required)
+            </div>
+          </div>
+
+          <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-gold); box-shadow: var(--shadow-card);">
+            <img src="images/estate_homestay.jpg" alt="Planter Homestay Bungalow" style="width: 100%; height: 260px; object-fit: cover;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">☕ MALNAD CREST</div>
+          <p class="footer-desc">
+            Single-origin shade-grown coffee estate from Chikmagalur, Karnataka. Preserving 132 years of Indian coffee heritage.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="estate.html">Our Estate & Story</a></li>
+            <li><a href="products.html">Coffee Beans Catalog</a></li>
+            <li><a href="process.html">Brewing Guide & Ratios</a></li>
+            <li><a href="contact.html">Homestay & Tasting Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Contact Direct</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:concierge@malnadcrest.in">concierge@malnadcrest.in</a></li>
+            <li><a href="tel:+918262299887">+91 (08262) 299 887</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Estate Dispatch</h4>
+          <p class="footer-desc" style="margin-bottom: 1rem;">Subscribe to get stay invitations.</p>
+          <div class="form-group" style="display: flex; gap: 8px;">
+            <input type="email" class="form-control" placeholder="Enter your email" style="padding: 0.6rem 1rem; font-size: 0.85rem;">
+            <button class="btn btn-primary" onclick="window.showToast('Thank you for subscribing!')" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Malnad Crest Indian Coffee Estate. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Slide-Out Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="color: var(--accent-gold);">Your Coffee Cart</h3>
+      <button class="close-btn" id="closeCartDrawer">✕</button>
+    </div>
+    <div class="cart-body" id="cartItemsBody"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span id="cartTotalVal" style="color: var(--accent-gold);">₹0</span>
+      </div>
+      <button class="btn btn-primary" onclick="checkoutCart()" style="width: 100%;">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

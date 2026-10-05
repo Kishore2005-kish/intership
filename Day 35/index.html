@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malnad Crest | Heritage Indian Coffee Estate & Specialty Beans</title>
+  <meta name="description" content="Single-origin shade-grown specialty coffee from Baba Budangiri hills, Chikmagalur, Karnataka. Monsooned Malabar AA, Mysore Nugget, and South Indian Filter Kaapi.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">☕</div>
+        <span>MALNAD CREST</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="estate.html" class="nav-link">Our Estate</a></li>
+        <li><a href="products.html" class="nav-link">Coffees & Store</a></li>
+        <li><a href="process.html" class="nav-link">Artisanal Process</a></li>
+        <li><a href="contact.html" class="nav-link">Visit & Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartToggle" aria-label="View Shopping Cart">
+          <span>Cart</span>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span>✨</span> Born in Baba Budangiri Hills (Est. 1892)
+      </div>
+      <h1 class="hero-title">
+        Born in the Mist of <br>
+        <span class="gold-gradient-text">Western Ghats</span>
+      </h1>
+      <p class="hero-subtitle">
+        100% shade-grown under native rainforest canopies at 4,200ft elevation. Experience single-origin Monsooned Malabar AA and authentic South Indian Filter Kaapi.
+      </p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn btn-primary">Explore Reserve Coffees</a>
+        <a href="estate.html" class="btn btn-outline">Our 132-Year Heritage</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estate Key Stats Counter Section -->
+  <section class="section-padding" style="background: var(--bg-darker); border-bottom: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="glass-card stat-card reveal">
+          <div class="stat-number" data-target="132">0</div>
+          <div class="stat-label">Years of Estate Heritage</div>
+        </div>
+        <div class="glass-card stat-card reveal">
+          <div class="stat-number" data-target="4200" data-suffix="ft">0</div>
+          <div class="stat-label">Elevation Canopy</div>
+        </div>
+        <div class="glass-card stat-card reveal">
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Shade Grown Canopy</div>
+        </div>
+        <div class="glass-card stat-card reveal">
+          <div class="stat-number" data-target="49" data-suffix="K+">0</div>
+          <div class="stat-label">Connoisseurs Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy & Shade-Grown Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
+        <div class="reveal">
+          <span class="sub-title">Shade Grown Biodiversity</span>
+          <h2 class="section-heading">Nurtured Under Native Forest Canopies</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+            Unlike sun-drenched monoculture plantations, Malnad Crest coffee trees flourish beneath a lush three-tiered canopy of silver oaks, rosewood, wild jackfruit, and pepper vines in Chikmagalur, Karnataka.
+          </p>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+            Slow ripening under natural shade develops intense aromatic density, low natural acidity, and deep notes of dark cocoa, toasted hazelnut, and cardamoms.
+          </p>
+          <a href="estate.html" class="btn btn-outline">Discover Estate Ecosystem</a>
+        </div>
+        <div class="reveal" style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-gold); box-shadow: var(--shadow-card);">
+          <img src="images/hero_estate.jpg" alt="Malnad Coffee Estate Canopy" style="width: 100%; height: 400px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Coffees Preview -->
+  <section class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;" class="reveal">
+        <span class="sub-title">Artisanal Reserve</span>
+        <h2 class="section-heading">Signature Indian Harvests</h2>
+        <p style="color: var(--text-secondary);">Hand-picked at peak ripeness, sun-cured, and master roasted in micro-batches.</p>
+      </div>
+
+      <div class="grid-3" id="homeProductGrid">
+        <!-- JS rendered via cart.js or preview fallback -->
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;" class="reveal">
+        <a href="products.html" class="btn btn-primary">View Full Store Catalog</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- South Indian Filter Kaapi Ritual Teaser -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="glass-card" style="padding: 3.5rem 2.5rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+          <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-gold);">
+            <img src="images/filter_coffee_brass.jpg" alt="South Indian Filter Kaapi" style="width: 100%; height: 350px; object-fit: cover;">
+          </div>
+          <div>
+            <span class="sub-title">The South Indian Kaapi Ritual</span>
+            <h2 class="section-heading" style="font-size: 2.4rem;">Frothy Gold in a Brass Dabarah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+              Experience the timeless morning tradition of South India. Thick, fragrant coffee decoction brewed in a brass filter, poured back and forth with steaming milk to create velvety crema.
+            </p>
+            <a href="process.html" class="btn btn-primary">Try Interactive Brew Ratio Calculator</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">☕ MALNAD CREST</div>
+          <p class="footer-desc">
+            Single-origin shade-grown coffee estate from Chikmagalur, Karnataka. Preserving 132 years of Indian coffee heritage.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="estate.html">Our Estate & Story</a></li>
+            <li><a href="products.html">Coffee Beans Catalog</a></li>
+            <li><a href="process.html">Brewing Guide & Ratios</a></li>
+            <li><a href="contact.html">Homestay & Tasting Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Coffee Varieties</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Monsooned Malabar AA</a></li>
+            <li><a href="products.html">Bababudan Reserve Micro-Lot</a></li>
+            <li><a href="products.html">Mysore Nugget Extra Bold</a></li>
+            <li><a href="products.html">Coorg Filter Kaapi Blend</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Estate Dispatch</h4>
+          <p class="footer-desc" style="margin-bottom: 1rem;">Subscribe to receive fresh roast announcements & seasonal micro-lot releases.</p>
+          <div class="form-group" style="display: flex; gap: 8px;">
+            <input type="email" class="form-control" placeholder="Enter your email" style="padding: 0.6rem 1rem; font-size: 0.85rem;">
+            <button class="btn btn-primary" onclick="window.showToast('Thank you for subscribing!')" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Malnad Crest Indian Coffee Estate. Crafted with pride in Western Ghats, Karnataka.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Slide-Out Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="color: var(--accent-gold);">Your Coffee Cart</h3>
+      <button class="close-btn" id="closeCartDrawer">✕</button>
+    </div>
+    <div class="cart-body" id="cartItemsBody">
+      <!-- Dynamically rendered by cart.js -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span id="cartTotalVal" style="color: var(--accent-gold);">₹0</span>
+      </div>
+      <button class="btn btn-primary" onclick="checkoutCart()" style="width: 100%;">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button onclick="closeQuickView()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer;">✕</button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    // Render first 3 featured coffees on home page
+    document.addEventListener('DOMContentLoaded', () => {
+      const homeGrid = document.getElementById('homeProductGrid');
+      if (homeGrid && typeof PRODUCTS !== 'undefined') {
+        const top3 = PRODUCTS.slice(0, 3);
+        homeGrid.innerHTML = top3.map(p => `
+          <div class="product-card reveal visible">
+            <div class="product-image-wrap">
+              <img src="${p.image}" alt="${p.name}" class="product-image">
+              <span class="product-tag">${p.tag}</span>
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">${p.name}</h3>
+              <div class="product-notes">${p.notes}</div>
+              <p class="product-desc">${p.desc}</p>
+              <div class="product-footer">
+                <div class="product-price">₹${p.price}</div>
+                <button class="btn btn-primary" onclick="openQuickView('${p.id}')" style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">
+                  Quick View
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
