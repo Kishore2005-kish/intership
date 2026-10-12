@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fa">
     <title>Contact | Teczo</title>
     <meta name="description" content="Contact Teczo Softwares to discuss your project, goals, and next steps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -17,19 +21,29 @@
                 <a href="privacy.html" class="nav-link">Privacy</a>
                 <a href="contact.html" class="btn btn-accent">Book a Call</a>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
         </div>
     </header>
 
     <main>
-        <section class="section-hero container-lg reveal" style="min-height: 40vh; padding-bottom: 0;">
-            <h1 class="hero-headline text-balance">Let's build together.</h1>
-            <p class="hero-subheadline text-balance">Tell us about your product, goals, and next steps.</p>
+        <section class="section-hero container-lg" style="min-height: 40vh; padding-bottom: 0;">
+            <div class="hero-eyebrow reveal">Teczo Softwares · Start a conversation</div>
+            <h1 class="hero-headline text-balance reveal">Let's build together.</h1>
+            <p class="hero-subheadline text-balance reveal">Tell us about your product, goals, and next steps.</p>
         </section>
 
-        <section class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-32);">
+        <section class="container-lg" style="padding-top: var(--space-8); padding-bottom: var(--space-32);">
             <div class="contact-section reveal">
-                <div id="formStatus" class="form-status"></div>
+                <div class="contact-layout">
+                    <aside class="contact-aside">
+                        <span class="section-kicker">Tell us what you’re building</span>
+                        <h2>Good products start with a conversation.</h2>
+                        <p>Share a little about the problem you’re solving. We’ll use it to understand your goals and the right next step.</p>
+                        <div class="contact-detail"><small>Email</small><a href="mailto:info@teczosoftwares.com">info@teczosoftwares.com</a></div>
+                        <div class="contact-detail"><small>Phone</small><a href="tel:+917337692174">+91 7337692174</a></div>
+                    </aside>
+                    <div class="contact-form-wrap">
+                <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
                 <form id="contactForm" novalidate>
                     <div class="form-group">
                         <label for="name" class="form-label">Full Name</label>

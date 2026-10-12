@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fa">
     <title>Teczo | Enterprise Grade Software</title>
     <meta name="description" content="Teczo Softwares. We build and scale SaaS products — from idea to launch. Custom software, AI automation, and integrations that help you grow faster.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -19,7 +23,7 @@
                 <a href="privacy.html" class="nav-link">Privacy</a>
                 <a href="contact.html" class="btn btn-accent">Book a Call</a>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
             </button>
         </div>
@@ -27,12 +31,33 @@
 
     <main>
         <!-- Oversized Hero -->
-        <section class="section-hero container-lg reveal">
-            <h1 class="hero-headline text-balance">Enterprise Grade Software.</h1>
-            <p class="hero-subheadline text-balance">We build and scale SaaS products — from idea to launch. Custom software, AI automation, and integrations that help you grow faster.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <section class="section-hero container-lg">
+            <div class="hero-eyebrow reveal">Enterprise-grade engineering, built to scale</div>
+            <h1 class="hero-headline text-balance reveal">We build what’s <span class="accent-word">next.</span></h1>
+            <p class="hero-subheadline text-balance reveal">We build and scale SaaS products — from idea to launch. Custom software, AI automation, and integrations that help you grow faster.</p>
+            <div class="hero-actions reveal">
                 <a href="contact.html" class="btn btn-accent" style="font-size: var(--text-lg); padding: 1.2rem 2.4rem;">Schedule a Consultation</a>
                 <a href="services.html" class="btn btn-secondary" style="font-size: var(--text-lg); padding: 1.2rem 2.4rem;">Explore Capabilities</a>
+            </div>
+            <p class="hero-note reveal">Strategy · Engineering · Launch · Scale</p>
+            <div class="hero-visual reveal" aria-label="Illustration of a software analytics dashboard">
+                <div class="floating-tag tag-one">AI workflows<span>Automating the busywork</span></div>
+                <div class="dashboard-window">
+                    <div class="window-top"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i><span class="window-label">TECZO / WORKSPACE</span></div>
+                    <div class="dashboard-content">
+                        <div class="dashboard-sidebar"><div class="dash-line active"></div><div class="dash-line"></div><div class="dash-line"></div><div class="dash-line"></div><div class="dash-line"></div></div>
+                        <div class="dashboard-main">
+                            <div class="dash-welcome">MONDAY, PRODUCT OVERVIEW</div><div class="dash-title">Your next big idea, in motion.</div>
+                            <div class="dash-cards">
+                                <div class="dash-card"><span>Delivery health</span><strong>98.4%</strong><em>↑ On track</em></div>
+                                <div class="dash-card"><span>Workflows</span><strong>24</strong><em>↑ Optimized</em></div>
+                                <div class="dash-card"><span>Platform uptime</span><strong>99.9%</strong><em>↑ Stable</em></div>
+                            </div>
+                            <div class="dash-chart"><svg viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,78 C45,72 55,83 95,57 S145,64 190,42 S245,56 285,33 S345,48 390,24 S440,43 480,18 S540,31 600,7" fill="none" stroke="#6667ef" stroke-width="3" stroke-linecap="round"/><path d="M0,78 C45,72 55,83 95,57 S145,64 190,42 S245,56 285,33 S345,48 390,24 S440,43 480,18 S540,31 600,7 L600,100 L0,100Z" fill="rgba(91,92,240,.09)"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-tag tag-two">Built for growth<span>Systems that scale with you</span></div>
             </div>
         </section>
 
@@ -44,11 +69,11 @@
                     <span class="stat-label">Projects Delivered</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">High</span>
+                    <span class="stat-number">99%</span>
                     <span class="stat-label">Client Retention</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">Global</span>
+                    <span class="stat-number">5+</span>
                     <span class="stat-label">Countries Served</span>
                 </div>
             </div>
@@ -69,7 +94,7 @@
         <!-- Services Preview -->
         <section class="container-lg" style="margin-top: var(--space-16);">
             <div class="reveal">
-                <h2 style="font-size: var(--text-6xl); margin-bottom: var(--space-12);">Our Expertise.</h2>
+                <span class="section-kicker">What we do</span><h2 class="section-heading">Our expertise.<br>Built around your ambition.</h2>
             </div>
             <div class="capabilities-list reveal" style="margin-top: 0;">
                 <div class="capability-row">
@@ -98,7 +123,7 @@
 
         <!-- Client Impact -->
         <section class="container-lg" style="padding-bottom: var(--space-32);">
-            <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-8);" class="reveal">Client Impact.</h2>
+            <span class="section-kicker reveal">Proof in the work</span><h2 class="section-heading reveal">Don’t take our word for it.</h2>
             <div class="testimonials-grid reveal">
                 <div class="testimonial-card">
                     <p class="testimonial-quote">"We approached Teczo for a custom web application, and the turnaround time was surprisingly fast. Their team understood our requirements clearly and delivered a clean, scalable solution. Communication was consistent throughout the project."</p>
@@ -114,6 +139,15 @@
                         <div class="testimonial-role" style="color: #a1a1a6;">CTO, FinEdge Technologies</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="container-lg reveal" style="padding-bottom: var(--space-24);">
+            <div class="cta-panel">
+                <span class="section-kicker" style="color:#b9baff;">Have a product in mind?</span>
+                <h2>Let’s turn your next idea into something real.</h2>
+                <p>Let’s discuss how Teczo can help your business scale, automate, and move forward with confidence.</p>
+                <a href="contact.html" class="btn">Start a conversation</a>
             </div>
         </section>
     </main>

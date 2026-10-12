@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fa">
     <title>About Us | Teczo</title>
     <meta name="description" content="We are a focused tech execution company. Learn about Teczo Softwares' approach and client impact.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -17,14 +21,15 @@
                 <a href="privacy.html" class="nav-link">Privacy</a>
                 <a href="contact.html" class="btn btn-accent">Book a Call</a>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
         </div>
     </header>
 
     <main>
-        <section class="section-hero container-lg reveal">
-            <h1 class="hero-headline text-balance">We are a focused tech execution company.</h1>
-            <p class="hero-subheadline text-balance">Ideas are cheap—what matters is building something that actually works.</p>
+        <section class="section-hero container-lg">
+            <div class="hero-eyebrow reveal">Teczo Softwares · Our approach</div>
+            <h1 class="hero-headline text-balance reveal">We are a focused tech execution company.</h1>
+            <p class="hero-subheadline text-balance reveal">Ideas are cheap—what matters is building something that actually works.</p>
         </section>
 
         <!-- The "Why Teczo" Section from original site -->
@@ -108,9 +113,10 @@
         </section>
 
         <!-- CTA -->
-        <section class="container-lg text-center reveal" style="padding-bottom: var(--space-32);">
+        <section class="container-lg reveal" style="padding-bottom: var(--space-32);"><div class="cta-panel">
             <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Work with us</h2>
             <a href="contact.html" class="btn btn-accent" style="font-size: var(--text-lg); padding: 1rem 2rem;">Start a Conversation</a>
+            </div>
         </section>
     </main>
 
