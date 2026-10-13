@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Passes & Itinerary • UTSAV — Indian Gatherings</title>
+  <meta name="description" content="View and manage your confirmed Indian cultural event passes, calendar invites, and saved gatherings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rozha+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement -->
+  <aside class="top-announcement" aria-label="Announcement">
+    <div class="container announcement-inner">
+      <span class="announcement-badge">नमो नमः</span>
+      <span class="announcement-text">
+        <strong>अतिथि देवो भव</strong> • Handcrafted cultural baithaks, food trails & live gatherings across 9+ Indian cultural hubs.
+      </span>
+      <div class="announcement-right">
+        <span class="currency-tag">All prices in Indian Rupees (₹)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Multi-Page Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <a href="index.html" class="brand-logo" aria-label="Utsav Portal Homepage">
+          <div class="logo-mark">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2c.8 2 2.5 3.5 2.5 5.5a2.5 2.5 0 0 1-5 0C9.5 5.5 11.2 4 12 2z" fill="#D97706" stroke="#B45309"/>
+              <path d="M4 14c0 4.418 3.582 7 8 7s8-2.582 8-7c0-2-3-3-8-3s-8 1-8 3z" fill="#8E2818" stroke="#681C10"/>
+              <path d="M2 14h20" stroke="#E7C57E" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-hindi">उत्सव</span>
+            <span class="brand-english">UTSAV<span class="brand-sub">PASS</span></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Browse Events</a>
+        <a href="register.html" class="nav-link">Book Passes</a>
+        <a href="my-passes.html" class="nav-link active">My Passes</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="my-passes.html#saved" class="btn btn-outline" id="headerSavedBtn" aria-label="Saved events">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>Saved</span>
+          <span class="badge-count" id="savedCountBadge">0</span>
+        </a>
+
+        <a href="my-passes.html" class="btn btn-secondary" aria-label="My booked passes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+            <line x1="2" y1="10" x2="22" y2="10"></line>
+            <line x1="7" y1="15" x2="7.01" y2="15"></line>
+            <line x1="12" y1="15" x2="12.01" y2="15"></line>
+          </svg>
+          <span>My Passes</span>
+          <span class="badge-count" id="passCountBadge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Title Strip -->
+  <section class="page-header-strip no-print">
+    <div class="container">
+      <h1 class="page-title">My Cultural Passes & Itinerary</h1>
+      <p class="page-subtitle">Your active venue passes, entry QR barcodes, calendar downloads, and bookmarked gatherings.</p>
+    </div>
+  </section>
+
+  <!-- Main Dashboard Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Tabs Navigation -->
+      <div class="tabs-navigation-bar" role="tablist">
+        <button type="button" class="tab-btn active" id="tabBtnPasses" role="tab" aria-selected="true" aria-controls="panePasses">
+          <span>Reserved Entry Passes</span>
+          <span class="tab-pill-count" id="tabPassesCount">0</span>
+        </button>
+        <button type="button" class="tab-btn" id="tabBtnSaved" role="tab" aria-selected="false" aria-controls="paneSaved">
+          <span>Saved Gatherings (Favorites)</span>
+          <span class="tab-pill-count" id="tabSavedCount">0</span>
+        </button>
+      </div>
+
+      <!-- Tab Pane 1: Reserved Passes -->
+      <section id="panePasses" class="tab-pane active" role="tabpanel" aria-labelledby="tabBtnPasses">
+        <div id="passesListContainer">
+          <!-- Populated via passes-page.js -->
+        </div>
+
+        <!-- Empty State for Passes -->
+        <div id="noPassesEmptyState" class="empty-state-card" style="display: none;">
+          <div class="empty-state-icon">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#A73220" stroke-width="1.8">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+          </div>
+          <h2 class="empty-title">No Reserved Passes Yet</h2>
+          <p class="empty-description">
+            You haven't reserved passes for any gatherings yet. Explore our upcoming classical baithaks, food walks, and fests across India.
+          </p>
+          <a href="events.html" class="btn btn-primary">Browse & Filter Events</a>
+        </div>
+      </section>
+
+      <!-- Tab Pane 2: Saved Gatherings -->
+      <section id="paneSaved" class="tab-pane" role="tabpanel" aria-labelledby="tabBtnSaved">
+        <div class="events-grid" id="savedGridContainer">
+          <!-- Populated via passes-page.js -->
+        </div>
+
+        <!-- Empty State for Saved -->
+        <div id="noSavedEmptyState" class="empty-state-card" style="display: none;">
+          <div class="empty-state-icon">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#C8781A" stroke-width="1.8">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h2 class="empty-title">No Saved Events</h2>
+          <p class="empty-description">
+            You haven't bookmarked any events yet. Click the bookmark icon on any event card while browsing to save it here for quick access.
+          </p>
+          <a href="events.html" class="btn btn-primary">Discover Upcoming Events</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Pass Boarding Ticket View Modal -->
+  <dialog id="viewTicketModal" class="custom-dialog" aria-labelledby="modalTicketTitle">
+    <div class="dialog-content printable-ticket-modal">
+      <div class="dialog-header no-print">
+        <div class="success-flag">
+          <span class="flag-icon">✓</span>
+          <span id="modalTicketTitle">OFFICIAL ENTRY PASS</span>
+        </div>
+        <button type="button" class="btn-close-modal" id="closeTicketModalBtn" aria-label="Close pass view">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="dialog-body ticket-body">
+        <article class="utsav-ticket-card">
+          <div class="ticket-head">
+            <div class="ticket-brand">
+              <span class="t-hindi">उत्सव</span>
+              <span class="t-title">UTSAV OFFICIAL ENTRY PASS</span>
+            </div>
+            <div class="ticket-status-pill">VERIFIED ENTRY</div>
+          </div>
+
+          <div class="ticket-cut-divider">
+            <span class="cut-dot"></span>
+            <span class="cut-line"></span>
+            <span class="cut-dot"></span>
+          </div>
+
+          <div class="ticket-main-grid">
+            <div class="ticket-details">
+              <div class="t-ref-row">
+                <span class="t-label">BOOKING REFERENCE:</span>
+                <strong class="t-ref-code" id="modalRefCode">UTSAV-BLR-0000</strong>
+              </div>
+
+              <h2 class="t-event-title" id="modalEventTitle">Event Title</h2>
+              <p class="t-event-artist" id="modalArtistName">Featuring Artist</p>
+
+              <div class="t-info-grid">
+                <div class="t-info-item">
+                  <span class="t-label">DATE & TIME</span>
+                  <strong class="t-val" id="modalDateTime">14 Oct • 06:30 PM</strong>
+                </div>
+                <div class="t-info-item">
+                  <span class="t-label">SEATS / TIER</span>
+                  <strong class="t-val" id="modalSeatsTier">1 Pass (General)</strong>
+                </div>
+                <div class="t-info-item t-full">
+                  <span class="t-label">VENUE & LANDMARK</span>
+                  <strong class="t-val" id="modalVenue">Chowdiah Memorial Hall, Malleshwaram</strong>
+                </div>
+                <div class="t-info-item">
+                  <span class="t-label">PRIMARY ATTENDEE</span>
+                  <strong class="t-val" id="modalAttendee">Attendee Name</strong>
+                </div>
+                <div class="t-info-item">
+                  <span class="t-label">CONTACT PHONE</span>
+                  <strong class="t-val" id="modalPhone">+91 98765 43210</strong>
+                </div>
+                <div class="t-info-item">
+                  <span class="t-label">TOTAL AMOUNT</span>
+                  <strong class="t-val highlight" id="modalAmount">₹0 (Paid/Confirmed)</strong>
+                </div>
+                <div class="t-info-item">
+                  <span class="t-label">PHOTO ID</span>
+                  <strong class="t-val" id="modalIdProof">Aadhaar Card Verified</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scannable Stub -->
+            <div class="ticket-stub">
+              <div class="qr-box">
+                <canvas id="modalTicketQrCanvas" width="130" height="130" aria-label="Verification QR code"></canvas>
+                <span class="qr-caption">SCAN AT ENTRY GATE</span>
+              </div>
+              <div class="stub-instructions">
+                <span>Please display this pass on your phone or carry a printed copy with original ID proof.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-foot">
+            <span>UtsavPass Security Verification • Entry gates open 45 minutes prior to scheduled start.</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="dialog-footer no-print">
+        <button type="button" class="btn btn-outline" onclick="window.print()">
+          🖨 Print / Save as PDF
+        </button>
+        <button type="button" class="btn btn-secondary" id="modalDownloadIcsBtn">
+          📅 Add to Calendar (.ics)
+        </button>
+        <button type="button" class="btn btn-primary" id="closeTicketModalFooterBtn">
+          Close Pass
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" role="status">
+    <div class="toast" id="toastElement">
+      <span class="toast-icon" id="toastIcon">✓</span>
+      <span class="toast-message" id="toastMessage">Success</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="f-hindi">उत्सव</span>
+          <span class="f-english">UTSAVPASS</span>
+        </div>
+        <p class="footer-mission">
+          Dedicated to promoting and preserving India’s regional living arts, classical music traditions, culinary culture, and independent creators across Bharat.
+        </p>
+        <p class="copyright-text">
+          &copy; 2026 UtsavPass Cultural Foundation. Made with pride for Bharat.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Browse & Filter Events</a></li>
+          <li><a href="register.html">Reserve Passes & Tickets</a></li>
+          <li><a href="my-passes.html">My Passes & Saved Gatherings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Indian Hubs</h4>
+        <ul class="footer-links">
+          <li><a href="events.html?city=Bengaluru">Bengaluru (Malleshwaram)</a></li>
+          <li><a href="events.html?city=Mumbai">Mumbai (Prithvi Theatre)</a></li>
+          <li><a href="events.html?city=Delhi+NCR">Delhi NCR (Chandni Chowk)</a></li>
+          <li><a href="events.html?city=Hyderabad">Hyderabad (Chowmahalla)</a></li>
+          <li><a href="events.html?city=Chennai">Chennai (Mylapore)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Organizers & Sabhas</h4>
+        <p class="footer-text-sm">
+          Are you a cultural sabha or heritage curator? Register your upcoming season.
+        </p>
+        <a href="register.html" class="btn btn-outline btn-sm">
+          Reserve Event Passes
+        </a>
+        <div class="tax-info">
+          <span>Official INR Currency Gateways • GST Compliant Invoices</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="events-data.js"></script>
+  <script src="common.js"></script>
+  <script src="passes-page.js"></script>
+</body>
+</html>

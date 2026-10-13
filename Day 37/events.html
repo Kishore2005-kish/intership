@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse & Filter Events • UTSAV — Indian Gatherings & Sabhas</title>
+  <meta name="description" content="Filter upcoming classical baithaks, heritage food walks, and fests by date, city, genre, and price across India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rozha+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement -->
+  <aside class="top-announcement" aria-label="Announcement">
+    <div class="container announcement-inner">
+      <span class="announcement-badge">नमो नमः</span>
+      <span class="announcement-text">
+        <strong>अतिथि देवो भव</strong> • Handcrafted cultural baithaks, food trails & live gatherings across 9+ Indian cultural hubs.
+      </span>
+      <div class="announcement-right">
+        <span class="currency-tag">All prices in Indian Rupees (₹)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Multi-Page Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <a href="index.html" class="brand-logo" aria-label="Utsav Portal Homepage">
+          <div class="logo-mark">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2c.8 2 2.5 3.5 2.5 5.5a2.5 2.5 0 0 1-5 0C9.5 5.5 11.2 4 12 2z" fill="#D97706" stroke="#B45309"/>
+              <path d="M4 14c0 4.418 3.582 7 8 7s8-2.582 8-7c0-2-3-3-8-3s-8 1-8 3z" fill="#8E2818" stroke="#681C10"/>
+              <path d="M2 14h20" stroke="#E7C57E" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-hindi">उत्सव</span>
+            <span class="brand-english">UTSAV<span class="brand-sub">PASS</span></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link active">Browse Events</a>
+        <a href="register.html" class="nav-link">Book Passes</a>
+        <a href="my-passes.html" class="nav-link">My Passes</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="my-passes.html#saved" class="btn btn-outline" aria-label="Saved events">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>Saved</span>
+          <span class="badge-count" id="savedCountBadge">0</span>
+        </a>
+
+        <a href="my-passes.html" class="btn btn-secondary" aria-label="My booked passes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+            <line x1="2" y1="10" x2="22" y2="10"></line>
+            <line x1="7" y1="15" x2="7.01" y2="15"></line>
+            <line x1="12" y1="15" x2="12.01" y2="15"></line>
+          </svg>
+          <span>My Passes</span>
+          <span class="badge-count" id="passCountBadge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter & Command Bar Header -->
+  <section class="page-header-strip">
+    <div class="container">
+      <div class="search-command-card" role="search" aria-label="Event search and date filters">
+        <div class="search-row">
+          <!-- Keyword search -->
+          <div class="search-field field-grow">
+            <label for="searchInput" class="field-label">Search Event or Artist</label>
+            <div class="input-with-icon">
+              <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchInput" placeholder="e.g. Chowdiah, Qawwali, Biryani walk, Trek..." autocomplete="off">
+            </div>
+          </div>
+
+          <!-- Date Picker Filter -->
+          <div class="search-field">
+            <label for="dateFilterInput" class="field-label">Filter by Specific Date</label>
+            <div class="input-with-icon">
+              <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <input type="date" id="dateFilterInput" aria-label="Choose Event Date">
+            </div>
+          </div>
+
+          <!-- City Selector -->
+          <div class="search-field">
+            <label for="citySelect" class="field-label">Indian City Hub</label>
+            <div class="input-with-icon">
+              <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <select id="citySelect" aria-label="Select City">
+                <option value="ALL">All Across India</option>
+                <option value="Bengaluru">Bengaluru (ಬೆಂಗಳೂರು)</option>
+                <option value="Mumbai">Mumbai (मुंबई)</option>
+                <option value="Delhi NCR">Delhi NCR (दिल्ली)</option>
+                <option value="Hyderabad">Hyderabad (హైదరాబాద్)</option>
+                <option value="Chennai">Chennai (சென்னை)</option>
+                <option value="Pune">Pune (पुणे)</option>
+                <option value="Kolkata">Kolkata (কলকাতা)</option>
+                <option value="Jaipur">Jaipur (जयपुर)</option>
+                <option value="Goa">Goa (गोंय)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Genre Selector -->
+          <div class="search-field">
+            <label for="categorySelect" class="field-label">Event Genre</label>
+            <div class="input-with-icon">
+              <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              <select id="categorySelect" aria-label="Select Genre">
+                <option value="ALL">All Genres</option>
+                <option value="Classical Music">Classical Music & Baithaks</option>
+                <option value="Food & Heritage">Food Walks & Culinary Trails</option>
+                <option value="Theatre & Arts">Theatre & Literature</option>
+                <option value="Workshops & Crafts">Handloom & Artisan Crafts</option>
+                <option value="Tech & Startups">Tech & Indie Builders</option>
+                <option value="Standup Comedy">Stand-up & Open Mic</option>
+                <option value="Outdoors & Adventure">Heritage Treks & Trails</option>
+                <option value="Live Music">Live Contemporary & Folk</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Date Presets Row -->
+        <div class="quick-date-row">
+          <span class="quick-date-caption">Quick Date Filter:</span>
+          <div class="date-buttons-group" role="group" aria-label="Quick date selectors">
+            <button type="button" class="date-chip active" data-date-filter="all">All Dates</button>
+            <button type="button" class="date-chip" data-date-filter="today">Today</button>
+            <button type="button" class="date-chip" data-date-filter="tomorrow">Tomorrow</button>
+            <button type="button" class="date-chip" data-date-filter="weekend">This Weekend</button>
+            <button type="button" class="date-chip" data-date-filter="week">Next 7 Days</button>
+          </div>
+          <button type="button" class="btn-clear-filters" id="resetFiltersBtn" title="Reset all applied filters">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            <span>Reset Filters</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog Content -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Catalog Results Bar -->
+      <section class="catalog-header-bar">
+        <div class="results-meta">
+          <h1 class="catalog-title" id="catalogResultsHeading">Upcoming Gatherings Across India</h1>
+          <span class="results-count-text" id="resultsCountText">Showing all events</span>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="control-item">
+            <label for="priceFilterSelect" class="control-label">Pricing:</label>
+            <select id="priceFilterSelect" class="select-sm">
+              <option value="ALL">All Rates</option>
+              <option value="FREE">Free Passes Only</option>
+              <option value="UNDER_500">Under ₹500</option>
+              <option value="500_TO_1000">₹500 - ₹1,000</option>
+              <option value="ABOVE_1000">Above ₹1,000</option>
+            </select>
+          </div>
+
+          <div class="control-item">
+            <label for="sortBySelect" class="control-label">Sort by:</label>
+            <select id="sortBySelect" class="select-sm">
+              <option value="date-asc">Date: Soonest First</option>
+              <option value="date-desc">Date: Furthest First</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="seats-asc">Fewest Seats Remaining</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Active Filters Display -->
+      <div class="active-filters-bar" id="activeFiltersContainer" style="display: none;">
+        <span class="active-filters-label">Active Filters:</span>
+        <div class="active-chips-list" id="activeChipsList"></div>
+      </div>
+
+      <!-- Events Grid -->
+      <div class="events-grid" id="eventsGrid" aria-live="polite">
+        <!-- Event Cards dynamically rendered here via events.js -->
+      </div>
+
+      <!-- Empty State View -->
+      <div class="empty-state-card" id="emptyState" style="display: none;">
+        <div class="empty-state-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8E2818" stroke-width="1.6">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+          </svg>
+        </div>
+        <h3 class="empty-title">No Events Found For Selected Criteria</h3>
+        <p class="empty-description">
+          We could not find scheduled gatherings matching your selected date or city filters. Try choosing a different date, clearing filters, or browsing across all cities.
+        </p>
+        <button type="button" class="btn btn-primary" id="emptyResetBtn">
+          Clear Filters & Show All Events
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Event Details Modal -->
+  <dialog id="eventDetailModal" class="custom-dialog" aria-labelledby="modalDetailTitle">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-header-meta">
+          <span class="badge-tag" id="modalDetailCategory">Classical</span>
+          <span class="location-badge" id="modalDetailCity">Bengaluru</span>
+        </div>
+        <button type="button" class="btn-close-modal" id="closeDetailModalBtn" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="dialog-body">
+        <div class="modal-event-hero">
+          <img id="modalDetailImage" src="" alt="Event banner" class="modal-hero-img">
+        </div>
+
+        <div class="modal-info-block">
+          <h2 class="modal-event-title" id="modalDetailTitle">Event Title</h2>
+          <p class="modal-event-artist" id="modalDetailArtist">Featuring Pt. Artist</p>
+          
+          <div class="event-meta-cards">
+            <div class="meta-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <div>
+                <span class="meta-label">Date & Timing</span>
+                <span class="meta-val" id="modalDetailDateTime">Saturday, 14 Oct • 6:30 PM</span>
+              </div>
+            </div>
+
+            <div class="meta-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                <span class="meta-label">Venue & Landmark</span>
+                <span class="meta-val" id="modalDetailVenue">Chowdiah Memorial Hall</span>
+              </div>
+            </div>
+
+            <div class="meta-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <div>
+                <span class="meta-label">Pass Price</span>
+                <span class="meta-val price-val" id="modalDetailPrice">₹499 per person</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h3 class="section-heading">About This Gathering</h3>
+            <p class="section-text" id="modalDetailDescription">Detailed narrative...</p>
+          </div>
+
+          <div class="modal-section">
+            <h3 class="section-heading">What's Included with your Pass</h3>
+            <ul class="inclusions-list" id="modalDetailInclusions">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog-footer">
+        <div class="footer-price-info">
+          <span class="f-label">Starting at</span>
+          <span class="f-price" id="modalFooterPrice">₹499</span>
+        </div>
+        <div class="footer-actions">
+          <button type="button" class="btn btn-outline" id="modalDetailSaveBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span id="modalDetailSaveText">Save</span>
+          </button>
+          <a href="#" class="btn btn-primary" id="modalDetailProceedRegLink">
+            <span>Proceed to Book Pass</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" role="status">
+    <div class="toast" id="toastElement">
+      <span class="toast-icon" id="toastIcon">✓</span>
+      <span class="toast-message" id="toastMessage">Success</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="f-hindi">उत्सव</span>
+          <span class="f-english">UTSAVPASS</span>
+        </div>
+        <p class="footer-mission">
+          Dedicated to promoting and preserving India’s regional living arts, classical music traditions, culinary culture, and independent creators across Bharat.
+        </p>
+        <p class="copyright-text">
+          &copy; 2026 UtsavPass Cultural Foundation. Made with pride for Bharat.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Browse & Filter Events</a></li>
+          <li><a href="register.html">Reserve Passes & Tickets</a></li>
+          <li><a href="my-passes.html">My Passes & Saved Gatherings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Indian Hubs</h4>
+        <ul class="footer-links">
+          <li><a href="events.html?city=Bengaluru">Bengaluru (Malleshwaram)</a></li>
+          <li><a href="events.html?city=Mumbai">Mumbai (Prithvi Theatre)</a></li>
+          <li><a href="events.html?city=Delhi+NCR">Delhi NCR (Chandni Chowk)</a></li>
+          <li><a href="events.html?city=Hyderabad">Hyderabad (Chowmahalla)</a></li>
+          <li><a href="events.html?city=Chennai">Chennai (Mylapore)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Organizers & Sabhas</h4>
+        <p class="footer-text-sm">
+          Are you a cultural sabha or heritage curator? Register your upcoming season.
+        </p>
+        <a href="register.html" class="btn btn-outline btn-sm">
+          Reserve Event Passes
+        </a>
+        <div class="tax-info">
+          <span>Official INR Currency Gateways • GST Compliant Invoices</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="events-data.js"></script>
+  <script src="common.js"></script>
+  <script src="events-page.js"></script>
+</body>
+</html>
