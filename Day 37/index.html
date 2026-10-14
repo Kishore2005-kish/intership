@@ -92,6 +92,22 @@
         <p class="hero-subhead">
           Discover soulful Hindustani ragas, dawn food walks through historic gullies, Marathi theatre, Carnatic sabhas, and grassroots indie developer mixers across India's vibrant cities.
         </p>
+        <div class="hero-photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            alt="A live cultural performance glowing beneath warm stage lights"
+            class="hero-photo"
+            fetchpriority="high">
+          <div class="hero-photo-shade"></div>
+          <div class="hero-photo-caption">
+            <span class="hero-photo-eyebrow">MAKE ROOM FOR WONDER</span>
+            <strong>Stories, sounds &amp; flavours worth going out for.</strong>
+          </div>
+          <div class="hero-photo-note">
+            <span class="hero-note-number">9+</span>
+            <span>cultural hubs<br>to explore</span>
+          </div>
+        </div>
 
         <!-- Search Command Card (Routes to events.html) -->
         <form class="search-command-card" action="events.html" method="GET" role="search">
@@ -204,27 +220,51 @@
 
       <div class="genre-grid">
         <a href="events.html?category=Classical+Music" class="genre-card">
-          <div class="genre-card-icon">🪕</div>
-          <h3 class="genre-card-title">Classical Music & Baithaks</h3>
-          <p class="genre-card-desc">Hindustani jugalbandis, acoustic sitar recitals, and Chennai Margazhi sabhas.</p>
+          <div class="genre-card-media">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Musicians performing on a warmly lit stage" class="genre-card-img" loading="lazy">
+            <span class="genre-card-tag">SOUND &amp; SOUL</span>
+          </div>
+          <div class="genre-card-body">
+            <h3 class="genre-card-title">Classical Music &amp; Baithaks</h3>
+            <p class="genre-card-desc">Hindustani jugalbandis, acoustic sitar recitals, and Chennai Margazhi sabhas.</p>
+            <span class="genre-card-action">Explore music <span aria-hidden="true">→</span></span>
+          </div>
         </a>
 
         <a href="events.html?category=Food+%26+Heritage" class="genre-card">
-          <div class="genre-card-icon">🍲</div>
-          <h3 class="genre-card-title">Food & Heritage Trails</h3>
-          <p class="genre-card-desc">Old Delhi seekh kebabs, Hyderabadi Irani chai walks, and Kolkata tram addas.</p>
+          <div class="genre-card-media">
+            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="A colourful Indian feast served for sharing" class="genre-card-img" loading="lazy">
+            <span class="genre-card-tag">TASTE THE CITY</span>
+          </div>
+          <div class="genre-card-body">
+            <h3 class="genre-card-title">Food &amp; Heritage Trails</h3>
+            <p class="genre-card-desc">Old Delhi seekh kebabs, Hyderabadi Irani chai walks, and Kolkata tram addas.</p>
+            <span class="genre-card-action">Follow a food trail <span aria-hidden="true">→</span></span>
+          </div>
         </a>
 
         <a href="events.html?category=Theatre+%26+Arts" class="genre-card">
-          <div class="genre-card-icon">🎭</div>
-          <h3 class="genre-card-title">Theatre & Literature</h3>
-          <p class="genre-card-desc">Dastangoi Urdu storytelling, Prithvi Theatre productions, and Marathi drama.</p>
+          <div class="genre-card-media">
+            <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="A performer taking a bow on stage" class="genre-card-img" loading="lazy">
+            <span class="genre-card-tag">TALES THAT STAY</span>
+          </div>
+          <div class="genre-card-body">
+            <h3 class="genre-card-title">Theatre &amp; Literature</h3>
+            <p class="genre-card-desc">Dastangoi Urdu storytelling, Prithvi Theatre productions, and Marathi drama.</p>
+            <span class="genre-card-action">Find your next story <span aria-hidden="true">→</span></span>
+          </div>
         </a>
 
         <a href="events.html?category=Workshops+%26+Crafts" class="genre-card">
-          <div class="genre-card-icon">🏺</div>
-          <h3 class="genre-card-title">Artisan Handloom & Pottery</h3>
-          <p class="genre-card-desc">Jaipur Bagru natural indigo block-printing and Bombay Gothic terracotta pottery.</p>
+          <div class="genre-card-media">
+            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Artists making colourful work together in a studio" class="genre-card-img" loading="lazy">
+            <span class="genre-card-tag">MADE BY HAND</span>
+          </div>
+          <div class="genre-card-body">
+            <h3 class="genre-card-title">Artisan Handloom &amp; Pottery</h3>
+            <p class="genre-card-desc">Jaipur Bagru natural indigo block-printing and Bombay Gothic terracotta pottery.</p>
+            <span class="genre-card-action">Make something by hand <span aria-hidden="true">→</span></span>
+          </div>
         </a>
       </div>
     </div>
@@ -242,52 +282,90 @@
 
       <div class="city-grid">
         <a href="events.html?city=Bengaluru" class="city-hub-card">
-          <div>
-            <div class="city-hub-name">Bengaluru</div>
-            <div class="city-hub-hindi">ಬೆಂಗಳೂರು • Malleshwaram & Indiranagar</div>
+          <div class="city-hub-media">
+            <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Bengaluru city at dusk" class="city-hub-img" loading="lazy">
+            <span class="city-hub-badge">3 GATHERINGS</span>
           </div>
-          <span class="city-hub-count">3 Events</span>
+          <div class="city-hub-body">
+            <div><div class="city-hub-name">Bengaluru</div><div class="city-hub-hindi">ಬೆಂಗಳೂರು • Malleshwaram &amp; Indiranagar</div></div>
+            <span class="city-hub-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
 
         <a href="events.html?city=Mumbai" class="city-hub-card">
-          <div>
-            <div class="city-hub-name">Mumbai</div>
-            <div class="city-hub-hindi">मुंबई • Prithvi Theatre & Kala Ghoda</div>
+          <div class="city-hub-media">
+            <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Mumbai's historic Gateway of India" class="city-hub-img" loading="lazy">
+            <span class="city-hub-badge">2 GATHERINGS</span>
           </div>
-          <span class="city-hub-count">2 Events</span>
+          <div class="city-hub-body">
+            <div><div class="city-hub-name">Mumbai</div><div class="city-hub-hindi">मुंबई • Prithvi Theatre &amp; Kala Ghoda</div></div>
+            <span class="city-hub-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
 
         <a href="events.html?city=Delhi+NCR" class="city-hub-card">
-          <div>
-            <div class="city-hub-name">Delhi NCR</div>
-            <div class="city-hub-hindi">दिल्ली • Chandni Chowk & Mandi House</div>
+          <div class="city-hub-media">
+            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="The historic architecture of Delhi" class="city-hub-img" loading="lazy">
+            <span class="city-hub-badge">1 GATHERING</span>
           </div>
-          <span class="city-hub-count">1 Event</span>
+          <div class="city-hub-body">
+            <div><div class="city-hub-name">Delhi NCR</div><div class="city-hub-hindi">दिल्ली • Chandni Chowk &amp; Mandi House</div></div>
+            <span class="city-hub-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
 
         <a href="events.html?city=Hyderabad" class="city-hub-card">
-          <div>
-            <div class="city-hub-name">Hyderabad</div>
-            <div class="city-hub-hindi">హైదరాబాద్ • Chowmahalla & Charminar</div>
+          <div class="city-hub-media">
+            <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="The Charminar monument in Hyderabad" class="city-hub-img" loading="lazy">
+            <span class="city-hub-badge">1 GATHERING</span>
           </div>
-          <span class="city-hub-count">1 Event</span>
+          <div class="city-hub-body">
+            <div><div class="city-hub-name">Hyderabad</div><div class="city-hub-hindi">హైదరాబాద్ • Chowmahalla &amp; Charminar</div></div>
+            <span class="city-hub-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
 
         <a href="events.html?city=Chennai" class="city-hub-card">
-          <div>
-            <div class="city-hub-name">Chennai</div>
-            <div class="city-hub-hindi">சென்னை • Mylapore & Music Academy</div>
+          <div class="city-hub-media">
+            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="A colourful South Indian temple tower" class="city-hub-img" loading="lazy">
+            <span class="city-hub-badge">1 GATHERING</span>
           </div>
-          <span class="city-hub-count">1 Event</span>
+          <div class="city-hub-body">
+            <div><div class="city-hub-name">Chennai</div><div class="city-hub-hindi">சென்னை • Mylapore &amp; Music Academy</div></div>
+            <span class="city-hub-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
 
         <a href="events.html?city=Pune" class="city-hub-card">
-          <div>
-            <div class="city-hub-name">Pune</div>
-            <div class="city-hub-hindi">पुणे • Sinhagad & Sahyadri Ridges</div>
+          <div class="city-hub-media">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="A green mountain landscape near Pune" class="city-hub-img" loading="lazy">
+            <span class="city-hub-badge">1 GATHERING</span>
           </div>
-          <span class="city-hub-count">1 Event</span>
+          <div class="city-hub-body">
+            <div><div class="city-hub-name">Pune</div><div class="city-hub-hindi">पुणे • Sinhagad &amp; Sahyadri Ridges</div></div>
+            <span class="city-hub-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="culture-feature-section">
+    <div class="container culture-feature">
+      <div class="culture-feature-image">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="A singer sharing a live performance with an intimate audience" loading="lazy">
+        <span class="culture-image-caption">THE BEST NIGHTS BECOME THE BEST STORIES</span>
+      </div>
+      <div class="culture-feature-copy">
+        <span class="culture-feature-kicker">GO BEYOND THE EVERYDAY</span>
+        <h2>Come for the performance. Leave with a story.</h2>
+        <p>Meet the artists, taste a neighbourhood, learn a craft, or hear a raga in the room it was meant for. Utsav brings you closer to the people and places behind India's living culture.</p>
+        <ul class="culture-feature-points">
+          <li>Thoughtfully selected local hosts</li>
+          <li>Small gatherings with room to connect</li>
+          <li>Memories that last beyond the encore</li>
+        </ul>
+        <a href="events.html" class="btn btn-secondary">Find your next experience <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -430,7 +508,7 @@
                   <span class="badge-day">${dayStr}</span>
                 </div>
                 <div class="card-top-tags">
-                  <span class="featured-flag">★ Featured</span>
+                  <span class="featured-flag">Featured</span>
                   <button type="button" class="btn-bookmark ${isSaved ? 'saved' : ''}" onclick="handleHomeBookmark('${ev.id}', this)" aria-label="Save event">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
                       <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -442,15 +520,32 @@
               <div class="card-content">
                 <div class="card-city-genre">
                   <span class="genre-tag">${Utsav.escapeHtml(ev.category)}</span>
-                  <span class="city-pill">📍 ${Utsav.escapeHtml(ev.city)}</span>
+                  <span class="city-pill">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="2.5"></circle>
+                    </svg>
+                    ${Utsav.escapeHtml(ev.city)}
+                  </span>
                 </div>
 
                 <h3 class="card-title">${Utsav.escapeHtml(ev.title)}</h3>
                 <p class="card-artist">${Utsav.escapeHtml(ev.artist)}</p>
 
                 <div class="card-venue-time">
-                  <div class="venue-line">🏛 ${Utsav.escapeHtml(ev.venue)}</div>
-                  <div class="time-line">⏰ ${Utsav.escapeHtml(ev.time)}</div>
+                  <div class="venue-line">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 9h.01M15 9h.01"></path>
+                    </svg>
+                    ${Utsav.escapeHtml(ev.venue)}
+                  </div>
+                  <div class="time-line">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M12 7v5l3 2"></path>
+                    </svg>
+                    ${Utsav.escapeHtml(ev.time)}
+                  </div>
                 </div>
 
                 <p class="card-desc-snippet">${Utsav.escapeHtml(ev.description)}</p>
