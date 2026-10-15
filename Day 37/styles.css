@@ -1,45 +1,48 @@
 /* ==========================================================================
    UTSAV (उत्सव) — Indian Cultural & Live Events Discovery Portal
-   Palette: Warm Earthy Terracotta, Marigold Ochre, Raw Parchment & Slate
-   Editorial, human-crafted aesthetic with NO purple gradients or pill buttons.
+   Palette: Midnight Pine, Citrus, Coral & Soft Mineral
+   A modern, high-energy home for live culture and city experiences.
    ========================================================================== */
 
 :root {
-  /* Warm Indian Earth & Spice Palette */
-  --color-primary: #A73220;         /* Deep Terracotta / Sindoor */
-  --color-primary-hover: #892516;   /* Darker Brick */
-  --color-primary-light: #FBF0ED;   /* Pale Terracotta Wash */
-  --color-secondary: #C8781A;       /* Warm Marigold / Haldi Ochre */
-  --color-secondary-hover: #A6600E; 
-  --color-secondary-light: #FEF7EE; 
-  
-  --color-forest: #1E5E3A;          /* Sacred Peepal / Forest Green (Free/Verified) */
-  --color-forest-light: #EBF5EF;
-  
-  --color-bg: #FAF7F2;              /* Warm Khadi / Raw Parchment Paper */
-  --color-surface: #FFFFFF;         /* Crisp Card White */
-  --color-surface-subtle: #F5EFE6;  /* Warm Sand Tint */
-  --color-border: #E4DAD0;          /* Crisp Earth Border */
-  --color-border-dark: #C8BCAC;
-  
-  --color-text-main: #1F1D1A;       /* Slate Charcoal */
-  --color-text-muted: #6B6258;      /* Warm Umber Gray */
-  --color-text-subtle: #948A7E;     /* Sand Muted */
+  /* Electric indigo, signal coral & ink */
+  --color-primary: #4338E8;
+  --color-primary-hover: #3026CC;
+  --color-primary-light: #EFEEFF;
+  --color-secondary: #FF6845;
+  --color-secondary-hover: #E84E2E;
+  --color-secondary-light: #FFF0EC;
+
+  --color-forest: #257A5A;
+  --color-forest-light: #EAF5EF;
+
+  --color-bg: #F5F3EE;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #ECE9E2;
+  --color-border: #DEDAD2;
+  --color-border-dark: #C6C0B6;
+
+  --color-text-main: #191820;
+  --color-text-muted: #6E6C76;
+  --color-text-subtle: #96939C;
+
+  --color-ink: #191820;
+  --color-lime: #D5FF42;
   
   /* Typography */
-  --font-display: 'Cinzel', 'Rozha One', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
-  /* Geometric Structure: Clean, Crisp, Handcrafted Rectangles (NOT Pill-shaped!) */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
+  /* Soft geometry, balanced with crisp editorial typography */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   
-  /* Elevation: Warm Paper Shadows */
-  --shadow-sm: 0 1px 3px rgba(35, 29, 20, 0.06), 0 1px 2px rgba(35, 29, 20, 0.04);
-  --shadow-md: 0 4px 12px rgba(35, 29, 20, 0.08), 0 2px 4px rgba(35, 29, 20, 0.04);
-  --shadow-lg: 0 12px 28px rgba(35, 29, 20, 0.12), 0 4px 10px rgba(35, 29, 20, 0.06);
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(16, 46, 41, 0.05);
+  --shadow-md: 0 10px 28px rgba(16, 46, 41, 0.09);
+  --shadow-lg: 0 24px 60px rgba(16, 46, 41, 0.16);
 
   --transition-fast: 150ms ease;
   --transition-base: 220ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -2665,6 +2668,1654 @@ button {
 
   .footer-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   UtsavPass Refresh — shared visual system
+   ========================================================================== */
+
+body {
+  background: var(--color-bg);
+  letter-spacing: -0.01em;
+}
+
+.container {
+  max-width: 1320px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.top-announcement {
+  background: var(--color-ink);
+  color: #E9F0E9;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.announcement-badge {
+  background: var(--color-lime);
+  color: var(--color-ink);
+  border-radius: 999px;
+}
+
+.announcement-right {
+  color: #B9C9C0;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: var(--color-border);
+  box-shadow: 0 5px 18px rgba(16, 46, 41, 0.045);
+  backdrop-filter: blur(14px);
+}
+
+.header-inner {
+  min-height: 4.75rem;
+  gap: 0.75rem;
+}
+
+.logo-mark {
+  background: #E7F1E8;
+  border-color: #D4E4D7;
+  border-radius: 12px;
+}
+
+.brand-hindi {
+  color: var(--color-secondary);
+}
+
+.brand-english {
+  font-size: 1.12rem;
+  letter-spacing: 0.045em;
+}
+
+.brand-sub {
+  color: var(--color-primary);
+}
+
+.main-nav {
+  flex: 1;
+  justify-content: center;
+  gap: 0.1rem;
+}
+
+.nav-link {
+  padding: 0.55rem 0.65rem;
+  border-radius: 9px;
+  color: #5A6B63;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.header-actions {
+  gap: 0.45rem;
+}
+
+.header-actions .btn {
+  padding: 0.58rem 0.78rem;
+  font-size: 0.8rem;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background: #F0F5F0;
+}
+
+.nav-link.active {
+  color: var(--color-ink);
+  background: #EAF4D0;
+  border-bottom: 0;
+}
+
+.btn {
+  min-height: 42px;
+  border-radius: 9px;
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 5px 14px rgba(21, 61, 54, 0.16);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 7px 18px rgba(21, 61, 54, 0.22);
+}
+
+.btn-secondary {
+  color: var(--color-ink);
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+}
+
+.btn-secondary:hover {
+  color: var(--color-ink);
+  background: #C8E652;
+  border-color: #C8E652;
+}
+
+.btn-outline {
+  color: var(--color-text-main);
+  background: #FFFFFF;
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  background: #F2F7F2;
+  border-color: #B9C9BE;
+}
+
+.badge-count {
+  color: var(--color-ink);
+  background: var(--color-lime);
+  border-radius: 999px;
+}
+
+.hero-section {
+  overflow: hidden;
+  padding: 4.25rem 0 3.5rem;
+  color: #FFFFFF;
+  background-color: var(--color-ink);
+  border-bottom: 0;
+  background-image:
+    radial-gradient(ellipse at 8% 10%, rgba(216, 243, 106, 0.12), transparent 34%),
+    radial-gradient(ellipse at 94% 18%, rgba(231, 101, 78, 0.14), transparent 32%);
+}
+
+.hero-kicker {
+  color: var(--color-lime);
+  letter-spacing: 0.13em;
+}
+
+.kicker-line {
+  background: var(--color-lime);
+}
+
+.hero-headline {
+  max-width: 660px;
+  font-size: clamp(2.25rem, 4.3vw, 3.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  color: #F7FAF4;
+}
+
+.hero-subhead {
+  max-width: 590px;
+  color: #C6D4CC;
+  line-height: 1.75;
+}
+
+.hero-photo-card {
+  min-height: 390px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.28);
+}
+
+.hero-photo-shade {
+  background: linear-gradient(180deg, rgba(8, 25, 22, 0.04) 25%, rgba(8, 25, 22, 0.8) 100%);
+}
+
+.hero-photo-note {
+  border-radius: 12px;
+  background: rgba(16, 46, 41, 0.78);
+}
+
+.hero-note-number {
+  color: var(--color-lime);
+}
+
+.search-command-card {
+  max-width: 1140px;
+  padding: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.22);
+}
+
+.field-label,
+.quick-date-caption {
+  color: #56685F;
+  letter-spacing: 0.075em;
+}
+
+.input-with-icon,
+.event-picker-dropdown,
+.form-group input,
+.form-group select,
+.phone-input-wrap,
+.select-sm {
+  border-radius: 9px;
+  background-color: #F8FAF7;
+}
+
+.input-with-icon:focus-within,
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(21, 61, 54, 0.11);
+}
+
+.date-chip {
+  border-radius: 999px;
+  background: #F2F5F1;
+  border-color: #E3EAE4;
+  padding: 0.42rem 0.85rem;
+}
+
+.date-chip:hover {
+  background: #EAF1EA;
+}
+
+.date-chip.active {
+  color: var(--color-ink);
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+}
+
+.quick-date-row {
+  align-items: flex-start;
+}
+
+.quick-date-caption {
+  padding-top: 0.35rem;
+}
+
+.home-section {
+  padding: 4rem 0;
+}
+
+.home-section-header {
+  border-color: var(--color-border);
+  margin-bottom: 1.6rem;
+}
+
+.section-title,
+.page-title,
+.catalog-title,
+.modal-event-title {
+  letter-spacing: -0.045em;
+}
+
+.section-title {
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+}
+
+.home-section[style] {
+  background: #EAF0E9 !important;
+  border-color: #DDE6DD !important;
+}
+
+.genre-grid,
+.city-grid {
+  gap: 1.15rem;
+}
+
+.genre-card,
+.city-hub-card,
+.event-card,
+.reg-card-box,
+.my-pass-card,
+.empty-state-card {
+  border-radius: 16px;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.genre-card:hover,
+.city-hub-card:hover,
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: #B9CDBE;
+  box-shadow: var(--shadow-md);
+}
+
+.genre-card-media,
+.city-hub-media {
+  background: #E3EBE3;
+}
+
+.genre-card-tag {
+  background: rgba(16, 46, 41, 0.92);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+}
+
+.genre-card:nth-child(2) .genre-card-tag,
+.genre-card:nth-child(3) .genre-card-tag,
+.genre-card:nth-child(4) .genre-card-tag {
+  background: rgba(16, 46, 41, 0.92);
+}
+
+.genre-card-title,
+.city-hub-name,
+.card-title,
+.pass-event-title,
+.event-preview-title {
+  letter-spacing: -0.035em;
+}
+
+.genre-card-action,
+.city-hub-hindi {
+  color: var(--color-primary);
+}
+
+.city-hub-badge,
+.featured-flag {
+  color: var(--color-ink);
+  background: var(--color-lime);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.culture-feature-section {
+  padding: 1rem 0 4rem;
+  background: linear-gradient(180deg, #F4F6F2 0%, #E9F0E8 100%);
+}
+
+.culture-feature {
+  border-radius: 20px;
+  background: #173B34;
+  box-shadow: var(--shadow-lg);
+}
+
+.culture-feature-copy .btn-secondary {
+  color: var(--color-ink);
+  background: var(--color-lime);
+}
+
+.stats-counter-strip {
+  background: #FFFFFF;
+}
+
+.stat-num {
+  color: var(--color-primary);
+}
+
+.main-content {
+  padding: 1.5rem 0 3rem;
+}
+
+.page-header-strip {
+  background: #EAF0E9;
+  border-color: #DDE6DD;
+  padding: 2.5rem 0;
+}
+
+.page-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.page-subtitle {
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.catalog-header-bar {
+  align-items: flex-end;
+  margin-bottom: 1.4rem;
+}
+
+.catalog-title {
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.events-grid {
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+}
+
+.event-card {
+  overflow: hidden;
+}
+
+.card-media-wrap {
+  height: 225px;
+  background: #E3EBE3;
+}
+
+.card-date-badge {
+  border-radius: 11px;
+  background: var(--color-ink);
+  padding: 0.42rem 0.65rem;
+}
+
+.badge-month {
+  color: var(--color-lime);
+}
+
+.btn-bookmark {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(16, 46, 41, 0.15);
+}
+
+.btn-bookmark.saved {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.genre-tag {
+  color: var(--color-secondary);
+}
+
+.card-artist {
+  color: #76857D;
+}
+
+.card-footer {
+  border-color: #E8EDE8;
+}
+
+.price-amount {
+  color: var(--color-primary);
+}
+
+.page-header-strip:has(.search-command-card) {
+  padding: 1.75rem 0 0;
+  background: #EAF0E9;
+  border: 0;
+}
+
+.page-header-strip:has(.search-command-card) .search-command-card {
+  margin-top: 0;
+  border-color: #E2E9E2;
+  box-shadow: 0 12px 30px rgba(16, 46, 41, 0.08);
+}
+
+.registration-page-layout {
+  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.85fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.reg-card-box {
+  padding: clamp(1.2rem, 2.4vw, 1.8rem);
+}
+
+.reg-box-title {
+  padding-bottom: 0.8rem;
+  border-color: #E6ECE6;
+  letter-spacing: -0.025em;
+}
+
+.selected-event-card-preview {
+  background: #F3F7F2;
+  border-color: #DFE9DF;
+  border-radius: 12px;
+}
+
+.event-preview-img {
+  border-radius: 9px;
+}
+
+.tier-card {
+  border-radius: 12px;
+}
+
+.tier-card.active {
+  background: #F0F7E2;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(21, 61, 54, 0.12);
+}
+
+.tier-card input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+.tier-cost,
+.grand-total {
+  color: var(--color-primary);
+}
+
+.quantity-row,
+.billing-summary-box {
+  background: #F3F6F2;
+  border-color: #E0E8E0;
+  border-radius: 12px;
+}
+
+.billing-summary-box {
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.billing-title {
+  color: var(--color-primary);
+}
+
+.payment-note {
+  color: var(--color-forest);
+  background: #EAF5EF;
+  padding: 0.7rem 0.8rem;
+  border-radius: 9px;
+}
+
+.tabs-navigation-bar {
+  gap: 0.75rem;
+  border-bottom-width: 1px;
+}
+
+.tab-btn {
+  font-family: var(--font-body);
+  border-radius: 10px 10px 0 0;
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.tab-btn.active .tab-pill-count {
+  color: var(--color-ink);
+  background: var(--color-lime);
+}
+
+.my-pass-card {
+  padding: 1.4rem;
+}
+
+.pass-code-tag {
+  color: var(--color-secondary);
+}
+
+.utsav-ticket-card {
+  border: 1px solid #C9D6CC;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.ticket-head {
+  background: var(--color-ink);
+  padding: 1rem 1.35rem;
+}
+
+.t-hindi {
+  color: var(--color-lime);
+}
+
+.ticket-status-pill {
+  color: var(--color-ink);
+  background: var(--color-lime);
+  border-radius: 999px;
+}
+
+.cut-line {
+  border-color: #C7D5CA;
+}
+
+.cut-dot {
+  background: var(--color-bg);
+  border-color: #B8C7BC;
+}
+
+.ticket-foot {
+  background: #F1F5F1;
+}
+
+.custom-dialog::backdrop {
+  background: rgba(9, 29, 25, 0.76);
+  backdrop-filter: blur(7px);
+}
+
+.dialog-content {
+  border-radius: 18px;
+  border-color: #DCE4DD;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-header,
+.dialog-footer {
+  background: #F3F6F2;
+}
+
+.meta-box {
+  background: #F3F6F2;
+  border-color: #E2EAE2;
+  border-radius: 10px;
+}
+
+.meta-box svg,
+.badge-tag {
+  color: var(--color-primary);
+}
+
+.badge-tag {
+  background: var(--color-primary-light);
+  border-radius: 999px;
+}
+
+.empty-state-card {
+  border-style: solid;
+  padding: 3rem 1.5rem;
+}
+
+.heritage-strip {
+  background: var(--color-ink);
+  border-color: #294B44;
+}
+
+.strip-icon-box {
+  color: var(--color-lime);
+  background: #1D443C;
+  border-color: #34594E;
+  border-radius: 12px;
+}
+
+.site-footer {
+  background: #0D2723;
+  border-top: 3px solid var(--color-lime);
+}
+
+.f-hindi,
+.footer-links a:hover {
+  color: var(--color-lime);
+}
+
+.toast {
+  background: var(--color-ink);
+  border-color: #34594E;
+  border-radius: 12px;
+}
+
+.toast-icon {
+  color: var(--color-lime);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-section {
+    padding: 2.8rem 0 2.5rem;
+  }
+
+  .hero-photo-card {
+    min-height: 280px;
+    border-radius: 16px;
+  }
+
+  .home-section {
+    padding: 2.8rem 0;
+  }
+
+  .registration-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    gap: 0.15rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.55rem;
+    font-size: 0.8rem;
+  }
+
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  .header-actions .btn {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .catalog-header-bar {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    justify-content: space-around;
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.45rem;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .registration-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-billing-col {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .announcement-right {
+    display: none;
+  }
+
+  .header-actions .btn span:not(.badge-count) {
+    display: none;
+  }
+
+  .header-actions .btn {
+    min-width: 42px;
+    padding: 0.5rem;
+  }
+
+  .main-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .nav-link {
+    white-space: nowrap;
+  }
+
+  .catalog-header-bar {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   UtsavPass Art Direction — high-contrast live culture editorial
+   ========================================================================== */
+
+body {
+  background: #F5F3EE;
+  color: #191820;
+  letter-spacing: -0.018em;
+}
+
+.container {
+  max-width: 1400px;
+}
+
+.top-announcement {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  background: #FF6845;
+  color: #191820;
+  border: 0;
+  font-size: 0.75rem;
+}
+
+.announcement-badge {
+  color: #FFFFFF;
+  background: #191820;
+  border-radius: 2px;
+}
+
+.announcement-right {
+  color: #381E1A;
+}
+
+.site-header {
+  background: #191820;
+  border: 0;
+  box-shadow: none;
+  color: #FFFFFF;
+}
+
+.header-inner {
+  min-height: 5.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-lime);
+}
+
+.brand-hindi {
+  color: var(--color-secondary);
+}
+
+.brand-english {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+}
+
+.brand-sub {
+  color: var(--color-lime);
+}
+
+.main-nav {
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
+
+.nav-link {
+  min-height: 38px;
+  padding: 0.5rem 0.72rem;
+  border-radius: 3px;
+  color: #C5C3CC;
+  font-size: 0.78rem;
+  letter-spacing: 0.015em;
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+  color: #191820;
+  background: var(--color-lime);
+  border: 0;
+}
+
+.header-actions .btn {
+  min-height: 38px;
+  padding: 0.45rem 0.68rem;
+  border-radius: 3px;
+  font-size: 0.74rem;
+}
+
+.header-actions .btn-outline {
+  color: #FFFFFF;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.header-actions .btn-outline:hover {
+  color: var(--color-lime);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.header-actions .btn-secondary,
+.header-actions .btn-secondary:hover {
+  color: #191820;
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+}
+
+.hero-section {
+  padding: 0 0 4.5rem;
+  overflow: visible;
+  background: #191820;
+}
+
+.hero-layout {
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  min-height: min(690px, 68vw);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4.5rem 3rem 8rem;
+  isolation: isolate;
+}
+
+.hero-photo-card {
+  position: absolute;
+  z-index: -2;
+  inset: 0 50%;
+  width: 100vw;
+  height: 100%;
+  min-height: 0;
+  transform: translateX(-50%);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  animation: none;
+}
+
+.hero-photo {
+  animation: none;
+  filter: saturate(0.82);
+}
+
+.hero-photo-shade {
+  background: linear-gradient(90deg, rgba(15, 14, 23, 0.96) 0%, rgba(19, 17, 28, 0.88) 34%, rgba(20, 17, 29, 0.52) 66%, rgba(20, 17, 29, 0.18) 100%), linear-gradient(0deg, rgba(16, 14, 22, 0.62), transparent 48%);
+}
+
+.hero-photo-caption,
+.hero-photo-note {
+  display: none;
+}
+
+.hero-kicker,
+.hero-headline,
+.hero-subhead {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-kicker {
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  padding: 0.45rem 0.65rem;
+  background: var(--color-lime);
+  color: #191820;
+  font-size: 0.66rem;
+  letter-spacing: 0.15em;
+}
+
+.kicker-line {
+  display: none;
+}
+
+.hero-headline {
+  max-width: 1120px;
+  margin-bottom: 1.3rem;
+  font-size: clamp(3rem, 6.6vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+  text-wrap: balance;
+}
+
+.hero-subhead {
+  max-width: 570px;
+  margin-bottom: 0;
+  color: #D2CFD8;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.search-command-card {
+  position: relative;
+  z-index: 3;
+  max-width: none;
+  margin: 2rem 0 0;
+  padding: 1.4rem 1.5rem 1rem;
+  border: 1px solid #D8D4CC;
+  border-radius: 4px;
+  box-shadow: 0 20px 55px rgba(17, 15, 24, 0.22);
+}
+
+.field-label,
+.quick-date-caption {
+  color: #595761;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+}
+
+.input-with-icon,
+.event-picker-dropdown,
+.form-group input,
+.form-group select,
+.phone-input-wrap,
+.select-sm {
+  border-radius: 3px;
+  background: #F8F7F4;
+}
+
+.input-with-icon:focus-within,
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(67, 56, 232, 0.12);
+}
+
+.btn {
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  color: #FFFFFF;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: none;
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+  color: #191820;
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+}
+
+.btn-outline {
+  border-radius: 3px;
+}
+
+.badge-count {
+  color: #191820;
+  background: var(--color-lime);
+  border-radius: 2px;
+}
+
+.quick-date-row {
+  align-items: center;
+}
+
+.quick-date-caption {
+  padding-top: 0;
+}
+
+.date-chip {
+  border-radius: 2px;
+  background: #F0EFEB;
+  border-color: #E3E0D9;
+}
+
+.date-chip.active {
+  color: #FFFFFF;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.home-section {
+  padding: 5rem 0;
+}
+
+.home-section-header {
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #191820;
+}
+
+.section-title,
+.page-title,
+.catalog-title,
+.modal-event-title {
+  letter-spacing: -0.06em;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.section-sub {
+  color: #716F79;
+}
+
+.home-section[style] {
+  background: #E9E6DE !important;
+  border-color: #D5D1C8 !important;
+}
+
+.events-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 355px), 1fr));
+  gap: 1rem;
+}
+
+.event-card {
+  border: 1px solid #D9D5CD;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.event-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 28px rgba(25, 24, 32, 0.12);
+}
+
+.card-media-wrap {
+  height: 205px;
+  background: #E2DFD8;
+}
+
+.card-date-badge {
+  top: 0.8rem;
+  left: 0.8rem;
+  min-width: 56px;
+  padding: 0.45rem 0.55rem;
+  border: 0;
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.badge-month {
+  color: var(--color-lime);
+}
+
+.badge-day {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  letter-spacing: -0.05em;
+}
+
+.featured-flag {
+  border-radius: 2px;
+  color: #191820;
+  background: var(--color-lime);
+}
+
+.btn-bookmark {
+  border-radius: 2px;
+}
+
+.btn-bookmark.saved {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.genre-tag,
+.card-artist {
+  color: var(--color-secondary);
+}
+
+.card-title,
+.genre-card-title,
+.city-hub-name,
+.pass-event-title,
+.event-preview-title {
+  letter-spacing: -0.05em;
+}
+
+.card-footer {
+  border-top: 1px solid #E5E2DC;
+}
+
+.price-amount {
+  color: var(--color-primary);
+}
+
+.genre-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.genre-card {
+  position: relative;
+  min-height: 370px;
+  border: 0;
+  border-radius: 3px;
+  background: #191820;
+  box-shadow: none;
+}
+
+.genre-card-media {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background: #191820;
+}
+
+.genre-card-media::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 14, 23, 0.12) 16%, rgba(15, 14, 23, 0.88) 100%);
+  content: "";
+}
+
+.genre-card-img {
+  opacity: 0.8;
+}
+
+.genre-card-tag {
+  z-index: 1;
+  top: 0.9rem;
+  left: 0.9rem;
+  border: 0;
+  border-radius: 2px;
+  color: #191820;
+  background: var(--color-lime);
+  font-size: 0.62rem;
+}
+
+.genre-card:nth-child(2) .genre-card-tag,
+.genre-card:nth-child(3) .genre-card-tag,
+.genre-card:nth-child(4) .genre-card-tag {
+  color: #191820;
+  background: var(--color-lime);
+}
+
+.genre-card-body {
+  position: relative;
+  z-index: 1;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  color: #FFFFFF;
+  background: transparent;
+}
+
+.genre-card-title,
+.genre-card:hover .genre-card-title {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+}
+
+.genre-card-desc {
+  color: #D3D0D8;
+}
+
+.genre-card-action {
+  padding-top: 0.8rem;
+  color: var(--color-lime);
+}
+
+.genre-card:hover {
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(25, 24, 32, 0.2);
+}
+
+.city-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.city-hub-card {
+  border: 1px solid #D9D5CD;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.city-hub-media {
+  height: 190px;
+}
+
+.city-hub-badge {
+  border-radius: 2px;
+  color: #191820;
+  background: var(--color-lime);
+}
+
+.city-hub-body {
+  padding: 1rem;
+}
+
+.city-hub-hindi {
+  color: #77747E;
+}
+
+.city-hub-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 24px rgba(25, 24, 32, 0.1);
+}
+
+.culture-feature {
+  border-radius: 3px;
+  background: #29215C;
+}
+
+.culture-feature-kicker,
+.culture-feature-points li::before {
+  color: var(--color-lime);
+}
+
+.culture-feature-points li::before {
+  background: var(--color-lime);
+}
+
+.stats-counter-strip {
+  background: #191820;
+  border-color: #191820;
+}
+
+.stat-item {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stat-num,
+.stat-label {
+  color: #FFFFFF;
+}
+
+.stat-sub {
+  color: #B9B6C1;
+}
+
+.page-header-strip {
+  padding: 3rem 0;
+  background: #29215C;
+  border: 0;
+}
+
+.page-header-strip .page-title {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.page-header-strip .page-subtitle {
+  color: #D0CCDF;
+}
+
+.page-header-strip:has(.search-command-card) {
+  padding: 0 0 0.5rem;
+  background: #E9E6DE;
+}
+
+.page-header-strip:has(.search-command-card) .search-command-card {
+  margin-top: 1.5rem;
+  border-color: #D5D1C8;
+  box-shadow: 0 8px 24px rgba(25, 24, 32, 0.08);
+}
+
+.catalog-header-bar {
+  align-items: flex-end;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #191820;
+}
+
+.catalog-title {
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+}
+
+.select-sm {
+  border-radius: 2px;
+}
+
+.active-filters-bar {
+  border-radius: 3px;
+  background: #EFEEFF;
+  border-color: #D9D6FF;
+}
+
+.registration-page-layout {
+  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.85fr);
+  gap: 1.1rem;
+}
+
+.reg-card-box,
+.my-pass-card {
+  border: 1px solid #D9D5CD;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.reg-card-box {
+  padding: 1.5rem;
+}
+
+.reg-box-title {
+  border-bottom: 2px solid #191820;
+  font-size: 1.25rem;
+}
+
+.event-picker-dropdown,
+.selected-event-card-preview,
+.tier-card,
+.quantity-row,
+.billing-summary-box {
+  border-radius: 3px;
+}
+
+.selected-event-card-preview {
+  background: #F1EFEB;
+  border-color: #DDD9D1;
+}
+
+.tier-card.active {
+  background: #EFEEFF;
+  border-color: var(--color-primary);
+  box-shadow: inset 4px 0 0 var(--color-primary);
+}
+
+.tier-card input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+.tier-cost,
+.grand-total {
+  color: var(--color-primary);
+}
+
+.quantity-row,
+.billing-summary-box {
+  background: #ECE9E2;
+  border-color: #D9D5CD;
+}
+
+.billing-summary-box {
+  padding: 1.5rem;
+}
+
+.billing-title {
+  color: #191820;
+  border-bottom: 2px solid #191820;
+}
+
+.payment-note {
+  color: #245B43;
+  background: #E6F0E8;
+  border-radius: 3px;
+}
+
+.tabs-navigation-bar {
+  border-bottom: 2px solid #191820;
+}
+
+.tab-btn {
+  font-family: var(--font-body);
+  border-radius: 0;
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.tab-pill-count,
+.tab-btn.active .tab-pill-count {
+  color: #191820;
+  background: var(--color-lime);
+  border-radius: 2px;
+}
+
+.empty-state-card {
+  border: 1px solid #D9D5CD;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.empty-state-icon svg {
+  stroke: var(--color-primary);
+}
+
+.utsav-ticket-card {
+  border: 1px solid #191820;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.ticket-head {
+  background: #191820;
+}
+
+.ticket-status-pill {
+  border-radius: 2px;
+  color: #191820;
+  background: var(--color-lime);
+}
+
+.site-footer {
+  background: #191820;
+  border-top: 4px solid var(--color-secondary);
+}
+
+.f-hindi,
+.footer-links a:hover,
+.toast-icon {
+  color: var(--color-lime);
+}
+
+.heritage-strip {
+  background: #30296B;
+  border-color: #443C80;
+}
+
+.strip-icon-box {
+  color: var(--color-lime);
+  background: #393177;
+  border-color: #514A8D;
+  border-radius: 3px;
+}
+
+.toast {
+  background: #191820;
+  border: 1px solid #393743;
+  border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    min-height: 600px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .registration-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-billing-col {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .main-nav {
+    border-color: rgba(255, 255, 255, 0.14);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+    color: #D0CED6;
+  }
+
+  .hero-section {
+    padding-bottom: 3rem;
+  }
+
+  .hero-content {
+    min-height: 590px;
+    padding: 4rem 1.25rem 5rem;
+    justify-content: flex-end;
+  }
+
+  .hero-photo-shade {
+    background: linear-gradient(0deg, rgba(15, 14, 23, 0.98) 0%, rgba(15, 14, 23, 0.84) 42%, rgba(15, 14, 23, 0.24) 100%);
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .search-command-card {
+    margin-top: 1.25rem;
+    padding: 1rem;
+  }
+
+  .quick-date-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .date-buttons-group {
+    gap: 0.35rem;
+  }
+
+  .date-chip {
+    font-size: 0.75rem;
+  }
+
+  .home-section {
+    padding: 3.5rem 0;
+  }
+
+  .genre-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .genre-card {
+    min-height: 310px;
+  }
+
+  .city-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .registration-page-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-announcement {
+    font-size: 0.68rem;
+  }
+
+  .header-inner {
+    gap: 0.5rem;
+  }
+
+  .brand-english {
+    font-size: 1rem;
+  }
+
+  .header-actions {
+    gap: 0.3rem;
+  }
+
+  .header-actions .btn {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0.4rem;
+  }
+
+  .hero-content {
+    min-height: 540px;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .hero-kicker {
+    font-size: 0.58rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.35rem, 10vw, 3.25rem);
+  }
+
+  .hero-subhead {
+    font-size: 0.92rem;
+  }
+
+  .genre-grid,
+  .city-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .genre-card {
+    min-height: 320px;
+  }
+
+  .home-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
