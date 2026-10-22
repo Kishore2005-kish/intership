@@ -368,6 +368,10 @@ body.dark-theme { --paper: #17181c; --white: #202126; --ink: #f1f1f4; --muted: #
   .nav-links.open { display: flex; flex-direction: column; }
   .nav-links a { padding: 12px; border-radius: 7px; color: #333; }
   .nav-links a:hover { background: rgba(0,0,0,.04); }
+  .dark-theme .nav-links { border-color: rgba(255,255,255,.1); background: rgba(30,31,36,.97); }
+  .dark-theme .nav-links a { color: #eeeeef; }
+  .dark-theme .nav-links a[aria-current="page"] { color: var(--blue); }
+  .dark-theme .nav-links a:hover { background: rgba(255,255,255,.08); }
   .nav-actions { gap: 4px; margin-left: auto; margin-right: 8px; }
   .nav-actions .icon-button { width: 29px; }
   .nav-signin { display: none; }
