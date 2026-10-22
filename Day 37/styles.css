@@ -324,11 +324,17 @@ body.dark-theme { --paper: #17181c; --white: #202126; --ink: #f1f1f4; --muted: #
 .dark-theme .site-header .nav-shell { border-color: rgba(255,255,255,.08); background: rgba(30,31,36,.82); }
 .dark-theme .nav-links a, .dark-theme .nav-signin { color: #eeeeef; }
 .dark-theme .intro-section { color: var(--ink); }
+.dark-theme .button-dark { background: #f1f1f4; color: #1d1d1f; }
+.dark-theme .button-dark:hover { background: #d8d8dd; }
 .dark-theme .explore-section, .dark-theme .event-modal { background: #202126; }
 .dark-theme .search-box, .dark-theme .category-chip, .dark-theme .registration-panel, .dark-theme .reference-box, .dark-theme .form-field input, .dark-theme .form-field textarea, .dark-theme .form-field select { border-color: #3a3b42; background: #292a30; color: var(--ink); }
+.dark-theme .date-range input { border-color: #3a3b42; background: #292a30; color: var(--ink); color-scheme: dark; }
 .dark-theme .category-chip.active { background: #f1f1f4; color: #1d1d1f; }
 .dark-theme .card-content h3, .dark-theme .sort-control select, .dark-theme .date-select-label select, .dark-theme .card-price, .dark-theme .details-link { color: var(--ink); }
+.dark-theme .event-date strong { color: #1d1d1f; }
 .dark-theme .card-meta, .dark-theme .card-description, .dark-theme .check-control { color: #b3b3ba; }
+.dark-theme .filter-label, .dark-theme .date-select-label, .dark-theme .date-range, .dark-theme .sort-control, .dark-theme .clear-filters { color: #b3b3ba; }
+.dark-theme .view-button.active { border-color: #3a3b42; background: #f1f1f4; color: #1d1d1f; }
 .dark-theme .card-meta, .dark-theme .list-view .event-card { border-color: #383940; }
 .dark-theme .site-footer { background: #202126; }
 .dark-theme .footer-note span { color: var(--ink); }
