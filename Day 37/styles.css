@@ -326,6 +326,7 @@ body.dark-theme { --paper: #17181c; --white: #202126; --ink: #f1f1f4; --muted: #
 .dark-theme .intro-section { color: var(--ink); }
 .dark-theme .button-dark { background: #f1f1f4; color: #1d1d1f; }
 .dark-theme .button-dark:hover { background: #d8d8dd; }
+.dark-theme .modal-close { border-color: rgba(0,0,0,.12); background: rgba(255,255,255,.94); color: #1d1d1f; }
 .dark-theme .explore-section, .dark-theme .event-modal { background: #202126; }
 .dark-theme .search-box, .dark-theme .category-chip, .dark-theme .registration-panel, .dark-theme .reference-box, .dark-theme .form-field input, .dark-theme .form-field textarea, .dark-theme .form-field select { border-color: #3a3b42; background: #292a30; color: var(--ink); }
 .dark-theme .date-range input { border-color: #3a3b42; background: #292a30; color: var(--ink); color-scheme: dark; }
